@@ -277,3 +277,7 @@ dtf_push () {
 dtf_pull () {
   dtf pull
 }
+
+dtf_lazygit () {
+  lazygit --git-dir=$HOME/.dotfiles/ --work-tree=$HOME $@
+}

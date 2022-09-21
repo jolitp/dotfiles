@@ -58,8 +58,8 @@ replacement to htop/Bpytop
 ***** NO ledger
 ***** NO ? man page reader ?
 **** 4.1.2 shells
-***** NO bash
-***** zsh
+***** 4.1.2.1 bash
+***** 4.1.2.2 zsh
 ****** TODO fix config from garuda
 ******* TODO (remove) Use emacs key bindings
 ******* TODO put vim mode / vim keybindings
@@ -71,47 +71,48 @@ replacement to htop/Bpytop
 ******* TODO ll -> ls -l
 ******* TODO la -> ls -a
 ******* TODO lla -> ls -la
-***** NO fish
-***** NO starship prompt
+***** 4.1.2.3 fish
+***** 4.1.2.4 starship prompt
 try putting a powerline 10k inspired prompt style
-***** shell agnostic config
+***** 4.1.2.5 shell agnostic config
 ****** aliases
 ****** dotfiles helper functions
 **** 4.1.3 terminal emulators
-***** NO alacrity
-***** NO kitty
-***** NO konsole
-***** NO yakuake
+***** 4.1.3.1 alacrity
+***** 4.1.3.2 kitty
+***** 4.1.3.3 konsole
+***** 4.1.3.4 yakuake
 **** 4.1.4 console emulators
-***** NO citra (nintendo 3ds)
-***** NO melonDS (nintendo ds)
-***** NO Yuzu (nintendo Switch)
-***** NO mgba (nintendo GBA/GB)
+***** 4.1.4.1 citra (nintendo 3ds)
+***** 4.1.4.2 melonDS (nintendo ds)
+***** 4.1.4.3 Yuzu (nintendo Switch)
+***** 4.1.4.4 mgba (nintendo GBA/GB)
+***** 4.1.4.5 Kega Fusion (Sega Genesis)
 **** 4.1.5 graphical applications
-***** NO latte dock
+***** 4.1.5.1 latte dock
 FIND A REPLACEMENT
-***** NO krita
-***** NO piper
+***** 4.1.5.2 krita
+***** 4.1.5.3 piper
 control gamming mice
-***** NO solaar
+***** 4.1.5.4 solaar
 control logiteck devices
-***** NO rclone browser
-***** NO mpv
-***** NO okular
-***** NO pinta
-***** NO vlc
-***** NO zathura
-***** NO audacious
-***** NO lutris
+***** 4.1.5.5 rclone browser
+***** 4.1.5.6 mpv
+***** 4.1.5.7 okular
+***** 4.1.5.8 pinta
+***** 4.1.5.9 vlc
+***** 4.1.5.10 zathura
+***** 4.1.5.11 audacious
+***** 4.1.5.12 lutris
 *** 4.2 text editors
 **** 4.2.1 vim
-***** NO chenvim
-***** NO nvim
-***** NO neovide
-**** 4.2.1 emacs
-***** NO chemacs
-***** NO doom emacs
-**** 4.2.1 vscode
+***** 4.2.1.1 chenvim
+***** 4.2.1.2 nvim
+***** 4.2.1.3 neovide
+**** 4.2.2 emacs
+***** 4.2.2.3 chemacs
+***** 4.2.2.3 doom emacs
+**** 4.2.3 vscode
 *** 4.3 browsers
 **** NO brave
 **** NO chrome
@@ -121,6 +122,7 @@ control logiteck devices
 **** NO syncthing
 *** 4.5 remote control
 **** NO scripy
+**** NO KDE Direct?
 **** NO rust desk
 **** NO team viewer
 **** NO anydesk
@@ -128,6 +130,10 @@ control logiteck devices
 **** NO rust / cargo
 ***** NO rustup
 **** NO javascript / npm / yarn / pnpm
+**** NO Godot / Gdscript
+**** NO Elixir / Phoenix / Liveview
+**** NO Elm
+**** NO Python
 *** 4.7 markup languages
 **** NO latex
 ** 5. Lenovo-Garuda
