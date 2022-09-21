@@ -237,7 +237,7 @@ alias upd="/usr/bin/update"
 
 # dotfiles
 dtf () {
-  git --git-dir="$HOME/dotfiles" --work-tree="$HOME" "$@"
+  git --git-dir="$HOME/.dotfiles" --work-tree="$HOME" "$@"
 }
 
 REPO="git@github.com:jolitp/dotfiles.git"
@@ -246,6 +246,26 @@ REPO="git@github.com:jolitp/dotfiles.git"
 dtf_add () {
   dtf add -f $@
   dtf commit -m "feat: added $@"
+}
+
+# remove dotfiles
+dtf_remove () {
+  dtf remove -f $@
+  dtf commit -m "fix: removed $@"
+}
+
+# move dotfile
+dtf_move () {
+  dtf mv -f $1 $2
+  dtf commit -m "fix: moved $1 to $2"
+}
+
+# link dotfiles
+dtf_link () {
+  #dtf mv -f $1 $2
+  ln -s $1 $2
+  git add -f $2
+  dtf commit -m "fix: linked $1 to $2"
 }
 
 # push dotfiles to github
