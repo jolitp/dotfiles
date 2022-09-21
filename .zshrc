@@ -263,7 +263,7 @@ dtf_move () {
 # link dotfiles
 dtf_link () {
   #dtf mv -f $1 $2
-  ln -s $1 $2
+  ln -s -r $1 $2
   git add -f $2
   dtf commit -m "fix: linked $1 to $2"
 }

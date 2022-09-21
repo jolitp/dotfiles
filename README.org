@@ -2,9 +2,9 @@
 #+AUTHOR: João Luís Teixeira Pinto
 #+print_bibliography: no
 * dotfiles
-** What is this?
+** 1. What is this?
 These are my dotfiles, or configuration files, for all the systems I use.
-** How to Use
+** 2. How to Use
 The shell configuration files have functions in them to help when adding,
 deleting, moving configuration files, pushing and pulling to github.
 
@@ -19,7 +19,7 @@ deleting, moving configuration files, pushing and pulling to github.
 | dtf_push   | push dotfiles to github                                   |
 | dtf_pull   | pull dotfiles from github                                 |
 |------------+-----------------------------------------------------------|
-** How is this Configuration Setup
+** 3. How is this Configuration Setup
 The =~/.dotfiles= directory is the =git bare repository= which hosts the git
 repository information, while Config is the configuration directory which hosts
 the config files. The =$HOME= (=~=) directory is the =working tree= of =~/.dotfiles=.
@@ -32,10 +32,11 @@ that is system independent, and is present on all systems. The next ones are for
 each specific system and may not even exist. I'am unsure of how I want to handle
 system specific configuraton. It could be done with branches or submodules, I
 will decide when the time comes.
-** Base
-*** terminal
-**** programs
+** 4. Base
+*** 4.1 terminal
+**** 4.1.1 programs
 ***** NO bat
+***** cht.sh
 ***** [replacement] neofetch
 ***** NO BPyTop
 ***** NO tectonic
@@ -56,23 +57,37 @@ replacement to htop/Bpytop
 ***** NO more/less alternative
 ***** NO ledger
 ***** NO ? man page reader ?
-**** shells
+**** 4.1.2 shells
 ***** NO bash
-***** NO zsh
+***** zsh
+****** TODO fix config from garuda
+******* TODO (remove) Use emacs key bindings
+******* TODO put vim mode / vim keybindings
+******* TODO alias better programs
+******** TODO ls to exa
+******** TODO tree to exa --tree
+******** TODO cat to bat
+****** TODO add useful aliases
+******* TODO ll -> ls -l
+******* TODO la -> ls -a
+******* TODO lla -> ls -la
 ***** NO fish
 ***** NO starship prompt
 try putting a powerline 10k inspired prompt style
-**** console emulators
-***** NO citra (nintendo 3ds)
-***** NO melonDS (nintendo ds)
-***** NO Yuzu (nintendo Switch)
-***** NO mgba (nintendo GBA/GB)
-**** terminal emulators
+***** shell agnostic config
+****** aliases
+****** dotfiles helper functions
+**** 4.1.3 terminal emulators
 ***** NO alacrity
 ***** NO kitty
 ***** NO konsole
 ***** NO yakuake
-**** graphical applications
+**** 4.1.4 console emulators
+***** NO citra (nintendo 3ds)
+***** NO melonDS (nintendo ds)
+***** NO Yuzu (nintendo Switch)
+***** NO mgba (nintendo GBA/GB)
+**** 4.1.5 graphical applications
 ***** NO latte dock
 FIND A REPLACEMENT
 ***** NO krita
@@ -88,38 +103,38 @@ control logiteck devices
 ***** NO zathura
 ***** NO audacious
 ***** NO lutris
-*** text editors
-**** vim
+*** 4.2 text editors
+**** 4.2.1 vim
 ***** NO chenvim
 ***** NO nvim
 ***** NO neovide
-**** emacs
+**** 4.2.1 emacs
 ***** NO chemacs
 ***** NO doom emacs
-**** vscode
-*** browsers
+**** 4.2.1 vscode
+*** 4.3 browsers
 **** NO brave
 **** NO chrome
 **** NO firefox
-*** cloud
+*** 4.4 cloud
 **** NO nextcloud
 **** NO syncthing
-*** remote control
+*** 4.5 remote control
 **** NO scripy
 **** NO rust desk
 **** NO team viewer
 **** NO anydesk
-*** programming languages
+*** 4.6 programming languages
 **** NO rust / cargo
 ***** NO rustup
 **** NO javascript / npm / yarn / pnpm
-*** markup languages
+*** 4.7 markup languages
 **** NO latex
-** Lenovo-Garuda
-** Lenovo-Windows
-** Ryzen-Garuda
-** Ryzen-Linux
-** References
+** 5. Lenovo-Garuda
+** 6. Lenovo-Windows
+** 7. Ryzen-Garuda
+** 8. Ryzen-Linux
+** 90. References
 following the guides:
 
 Store Home Directory Config Files (Dotfiles) in Git (3 Part Series)
@@ -132,7 +147,7 @@ https://dev.to/bowmanjd/store-home-directory-config-files-dotfiles-in-git-using-
 
 3 - Using Multiple Git Repositories to Store Dotfiles in a Modular Fashion
 https://dev.to/bowmanjd/using-multiple-git-repositories-to-store-dotfiles-in-a-modular-fashion-mni
-** Template
+** 100. Template
 #+begin_src conf :tangle ./name/of/file.txt
 
 #+end_src
