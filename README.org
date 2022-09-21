@@ -1,0 +1,138 @@
+#+TITLE: dotfiles
+#+AUTHOR: João Luís Teixeira Pinto
+#+print_bibliography: no
+* dotfiles
+** What is this?
+These are my dotfiles, or configuration files, for all the systems I use.
+** How to Use
+The shell configuration files have functions in them to help when adding,
+deleting, moving configuration files, pushing and pulling to github.
+
+|------------+-----------------------------------------------------------|
+| name       | outcome                                                   |
+|------------+-----------------------------------------------------------|
+| dtf        | replaces =git= command                                      |
+| dtf_add    | add a file to the repository                              |
+| dtf_remove | remove a file from the repository                         |
+| dtf_move   | move a file from a to b                                   |
+| dtf_link   | create a symlink of the file, adds link to the repository |
+| dtf_push   | push dotfiles to github                                   |
+| dtf_pull   | pull dotfiles from github                                 |
+|------------+-----------------------------------------------------------|
+** How is this Configuration Setup
+The =~/.dotfiles= directory is the =git bare repository= which hosts the git
+repository information, while Config is the configuration directory which hosts
+the config files. The =$HOME= (=~=) directory is the =working tree= of =~/.dotfiles=.
+Dotfiles that must be on =$HOME= are moved to =~/Config= and symlinked to =$HOME=,
+both the real file and the symlink must be added to the repository.
+Documentation is also in the Config directory.
+
+Each of the next sections is a part of the whole config. Base is configuration
+that is system independent, and is present on all systems. The next ones are for
+each specific system and may not even exist. I'am unsure of how I want to handle
+system specific configuraton. It could be done with branches or submodules, I
+will decide when the time comes.
+** Base
+*** terminal
+**** programs
+***** NO bat
+***** [replacement] neofetch
+***** NO BPyTop
+***** NO tectonic
+latex distribution
+***** MAYBE Glances?
+replacement to htop/Bpytop
+***** NO broot
+***** NO exa
+****** NO config =tree= command alias to exa --tree
+***** NO fd
+***** NO fzf
+***** NO lazygit
+***** NO git
+***** NO ripgrep
+***** NO ripgrep-all
+***** NO kanata
+***** NO pandoc
+***** NO more/less alternative
+***** NO ledger
+***** NO ? man page reader ?
+**** shells
+***** NO bash
+***** NO zsh
+***** NO fish
+***** NO starship prompt
+try putting a powerline 10k inspired prompt style
+**** console emulators
+***** NO citra (nintendo 3ds)
+***** NO melonDS (nintendo ds)
+***** NO Yuzu (nintendo Switch)
+***** NO mgba (nintendo GBA/GB)
+**** terminal emulators
+***** NO alacrity
+***** NO kitty
+***** NO konsole
+***** NO yakuake
+**** graphical applications
+***** NO latte dock
+FIND A REPLACEMENT
+***** NO krita
+***** NO piper
+control gamming mice
+***** NO solaar
+control logiteck devices
+***** NO rclone browser
+***** NO mpv
+***** NO okular
+***** NO pinta
+***** NO vlc
+***** NO zathura
+***** NO audacious
+***** NO lutris
+*** text editors
+**** vim
+***** NO chenvim
+***** NO nvim
+***** NO neovide
+**** emacs
+***** NO chemacs
+***** NO doom emacs
+**** vscode
+*** browsers
+**** NO brave
+**** NO chrome
+**** NO firefox
+*** cloud
+**** NO nextcloud
+**** NO syncthing
+*** remote control
+**** NO scripy
+**** NO rust desk
+**** NO team viewer
+**** NO anydesk
+*** programming languages
+**** NO rust / cargo
+***** NO rustup
+**** NO javascript / npm / yarn / pnpm
+*** markup languages
+**** NO latex
+** Lenovo-Garuda
+** Lenovo-Windows
+** Ryzen-Garuda
+** Ryzen-Linux
+** References
+following the guides:
+
+Store Home Directory Config Files (Dotfiles) in Git (3 Part Series)
+
+1 - A Simple Approach to storing Home Directory Config Files (Dotfiles) in Git using Bash, Zsh, or Powershell, without a Bare Repo
+https://dev.to/bowmanjd/store-home-directory-config-files-dotfiles-in-git-using-bash-zsh-or-powershell-a-simple-approach-without-a-bare-repo-2if7
+
+2 - The Bare Repo Approach to Storing Home Directory Config Files (Dotfiles) in Git using Bash, Zsh, or Powershell
+https://dev.to/bowmanjd/store-home-directory-config-files-dotfiles-in-git-using-bash-zsh-or-powershell-the-bare-repo-approach-35l3
+
+3 - Using Multiple Git Repositories to Store Dotfiles in a Modular Fashion
+https://dev.to/bowmanjd/using-multiple-git-repositories-to-store-dotfiles-in-a-modular-fashion-mni
+** Template
+#+begin_src conf :tangle ./name/of/file.txt
+
+#+end_src
