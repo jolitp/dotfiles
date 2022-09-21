@@ -243,8 +243,17 @@ dtf () {
 REPO="git@github.com:jolitp/dotfiles.git"
 
 # add dotfiles
-adtf () {
+dtf_add () {
   dtf add -f $@
   dtf commit -m "feat: added $@"
 }
 
+# push dotfiles to github
+dtf_push () {
+  dtf push -u origin HEAD
+}
+
+# pull dotfiles from github
+dtf_pull () {
+  dtf pull
+}
