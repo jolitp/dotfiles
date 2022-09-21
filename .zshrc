@@ -234,14 +234,17 @@ alias upd="/usr/bin/update"
 #neofetch
 
 # dotfiles bare repo setup
-dotfiles () {
+
+# dotfiles
+dtf () {
   git --git-dir="$HOME/dotfiles" --work-tree="$HOME" "$@"
 }
 
 REPO="git@github.com:jolitp/dotfiles.git"
 
-add_dotfile () {
-  git add -f $@
-  git commit -m "feat: added $@"
+# add dotfiles
+adtf () {
+  dtf add -f $@
+  dtf commit -m "feat: added $@"
 }
 
