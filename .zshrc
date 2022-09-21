@@ -250,7 +250,7 @@ dtf_add () {
 
 # remove dotfiles
 dtf_remove () {
-  dtf remove -f $@
+  dtf rm -f $@
   dtf commit -m "fix: removed $@"
 }
 
