@@ -7,3 +7,5 @@
 !~/.bashrc
 !.bashrc !.zshrc !README.org
 !.gitignore
+!.gitignore
+!.zshrc
