@@ -1,6 +1,6 @@
-#/**                    # first atempt
+/**                    # first atempt
 #*                       # second atempt
-~/**/*                  # third atempt
+#~/**/*                  # third atempt
 
 # whitelisted folders
 !~/Config
