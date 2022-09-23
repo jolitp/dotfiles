@@ -14,7 +14,7 @@ deleting, moving configuration files, pushing and pulling to github.
 | dtf        | replaces =git= command                                      |
 | dtf_add    | add a file to the repository                              |
 | dtf_remove | remove a file from the repository                         |
-| dtf_move   | move a file from a to b                                   |
+| dtf_move   | move a file from A to B                                   |
 | dtf_link   | create a symlink of the file, adds link to the repository |
 | dtf_push   | push dotfiles to github                                   |
 | dtf_pull   | pull dotfiles from github                                 |
@@ -60,7 +60,9 @@ replacement to htop/Bpytop
 ***** zoxide
 **** 4.1.2 shells
 ***** 4.1.2.1 bash
+Default linux shell. Required as the system shell.
 ***** 4.1.2.2 zsh
+Shell with convenient features. Used as POSIX compliant interactive shell.
 ****** TODO fix config from garuda
 ******* TODO (remove) Use emacs key bindings
 ******* TODO put vim mode / vim keybindings
@@ -73,9 +75,17 @@ replacement to htop/Bpytop
 ******* TODO la -> ls -a
 ******* TODO lla -> ls -la
 ***** 4.1.2.3 fish
-***** 4.1.2.4 starship prompt
-****** 4.1.2.4.1 powerline 10k inspired prompt style
-****** 4.1.2.4.2 time taken with different colors
+Better interactive shell.
+***** 4.1.2.4 Prompts
+****** 4.1.2.4.1 Powerlevel 10k
+https://github.com/romkatv/powerlevel10k
+****** 4.1.2.4.2 starship prompt
+******* config location
+starship.toml
+
+/home/jolitp/.config/
+******* 4.1.2.4.1 powerlevel 10k inspired prompt style
+******* 4.1.2.4.2 time taken with different colors
 - blue     1    - 200 ms
 - cyan     200  - 500 ms
 - blue     500  - 1000 ms
@@ -83,22 +93,58 @@ replacement to htop/Bpytop
 - orange   10s  - 1min
 - red      1min - 10min
 - magenta +10min
-****** 4.1.2.4.3 cwd with abbreviated middle directories
+******* 4.1.2.4.3 cwd with abbreviated middle directories
 ***** 4.1.2.5 shell agnostic config
 ****** aliases
 ****** dotfiles helper functions
+******* zsh
+******* bash
+******* fish
 **** 4.1.3 terminal emulators
 ***** 4.1.3.1 alacrity
 ***** 4.1.3.2 kitty
 ***** 4.1.3.3 konsole
 ***** 4.1.3.4 yakuake
 **** 4.1.4 console emulators
-***** 4.1.4.1 citra (nintendo 3ds)
-***** 4.1.4.2 melonDS (nintendo ds)
-***** 4.1.4.3 Yuzu (nintendo Switch)
-***** 4.1.4.4 mgba (nintendo GBA/GB)
-***** 4.1.4.5 Kega Fusion (Sega Genesis)
+***** 4.1.4.1 Nintendo
+****** handhelds
+******* 3ds
+******** citra
+******* ds
+******** melonDS
+******* gba
+******** mgba
+******* gameboy
+******* gameboy color
+******** mgba
+****** console
+******* NES
+******* SNES
+******* N64
+******* GameCube
+******** Dolphin
+******* Wii
+******** Dolphin
+****** hybrid
+******* switch
+******** Yuzu
+***** 4.1.4.2 Sega
+****** Megadrive / Genesis
+******* Kega Fusion
+****** Dreamcast
+****** Game Gear
+****** Master System
+***** 4.1.4.3 Sony
+****** Playstation
+****** Playstation 2
+****** Playstation 3
+****** PSP
+****** PSVita
+***** 4.1.4.3 Atari
+***** 4.1.4.3 Arcade
+****** MAME
 **** 4.1.5 graphical applications
+***** autostart
 ***** 4.1.5.1 latte dock
 FIND A REPLACEMENT
 ***** 4.1.5.2 krita
@@ -114,6 +160,28 @@ control logiteck devices
 ***** 4.1.5.10 zathura
 ***** 4.1.5.11 audacious
 ***** 4.1.5.12 lutris
+***** 4.1.5.13 antimicro
+***** 4.1.5.14 czkawka
+***** gtk
+****** 2.0
+****** 3.0
+****** 4.0
+***** insomnia
+***** keepassxc
+***** OBS
+***** Obsidian
+***** Octopi
+***** qbittorrent
+***** qdirstat
+***** rclone
+***** rclone-browser
+***** scribus?
+***** speedcrunch
+***** dolphin
+***** kdenlive
+***** shotcut
+***** (Kde)systemmonitor
+***** (kde)systemsettings
 *** 4.2 text editors
 **** 4.2.1 vim
 ***** 4.2.1.1 chenvim
@@ -132,7 +200,7 @@ control logiteck devices
 **** NO syncthing
 *** 4.5 remote control
 **** NO scripy
-**** NO KDE Direct?
+**** NO KDE Connect
 **** NO rust desk
 **** NO team viewer
 **** NO anydesk
@@ -146,11 +214,31 @@ control logiteck devices
 **** NO Python
 *** 4.7 markup languages
 **** NO latex
-** 5. Lenovo-Garuda
-** 6. Lenovo-Windows
-** 7. Ryzen-Garuda
-** 8. Ryzen-Linux
+** 5. System Specific
+*** 5.1 Lenovo-Garuda
+*** 5.2 Lenovo-Windows
+*** 5.3 Ryzen-Garuda
+*** 5.4 Ryzen-Linux
 ** TODO 9. export variables to `/etc/environment` file
+**** TODO add the kde xdg_* variables to bash
+/home/jolitp/.config/user-dirs.dirs
+#+begin_src conf
+# This file is written by xdg-user-dirs-update
+# If you want to change or add directories, just edit the line you're
+# interested in. All local changes will be retained on the next run.
+# Format is XDG_xxx_DIR="$HOME/yyy", where yyy is a shell-escaped
+# homedir-relative path, or XDG_xxx_DIR="/yyy", where /yyy is an
+# absolute path. No other format is supported.
+#
+XDG_DESKTOP_DIR="$HOME/Desktop"
+XDG_DOWNLOAD_DIR="$HOME/Downloads"
+XDG_TEMPLATES_DIR="$HOME/"
+XDG_PUBLICSHARE_DIR="$HOME/"
+XDG_DOCUMENTS_DIR="$HOME/Documents"
+XDG_MUSIC_DIR="$HOME/Music"
+XDG_PICTURES_DIR="$HOME/Pictures"
+XDG_VIDEOS_DIR="$HOME/Videos"
+#+end_src
 *** DONE XDG_DATA_HOME
 CLOSED: [2022-09-22 qui 19:07]
 #+begin_src bash
@@ -709,7 +797,7 @@ https://dev.to/bowmanjd/store-home-directory-config-files-dotfiles-in-git-using-
 
 3 - Using Multiple Git Repositories to Store Dotfiles in a Modular Fashion
 https://dev.to/bowmanjd/using-multiple-git-repositories-to-store-dotfiles-in-a-modular-fashion-mni
-** 100. Template
+** 100. Literate Config Template
 #+begin_src conf :tangle ./name/of/file.txt
 
 #+end_src
