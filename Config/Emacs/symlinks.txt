@@ -1,0 +1,7 @@
+Symbolik Links to create for configs to work
+
+[doom]
+
+~/Config/Emacs/.emacs-profiles.el -> ~/.emacs-profiles.el
+
+~/Config/Emacs/doom/doom.d/ -> ~/.doom.d

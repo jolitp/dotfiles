@@ -1,0 +1,3 @@
+# chemacs
+
+~/Config/neovim/profiles.lua -> ~/.config/nvim/profiles.lua

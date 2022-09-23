@@ -1,0 +1,213 @@
+;;==============================================================
+;;jolitp kanata keyboard confguration for G613 wireless keyboard
+;;===============================================================
+
+;; ============== template for empty layer ==================
+;;
+;; (deflayer name
+;;   _    _    _    _    _    _    _    _    _    _    _    _    _            _    _    _
+;;   _    _    _    _    _    _    _    _    _    _    _    _    _    _       _    _    _       _    _    _    _
+;;   _    _    _    _    _    _    _    _    _    _    _    _    _    _       _    _    _       _    _    _    _
+;;   _    _    _    _    _    _    _    _    _    _    _    _    _                              _    _    _
+;;   _    _    _    _    _    _    _    _    _    _    _    _                      _            _    _    _    _
+;;   _    _    _              _              _    _    _    _                 _    _    _       _    _
+;; )
+;; =================================================================
+
+;; goals for this config ===============================================================================
+;;
+;; DONE 0. make it work with the keyboard keys as they are
+;; DONE 1. remove the annoying F1 spam
+;; DONE 2. shift-space sends _
+;; DONE 3. caps lock functions as ctrl when hold and as esc when tapped
+;; 4. tapping shift makes it sticky (optional)
+;; DONE 5. both shifts at the same time triggers caps lock
+;;      (left shift then right shift for now)
+;; 6. holding space and pressing hjkl sends Arrow keys
+;; DONE 7. num pad layer on the right side of the keyboard
+;;    (implemented as a home row mod on 'a')
+
+;; 8. add often used symbols
+;;   - ª
+;;   - º
+;;   - (travessão)
+;;   - §
+;; 9. add layer for accented characters
+;;
+;; =======================================================================================================
+
+
+;; Exactly one defcfg entry is required. This is used for configuration key-pairs.
+(defcfg
+  ;; Your keyboard device will likely differ from this. I believe /dev/input/by-id/
+  ;; is preferable; I recall reading that it's less likely to change names on you,
+  ;; but I didn't find any keyboard device in there in my VM.
+  linux-dev /dev/input/by-id/usb-Logitech_USB_Receiver-event-kbd:/dev/input/by-path/platform-i8042-serio-0-event-kbd
+
+  ;; If you want to read from multiple devices, separate them by `:`.
+  ;; linux-dev /dev/input/<dev1>:/dev/input/<dev2>
+
+  ;; Optional confguration: enable kanata to execute commands.
+  ;; It is also not enabled in this sample configuration.
+  ;; This is dangerous because it allows kanata to execute arbitrary commands.
+  ;; Using a binary compiled with the cmd feature enabled, uncomment below to
+  ;; enable command execution:
+  ;; danger-enable-cmd yes
+)
+
+(defsrc
+  esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12          ssrq slck pp
+  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc    ins  home pgup    nlck kp/  kp*  kp-
+  tab  q    w    e    r    t    y    u    i    o    p    [    ]    \       del  end  pgdn    kp7  kp8  kp9  kp+
+  caps a    s    d    f    g    h    j    k    l    ;    '    ret                            kp4  kp5  kp6
+  lsft z    x    c    v    b    n    m    ,    .    /    rsft                   up           kp1  kp2  kp3  kprt
+  lctl lmet lalt           spc            ralt rmet cmp  rctl              left down rght    kp0  kp.
+)
+
+(deflayer qwerty
+  esc  XX   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12          ssrq slck pp
+  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc    ins  home pgup    nlck kp/  kp*  kp-
+  tab  q    w    e    r    t    y    u    i    o    p    [    ]    \       del  end  pgdn    kp7  kp8  kp9  kp+
+  @cap @anm s    d    f    g    h    j    k    l    ;    '    ret                            kp4  kp5  kp6
+  @LST z    x    c    v    b    n    m    ,    .    /    rsft                   up           kp1  kp2  kp3  kprt
+  lctl lmet lalt           spc            ralt rmet cmp  rctl              left down rght    kp0  kp.
+)
+
+(defalias
+;; layers
+    LST (layer-toggle shifted) ;; Left Shift Trigger
+    ;; BUG shift + mouse buttons does not work
+
+    ;; BUG when the config starts it triggers caps lock, showing the caps light
+    ;;     then it turns off the light but caps lock is still active
+    ;;     (only some times...)
+
+;;    ??? (layer-toggle shifted) ;; Left Shift Trigger
+    num (layer-toggle numbers)
+
+;; shifted buttons
+    ;; esc, F1 - F12 row
+    Sesc S-esc
+    Sf1 S-f1
+    Sf2 S-f2
+    Sf3 S-f3
+    Sf4 S-f4
+    Sf5 S-f5
+    Sf6 S-f6
+    Sf7 S-f7
+    Sf8 S-f8
+    Sf9 S-f9
+    Sf10 S-f10
+    Sf11 S-f11
+    Sf12 S-f12
+    ;; number row
+    til S-grv
+    ! S-1
+    @ S-2
+    # S-3
+    $ S-4
+    % S-5
+    ^ S-6
+    & S-7
+    * S-8
+    par_o S-9
+    par_c S-0
+    + S-=
+    ;; qerty row
+    Q S-q
+    W S-w
+    E S-e
+    R S-r
+    T S-t
+    Y S-y
+    U S-u
+    I S-i
+    O S-o
+    P S-p
+    { S-[
+    } S-]
+    | S-\
+
+    sTab S-tab
+
+    ;; asdf row / home row
+    A S-a
+    S S-s
+    D S-d
+    F S-f
+    G S-g
+    H S-h
+    J S-j
+    K S-k
+    L S-l
+    : S-;
+    d_quo S-'
+    s_etr S-ret
+    ;; zxcv row
+    Z S-z
+    X S-x
+    C S-c
+    V S-v
+    B S-b
+    N S-n
+    M S-m
+    < S-,
+    > S-.
+    ? S-/
+
+    und S-min
+
+    ;; both shifts trigger caps lock
+    both_sft caps
+
+  ;; tap-hold parameter order:
+  ;; 1. tap timeout
+  ;; 2. hold timeout
+  ;; 3. tap action
+  ;; 4. hold action
+
+    ;; caps lock -> tap = esc, hold = ctrl
+    cap (tap-hold 100 100 esc lctl)
+
+    ;; tap: a      hold: numbers layer
+    anm (tap-hold 200 200 a @num)
+)
+
+aaa1111112
+(deflayer shifted
+  @Sesc @Sf1 @Sf2 @Sf3 @Sf4 @Sf5 @Sf6 @Sf7 @Sf8 @Sf9   @Sf10  @Sf11     @Sf12        _  _  _
+  @til  @!   @@   @#   @$   @%   @^   @&   @*   @par_o @par_c @und      @+     bspc  _  _  _   _ _ _ _
+  @sTab @Q   @W   @E   @R   @T   @Y   @U   @I   @O     @P     @{        @}     @|    _  _  _   _ _ _ _
+  @cap  @A   @S   @D   @F   @G   @H   @J   @K   @L     @:     @d_quo    @s_etr                 _ _ _
+  @LST  @Z   @X   @C   @V   @B   @N   @M   @<   @>     @?     @both_sft                 _      _ _ _ _
+  lctl  lmet lalt           @und      ralt rmet cmp    rctl                          _  _  _   _ _
+)
+
+(deflayer numbers
+  _    _    _    _    _    _    _    _    _    _    _    _    _            _    _    _
+  _    _    _    _    _    _    nlk  kp7  kp8  kp9  _    _    _    _       _    _    _       _ _ _ _
+  _    _    _    _    _    _    _    kp4  kp5  kp6  -    _    _    _       _    _    _       _ _ _ _
+  _    _    _    _    C-z  _    _    kp1  kp2  kp3  +    _    _                              _ _ _
+  _    C-z  C-x  C-c  C-v  _    _    kp0  _    _    _    _                      _            _ _ _ _
+  _    _    _              _              _    _    _    _                 _    _    _       _ _
+)
+
+
+;; (deflayer right_alted
+;;   _    _    _    _    _    _    _    _    _    _    _    _    _            _    _    _
+;;   _    _    _    _    _    _    _    _    _    _    _    _    _    _       _    _    _       _    _    _    _
+;;   _    _    _    _    _    _    _    _    _    _    _    _    _    _       _    _    _       _    _    _    _
+;;   _    _    _    _    _    _    _    _    _    _    _    _    _                              _    _    _
+;;   _    _    _    _    _    _    _    _    _    _    _    _                      _            _    _    _    _
+;;   _    _    _              _              _    _    _    _                 _    _    _       _    _
+;; )
+
+
+
+
+
+
+
+
+
+

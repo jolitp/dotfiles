@@ -1,0 +1,117 @@
+;;==============================================================
+;;jolitp kanata keyboard confguration for G613 wireless keyboard
+;;===============================================================
+
+;; ============== template for empty layer ==================
+;;
+;; (deflayer name
+;;   _    _    _    _    _    _    _    _    _    _    _    _    _            _    _    _
+;;   _    _    _    _    _    _    _    _    _    _    _    _    _    _       _    _    _       _    _    _    _ ;;   _    _    _    _    _    _    _    _    _    _    _    _    _    _       _    _    _       _    _    _    _
+;;   _    _    _    _    _    _    _    _    _    _    _    _    _                              _    _    _
+;;   _    _    _    _    _    _    _    _    _    _    _    _                      _            _    _    _    _
+;;   _    _    _              _              _    _    _    _                 _    _    _       _    _
+;; )
+;; =================================================================
+
+;; goals for this config ===============================================================================
+;;
+;; SKIP 5.  both shifts at the same time triggers caps lock (tapping right shift to caps lock works now)
+;; SKIP 6.  holding space and pressing hjkl sends Arrow keys (holding space triggers _ now)
+;;
+;; DONE 0.   make it work with the keyboard keys as they are
+;; DONE 1.   remove the annoying F1 spam
+;; DONE 2.   holding space sends _
+;; DONE 3.   caps lock functions as ctrl when hold and as esc when tapped
+;; DONE 4.   tapping shift makes it sticky
+;;      (NOTE possible problems can be tapping shift then clicking the mouse right after)
+;; DONE 5.   right shift tap triggers caps lock
+;; DONE 11.  disable esc key on the far left of the keyboard
+;;
+;; 6. actual arrows on hjkl keys (layer)
+;;
+;; 7.   num pad layer on the right side of the keyboard (mimiking fn laptop layout)
+;;
+;; 8.   add often used symbols
+;;   -    ª
+;;   -    º
+;;   -    — (travessão)
+;;   -    §
+;;
+;; 9.   layer for PT-BR accented characters
+;;      (use the ('/") key as a layer toggle/switch?)
+;;
+;;      acento circunflexo â, ê, î, ô, û
+;;      acento agudo (') -> á, é, í, ó, ú, ç('+c)
+;;      til -> ã, õ
+;;
+;; 10.  try home row mods
+;;
+;; 12.  after I get used to the esc key on caps lock,
+;;      put get a use for the actual esc key,
+;;      maybe a layer switch (different than goggle)
+;;
+;; =======================================================================================================
+
+;; Exactly one defcfg entry is required. This is used for configuration key-pairs.
+(defcfg
+  ;; Your keyboard device will likely differ from this. I believe /dev/input/by-id/
+  ;; is preferable; I recall reading that it's less likely to change names on you,
+  ;; but I didn't find any keyboard device in there in my VM.
+  linux-dev /dev/input/by-id/usb-Logitech_USB_Receiver-event-kbd:/dev/input/by-path/platform-i8042-serio-0-event-kbd
+
+  ;; If you want to read from multiple devices, separate them by `:`.
+  ;; linux-dev /dev/input/<dev1>:/dev/input/<dev2>
+
+  ;; Optional confguration: enable kanata to execute commands.
+  ;; It is also not enabled in this sample configuration.
+  ;; This is dangerous because it allows kanata to execute arbitrary commands.
+  ;; Using a binary compiled with the cmd feature enabled, uncomment below to
+  ;; enable command execution:
+  ;; danger-enable-cmd yes
+)
+
+(defsrc
+  esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12          ssrq slck pp
+  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc    ins  home pgup    nlck kp/  kp*  kp-
+  tab  q    w    e    r    t    y    u    i    o    p    [    ]    \       del  end  pgdn    kp7  kp8  kp9  kp+
+  caps a    s    d    f    g    h    j    k    l    ;    '    ret                            kp4  kp5  kp6
+  lsft z    x    c    v    b    n    m    ,    .    /    rsft                   up           kp1  kp2  kp3  kprt
+  lctl lmet lalt           spc            ralt rmet cmp  rctl              left down rght    kp0  kp.
+)
+
+(deflayer qwerty
+  XX   XX   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12          ssrq slck pp
+  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc    ins  home pgup    nlck kp/  kp*  kp-
+  tab  q    w    e    r    t    y    u    i    o    p    [    ]    \       del  end  pgdn    kp7  kp8  kp9  kp+
+  @cap a    s    d    f    g    h    j    k    l    ;    '    ret                            kp4  kp5  kp6
+  @osls z    x    c    v    b    n    m    ,    .    /    @s&c                   up           kp1  kp2  kp3  kprt
+  lctl lmet lalt           @space         ralt rmet cmp  rctl              left down rght    kp0  kp.
+)
+
+(defalias
+    ;; underscore _
+    und S-min
+
+    osls (one-shot 1000 lsft) ;; one shot left shift
+
+  ;; tap-hold argument order:
+  ;; 1. tap timeout
+  ;; 2. hold timeout
+  ;; 3. tap action
+  ;; 4. hold action
+
+    cap (tap-hold 100 100 esc lctl);; caps lock -> tap: esc, hold: ctrl
+
+    s&c (tap-hold 100 100 caps rsft);; right shift -> tap: caps lock, hold: shift
+
+    space (tap-hold 200 200 spc @und);; space -> tap: space, hold: _
+)
+
+
+
+
+
+
+
+
+
