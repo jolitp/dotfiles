@@ -1,9 +1,5 @@
 /**
 
-# whitelisted folders
-!~/Config/**/*
-!~/.config//**/*
-
 # whitelisted files
 !~/.gitignore
 !~/README.org
