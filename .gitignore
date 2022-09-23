@@ -4,7 +4,7 @@
 
 # whitelisted folders
 !~/Config
-!~/.config
+#!~/.config
 
 # whitelisted files
 !~/.gitignore
