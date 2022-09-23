@@ -1,8 +1,8 @@
 /**
 
 # whitelisted folders
-!~/Config/**
-!~/.config/**
+!~/Config
+!~/.config
 
 # whitelisted files
 !~/.gitignore
