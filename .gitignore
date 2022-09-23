@@ -1,10 +1,20 @@
 /**                    # first atempt
 #*                       # second atempt
 #~/**/*                  # third atempt
+~/Applications/
+~/Cloud/
+~/Desktop/
+~/Documents/
+~/Downloads/
+~/Dropbox/
+~/Music/
+~/Pictures/
+~/Projects/
+~/Videos/
 
 # whitelisted folders
 !~/Config
-#!~/.config
+!~/.config
 
 # whitelisted files
 !~/.gitignore
