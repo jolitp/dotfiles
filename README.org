@@ -57,6 +57,7 @@ replacement to htop/Bpytop
 ***** NO more/less alternative
 ***** NO ledger
 ***** NO ? man page reader ?
+***** zoxide
 **** 4.1.2 shells
 ***** 4.1.2.1 bash
 ***** 4.1.2.2 zsh
@@ -67,13 +68,22 @@ replacement to htop/Bpytop
 ******** TODO ls to exa
 ******** TODO tree to exa --tree
 ******** TODO cat to bat
-****** TODO add useful aliases
+****** TODO add useful aliases / abbreviations
 ******* TODO ll -> ls -l
 ******* TODO la -> ls -a
 ******* TODO lla -> ls -la
 ***** 4.1.2.3 fish
 ***** 4.1.2.4 starship prompt
-try putting a powerline 10k inspired prompt style
+****** 4.1.2.4.1 powerline 10k inspired prompt style
+****** 4.1.2.4.2 time taken with different colors
+- blue     1    - 200 ms
+- cyan     200  - 500 ms
+- blue     500  - 1000 ms
+- yellow   1s   - 10s
+- orange   10s  - 1min
+- red      1min - 10min
+- magenta +10min
+****** 4.1.2.4.3 cwd with abbreviated middle directories
 ***** 4.1.2.5 shell agnostic config
 ****** aliases
 ****** dotfiles helper functions
@@ -140,6 +150,552 @@ control logiteck devices
 ** 6. Lenovo-Windows
 ** 7. Ryzen-Garuda
 ** 8. Ryzen-Linux
+** TODO 9. export variables to `/etc/environment` file
+*** DONE XDG_DATA_HOME
+CLOSED: [2022-09-22 qui 19:07]
+#+begin_src bash
+The $XDG_DATA_HOME environment variable is not set, make sure to add it to your shell's configuration before setting any of the other environment variables!
+    ⤷ The recommended value is: $HOME/.local/share
+#+end_src
+*** DONE XDG_CONFIG_HOME
+CLOSED: [2022-09-22 qui 19:12]
+#+begin_src bash
+The $XDG_CONFIG_HOME environment variable is not set, make sure to add it to your shell's configuration before setting any of the other environment variables!
+    ⤷ The recommended value is: $HOME/.config
+#+end_src
+*** DONE XDG_STATE_HOME
+CLOSED: [2022-09-22 qui 19:12]
+#+begin_src bash
+The $XDG_STATE_HOME environment variable is not set, make sure to add it to your shell's configuration before setting any of the other environment variables!
+    ⤷ The recommended value is: $HOME/.local/state
+#+end_src
+*** DONE XDG_CACHE_HOME
+CLOSED: [2022-09-22 qui 19:12]
+#+begin_src bash
+The $XDG_CACHE_HOME environment variable is not set, make sure to add it to your shell's configuration before setting any of the other environment variables!
+    ⤷ The recommended value is: $HOME/.cache
+
+Starting to check your $HOME.
+
+#+end_src
+*** TODO ANDROID_HOME [android-studio]: $HOME/.android
+#+begin_src bash
+[android-studio]: $HOME/.android
+
+  Try exporting the following environment variables:
+
+    export ANDROID_HOME="$XDG_DATA_HOME"/android
+
+  adb will always generate "$HOME/.android/adbkeys".
+
+#+end_src
+*** SKIP [anydesk]: $HOME/.anydesk
+#+begin_src bash
+[anydesk]: $HOME/.anydesk
+
+  Currently unsupported.
+
+  It can only be fixed by the company, since it's closed source.
+
+#+end_src
+*** SKIP [bash]: $HOME/.bash_logout
+#+begin_src bash
+[bash]: $HOME/.bash_logout
+
+  Currently unsupported.
+
+  Relevant issue: https://savannah.gnu.org/support/?108134
+
+#+end_src
+*** SKIP [bash]: $HOME/.bash_profile
+#+begin_src bash
+[bash]: $HOME/.bash_profile
+
+  Currently unsupported.
+
+  Relevant issue: https://savannah.gnu.org/support/?108134
+
+#+end_src
+*** SKIP [bash]: $HOME/.bashrc
+#+begin_src bash
+[bash]: $HOME/.bashrc
+
+  Currently unsupported.
+
+  Relevant issue: https://savannah.gnu.org/support/?108134
+
+#+end_src
+*** DONE [bash]: $HOME/.bash_history
+CLOSED: [2022-09-22 qui 19:13]
+#+begin_src bash
+[bash]: $HOME/.bash_history
+
+  Export the following environment variables:
+
+    export HISTFILE="${XDG_STATE_HOME}"/bash/history
+
+#+end_src
+*** DONE DOOMDIR [doom-emacs]: $HOME/.doom.d
+CLOSED: [2022-09-22 qui 19:16]
+#+begin_src bash
+[doom-emacs]: $HOME/.doom.d
+
+  XDG is supported out-of-the-box. Simply move ~/.doom.d to
+  $XDG_CONFIG_HOME/doom. Alternatively export $DOOMDIR to point to your
+  preferred location.
+
+#+end_src
+*** TODO [emacs]: $HOME/.emacs.d/init.el
+#+begin_src bash
+[emacs]: $HOME/.emacs.d/init.el
+
+  Supported since 27.1.
+
+  You can move the file to XDG_CONFIG_HOME/emacs/init.el.
+
+#+end_src
+*** SKIP [emacs]: $HOME/.emacs.d
+#+begin_src bash
+[emacs]: $HOME/.emacs.d
+
+  Currently unsupported.
+
+  Relevant issue: "Legacy paths have precedence over XDG paths. Emacs will never create XDG_CONFIG_HOME/emacs/."
+  according to XDG.
+
+#+end_src
+*** SKIP [Firefox]: $HOME/.mozilla
+#+begin_src bash
+[Firefox]: $HOME/.mozilla
+
+  Currently unsupported.
+
+  Relevant issue: https://bugzilla.mozilla.org/show_bug.cgi?id=259356
+
+#+end_src
+*** SKIP [Flatpak]: $HOME/.var
+#+begin_src bash
+[Flatpak]: $HOME/.var
+
+  Currently unsupported.
+
+  Relevant issue: https://github.com/flatpak/flatpak/issues/1519
+
+#+end_src
+*** TODO [git]: $HOME/.gitconfig
+#+begin_src bash
+[git]: $HOME/.gitconfig
+
+  XDG is supported out-of-the-box, so we can simply move the file to XDG_CONFIG_HOME/git/config.
+
+#+end_src
+*** DONE GNUPGHOME [gnupg]: $HOME/.gnupg
+CLOSED: [2022-09-22 qui 19:17]
+#+begin_src bash
+[gnupg]: $HOME/.gnupg
+
+  Export the following environment variables:
+
+    export GNUPGHOME="$XDG_DATA_HOME"/gnupg
+
+#+end_src
+*** TODO GTK2_RC_FILES [gtk-2]: $HOME/.gtkrc-2.0
+#+begin_src bash
+[gtk-2]: $HOME/.gtkrc-2.0
+
+  Export the following environment variables:
+
+    export GTK2_RC_FILES="$XDG_CONFIG_HOME"/gtk-2.0/gtkrc
+
+#+end_src
+*** SKIP [hplip]: $HOME/.hplip
+#+begin_src bash
+[hplip]: $HOME/.hplip
+
+  Currently unsupported.
+
+  Relevant issue: https://bugs.launchpad.net/hplip/+bug/307152
+
+#+end_src
+*** TODO IPYTHONDIR [ipython]: $HOME/.ipython
+#+begin_src bash
+[ipython]: $HOME/.ipython
+
+  Supported since 8.0.0.
+
+  You can move the file to XDG_CONFIG_HOME/ipython.
+
+  Or set the following environment variable:
+
+    export IPYTHONDIR="${XDG_CONFIG_HOME}/ipython"
+
+#+end_src
+*** TODO JUPYTER_CONFIG_DIR [jupyter]: $HOME/.jupyter
+#+begin_src bash
+[jupyter]: $HOME/.jupyter
+
+  Export the following environment variables:
+
+    export JUPYTER_CONFIG_DIR="$XDG_CONFIG_HOME"/jupyter
+
+#+end_src
+*** TODO KDEHOME [kde]: $HOME/.kde4
+#+begin_src bash
+[kde]: $HOME/.kde4
+
+  Export the following environment variables:
+
+    export KDEHOME="$XDG_CONFIG_HOME"/kde
+
+#+end_src
+*** TODO LESSHISTFILE [less]: ${HOME}/.lesshst
+#+begin_src bash
+[less]: ${HOME}/.lesshst
+
+  Export the following environment variables:
+
+    export LESSHISTFILE="$XDG_STATE_HOME"/less/history
+
+#+end_src
+*** TODO DVDCSS_CACHE [libdvdcss]: $HOME/.dvdcss
+#+begin_src bash
+[libdvdcss]: $HOME/.dvdcss
+
+  Export the following environment variables:
+
+    export DVDCSS_CACHE="$XDG_DATA_HOME"/dvdcss
+
+#+end_src
+*** TODO [mcfly]: $HOME/.mcfly/history.db
+#+begin_src bash
+[mcfly]: $HOME/.mcfly/history.db
+
+  Luckily, the XDG spec is supported by mcfly, so we can simply move the file to XDG_DATA_HOME/mcfly/history.db.
+
+#+end_src
+*** SKIP [mongosh]: $HOME/.mongodb
+#+begin_src bash
+[mongosh]: $HOME/.mongodb
+
+  Currently unsupported.
+
+  Relevant issue: https://jira.mongodb.org/browse/MONGOSH-1070
+
+#+end_src
+*** TODO NODE_REPL_HISTORY [nodejs]: $HOME/.node_repl_history
+#+begin_src bash
+[nodejs]: $HOME/.node_repl_history
+
+  Export the following environment variables:
+
+    export NODE_REPL_HISTORY="$XDG_DATA_HOME"/node_repl_history
+
+#+end_src
+*** TODO [npm]: $HOME/.npm
+#+begin_src bash
+[npm]: $HOME/.npm
+
+  You need to put the following into your npmrc:
+
+    prefix=${XDG_DATA_HOME}/npm
+    cache=${XDG_CACHE_HOME}/npm
+    tmp=${XDG_RUNTIME_DIR}/npm
+    init-module=${XDG_CONFIG_HOME}/npm/config/npm-init.js
+
+#+end_src
+*** NO [nss]: $HOME/.pki
+#+begin_src bash
+[nss]: $HOME/.pki
+
+  Disclaimer: XDG is supported, but directory may be created again by some programs.
+
+  XDG is supported out-of-the-box, so we can simply move directory to "$XDG_DATA_HOME"/pki.
+
+  Note: some apps (chromium, for example) hardcode path to "$HOME"/.pki, so directory may appear again, see
+  https://bugzilla.mozilla.org/show_bug.cgi?id=818686#c11.
+
+#+end_src
+*** TODO [openjdk]: $HOME/.java
+#+begin_src bash
+[openjdk]: $HOME/.java
+
+  Disclaimer: some applications don't respect this setting.
+
+  Export the following environment variable:
+
+    export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME"/java
+
+  See ticket https://bugs.java.com/bugdatabase/view_bug.do?bug_id=JDK-8290140
+
+#+end_src
+*** SKIP [openssh]: $HOME/.ssh
+#+begin_src bash
+[openssh]: $HOME/.ssh
+
+  Assumed to be present by many ssh daemons and clients such as DropBear and OpenSSH.
+
+#+end_src
+*** SKIP [profile]: $HOME/.profile
+#+begin_src bash
+[profile]: $HOME/.profile
+
+  There are shells and window managers that don't need this file and won't create it, depending on your config,
+  this file might be deleted or moved.
+
+  If you do not know, please do not move this file as it could lead to errors.
+
+#+end_src
+*** TODO PYTHONSTARTUP [python]: $HOME/.python_history
+#+begin_src bash
+[python]: $HOME/.python_history
+
+  Export the following environment variables:
+
+    export PYTHONSTARTUP="/etc/python/pythonrc"
+
+  Now create the file /etc/python/pythonrc, and put the following code into it:
+
+    import os
+    import atexit
+    import readline
+    from pathlib import Path
+
+    if readline.get_current_history_length() == 0:
+
+        state_home = os.environ.get("XDG_STATE_HOME")
+        if state_home is None:
+            state_home = Path.home() / ".local" / "state"
+        else:
+            state_home = Path(state_home)
+
+        history_path = state_home / "python_history"
+        if history_path.is_dir():
+            raise OSError(f"'{history_path}' cannot be a directory")
+
+        history = str(history_path)
+
+        try:
+            readline.read_history_file(history)
+        except OSError: # Non existent
+            pass
+
+        def write_history():
+            try:
+                readline.write_history_file(history)
+            except OSError:
+                pass
+
+        atexit.register(write_history)
+
+  Note: This won't work if python is invoked with -i flag.
+
+  Credit: https://unix.stackexchange.com/questions/630642/change-location-of-python-history
+
+#+end_src
+*** TODO RUSTUP_HOME [rustup]: $HOME/.rustup
+#+begin_src bash
+[rustup]: $HOME/.rustup
+
+  Export the following environment variables:
+
+    export RUSTUP_HOME="$XDG_DATA_HOME"/rustup
+
+#+end_src
+*** SKIP [thunderbird]: $HOME/.thunderbird
+#+begin_src bash
+[thunderbird]: $HOME/.thunderbird
+
+  Currently unsupported.
+
+  Relevant issue: https://bugzilla.mozilla.org/show_bug.cgi?id=735285
+
+#+end_src
+*** TODO [vim]: $HOME/.viminfo
+#+begin_src bash
+[vim]: $HOME/.viminfo
+
+  See help for .vimrc
+
+#+end_src
+*** SKIP [visual studio code]: $HOME/.vscode
+#+begin_src bash
+[visual studio code]: $HOME/.vscode
+
+  Currently unsupported.
+
+  Relevant issue: https://github.com/microsoft/vscode/issues/3884
+
+#+end_src
+*** SKIP [visual studio code]: $HOME/.vscode-oss
+#+begin_src bash
+[visual studio code]: $HOME/.vscode-oss
+
+  Currently unsupported.
+
+  Relevant issue: https://github.com/microsoft/vscode/issues/3884
+
+#+end_src
+*** TODO [wget]: $HOME/.wget-hsts
+#+begin_src bash
+[wget]: $HOME/.wget-hsts
+
+  Alias wget to use a custom hsts cache file location:
+
+    alias wget=wget --hsts-file="$XDG_DATA_HOME/wget-hsts"
+
+#+end_src
+*** TODO WINEPREFIX [wine]: $HOME/.wine/
+#+begin_src bash
+[wine]: $HOME/.wine
+
+  Export the following environment variables:
+
+    export WINEPREFIX="$XDG_DATA_HOME"/wine
+
+#+end_src
+*** TODO XINITRC [xinit]: $HOME/.xinitrc
+#+begin_src bash
+[xinit]: $HOME/.xinitrc
+
+  Disclaimer: this works only with xinit, not with startx.
+
+  Export the following environment variable:
+
+    export XINITRC="$XDG_CONFIG_HOME"/X11/xinitrc
+
+#+end_src
+*** TODO XAUTHORITY [xorg-xauth]: $HOME/.Xauthority
+#+begin_src bash
+[xorg-xauth]: $HOME/.Xauthority
+
+  Export the following environment variables:
+
+    export XAUTHORITY="$XDG_RUNTIME_DIR"/Xauthority
+
+  • LightDM does not allow you to do this. See here https://askubuntu.com/a/961459 for workaround.
+  • SLiM has ~/.Xauthority hardcoded
+  • SDDM uses its own config to set XAUTHORITY variable. Do not set it manually.
+  Example  /etc/sddm.conf.d/xorg_settings.conf :
+
+    [X11]
+    UserAuthFile=.local/share/sddm/Xauthority
+
+  Note: this might not work as expected, so be careful.
+
+#+end_src
+*** TODO [yarn]: $HOME/.yarnrc
+#+begin_src bash
+[yarn]: $HOME/.yarnrc
+
+  You can try to alias yarn to use a custom yarnrc location.
+
+    yarn --use-yarnrc $XDG_CONFIG_HOME/yarn/config
+
+  yarn might still generate this file by itself though.
+
+#+end_src
+*** SKIP [yarn]: $HOME/.yarn
+#+begin_src bash
+[yarn]: $HOME/.yarn
+
+  Changing this is currently not supported.
+
+#+end_src
+*** TODO [zsh]: $HOME/.zcompdump
+#+begin_src bash
+[zsh]: $HOME/.zcompdump
+
+  Set this in your zshrc:
+
+    compinit -d "$XDG_CACHE_HOME"/zsh/zcompdump-"$ZSH_VERSION"
+
+#+end_src
+*** TODO HISTFILE [zsh]: $HOME/.zhistory
+#+begin_src bash
+[zsh]: $HOME/.zhistory
+
+  Export the following environment variable:
+
+    export HISTFILE="$XDG_STATE_HOME"/zsh/history
+
+#+end_src
+*** DOING ZDOTDIR [zsh]: $HOME/.zshrc
+#+begin_src bash
+[zsh]: $HOME/.zshrc
+
+  Move file to "$HOME"/.config/zsh/.zshrc and export the following environment variable:
+
+    export ZDOTDIR="$HOME"/.config/zsh
+
+  You can do this in /etc/zsh/zshenv.
+#+end_src
+** TODO 10. move home dot files to .config or to Config+link
+*** TODO .android
+*** TODO .anydesk
+*** TODO .aspell.en.prepl
+*** TODO .bash_history
+*** TODO .bash_logout
+*** TODO .bash_profile
+*** TODO .bashrc
+*** TODO .cache
+*** TODO .chromium-bsu
+*** TODO .config
+*** TODO .dbshell
+*** TODO .doom.d -> /home/jolitp/Config/Emacs/doom/doom.d
+*** TODO .doom.d.clean
+*** TODO .dotfiles
+*** TODO .dropbox
+*** TODO .dropbox-dist
+*** TODO .dvdcss
+*** TODO .emacs-profiles.el -> /home/jolitp/Config/Emacs/.emacs-profiles.el
+*** TODO .emacs.d
+*** TODO .emacs.legacy
+*** TODO .exrc
+*** TODO .firedragon
+*** TODO .gitconfig
+*** TODO .gitignore
+*** TODO .gnupg
+*** TODO .gtkrc-2.0
+*** TODO .hplip
+*** TODO .ipython
+*** TODO .java
+*** TODO .jupyter
+*** TODO .kde4
+*** TODO .languagetool.cfg
+*** TODO .lesshst
+*** TODO .local
+*** TODO .mcfly
+*** TODO .miktex
+*** TODO .mongodb
+*** TODO .mongorc.js
+*** TODO .mozilla
+*** TODO .node_repl_history
+*** TODO .npm
+*** TODO .pkglist.txt.kate-swp
+*** TODO .pki
+*** TODO .profile
+*** TODO .python_history
+*** TODO .quokka
+*** TODO .rustup
+*** TODO .softplan-websigner
+*** TODO .ssh
+*** TODO .thunderbird
+*** TODO .var
+*** TODO .viminfo
+*** TODO .vscode
+*** TODO .vscode-oss
+*** TODO .vsnip
+*** TODO .vuerc
+*** TODO .wallaby
+*** TODO .wget-hsts
+*** TODO .wine
+*** TODO .Xauthority
+*** TODO .xinitrc
+*** TODO .yarn
+*** TODO .yarnrc
+*** TODO .zcompdump
+*** TODO .zhistory
+*** TODO .zshrc
 ** 90. References
 following the guides:
 

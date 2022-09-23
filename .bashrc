@@ -1,3 +1,24 @@
+# set environment varialbes
+
+# XDG variables
+export XDG_DATA_HOME=$HOME/.local/share
+export XDG_CONFIG_HOME=$HOME/.config
+export XDG_STATE_HOME=$HOME/.local/state
+export XDG_CACHE_HOME=$HOME/.cache
+
+# bash
+export HISTFILE="${XDG_STATE_HOME}"/bash/history
+
+# emacs
+export DOOMDIR=$HOME/Config/Emacs/doom/doom.d
+
+# gnupg
+export GNUPGHOME="$XDG_DATA_HOME"/gnupg
+
+# zsh
+# NOTE: May not work in here, may need to do that in a zsh file
+export ZDOTDIR="$HOME"/.config/zsh
+
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
