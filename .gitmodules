@@ -1,0 +1,3 @@
+[submodule "Config/Emacs/doom/doom.d"]
+	path = Config/Emacs/doom/doom.d
+	url = git@github.com:jolitp/doom-dir.git
