@@ -274,8 +274,8 @@ REPO="git@github.com:jolitp/dotfiles.git"
 # add dotfiles
 dtf_add () {
   echo "!$@" >> ~/.gitignore
-  git add -f ~/.gitignore
   dtf add -f $@
+  git add -f ~/.gitignore
   dtf commit -m "feat: added $@"
 }
 
