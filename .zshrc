@@ -273,8 +273,8 @@ REPO="git@github.com:jolitp/dotfiles.git"
 
 # add dotfiles
 dtf_add () {
-  echo "!$@" >> ~/.gitignore
-  git add -f ~/.gitignore
+  # echo "!$@" >> ~/.gitignore
+  # git add -f ~/.gitignore
   dtf add -f $@
   dtf commit -m "feat: added $@"
 }
@@ -287,8 +287,8 @@ dtf_remove () {
 
 # move dotfile
 dtf_move () {
-  echo "!$2" >> ~/.gitignore
-  git add -f ~/.gitignore
+  # echo "!$2" >> ~/.gitignore
+  # git add -f ~/.gitignore
   dtf mv -f $1 $2
   dtf commit -m "fix: moved $1 to $2"
 }
@@ -296,8 +296,8 @@ dtf_move () {
 # link dotfiles
 dtf_link () {
   #dtf mv -f $1 $2
-  echo "!$2" >> ~/.gitignore
-  git add -f ~/.gitignore
+  # echo "!$2" >> ~/.gitignore
+  # git add -f ~/.gitignore
   ln -s -r $1 $2
   git add -f $2
   dtf commit -m "fix: linked $1 to $2"
