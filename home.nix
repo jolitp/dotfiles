@@ -1,15 +1,21 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
   imports = [
     ./sh.nix
+    ./cli.nix
   ]; # imports
 
+
+
   config = {
+    news.display = "silent";
     # Home Manager needs a bit of information about you and the paths it should
     # manage.
     home.username = "jolitp";
     home.homeDirectory = "/home/jolitp";
+    
+    targets.genericLinux.enable = true; # enable this on non-nixos 
 
     # This value determines the Home Manager release that your configuration is
     # compatible with. This helps avoid breakage when a new Home Manager release
@@ -22,7 +28,7 @@
 
     # The home.packages option allows you to install Nix packages into your
     # environment.
-    home.packages = [
+    home.packages = with pkgs; [
       # # Adds the 'hello' command to your environment. It prints a friendly
       # # "Hello, world!" when run.
       # pkgs.hello
@@ -39,9 +45,14 @@
       # (pkgs.writeShellScriptBin "my-hello" ''
       #   echo "Hello, ${config.home.username}!"
       # '')
-      pkgs.neovim
-      pkgs.lazygit
+      neovim
+      lazygit
+      fzf
+
+#      oh-my-posh
+      starship
     ];
+
 
     # Home Manager is pretty good at managing dotfiles. The primary way to manage
     # plain files is through 'home.file'.
@@ -69,8 +80,11 @@
   # 2nd method
   #
   #  home.file.".config/hypr/hyperland.conf".source = ./hyperland.conf;
-
+#       ".bashrc".source = lib.mkDefault ./home/config/bash/.bashrc;
+      ".profile".source = lib.mkDefault ./home/config/bash/.profile;
     };
+
+
 
     # Home Manager can also manage your environment variables through
     # 'home.sessionVariables'. These will be explicitly sourced when using a
@@ -90,8 +104,8 @@
     #
     home.sessionVariables = {
       # EDITOR = "emacs";
+      TESTING = lib.mkDefault "home.nix";
     };
-
 
 
     # Let Home Manager install and manage itself.
@@ -105,6 +119,13 @@
       extraConfig = {
         init.defaultBranch = "main";
       };
-    };
-  };
+    }; # programs.git
+
+# Vimjoyer video:
+# NVF | The Superior Way To Configure Neovim With Nix
+# https://www.youtube.com/watch?v=uP9jDrRvAwM
+
+
+
+  }; # config
 }
