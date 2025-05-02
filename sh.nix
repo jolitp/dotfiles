@@ -3,9 +3,16 @@ let
   myAliases = {
     # TODO change to exa/eza/lsd
     # Listing (ls)
-    ll = "ls -l";
-    la = "ls -a";
-    lla = "ls -la";
+    #ll = "ls -l";
+    #la = "ls -a";
+    #lla = "ls -la";
+
+    # ls -> eza
+    ls = "eza --group-directories-first --icons ";
+    lt = "eza --group-directories-first --icons --tree";
+    ll = "eza --group-directories-first --icons --long";
+    la = "eza --group-directories-first --icons --all";
+    lla = "eza --group-directories-first --icons --long --all";
 
     # Directory traversal
     ".." = "cd ..";
@@ -159,6 +166,23 @@ in
 #        }; # character
 #      }; # settings
     }; # programs.starship
+
+#    programs.atuin = {
+#      enable = true;
+#    };
+
+    programs.eza = {
+      enable = true;
+      #icons = "always";
+
+      #extraOptions = [
+      #  "--tree"
+      #  "--icons"
+      #]; # extraOptions
+
+      git = true;
+
+    }; # programs.eza
 
   }; # config
 }

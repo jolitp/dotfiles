@@ -51,6 +51,17 @@
 
 #      oh-my-posh
       starship
+
+#      atuin
+      eza
+      bat
+      broot
+      fd
+      yazi
+      ripgrep
+      just
+      zoxide
+      zellij
     ];
 
 
