@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, pkgs-unstable, lib, ... }:
 
 {
   imports = [
@@ -10,8 +10,7 @@
 
   config = {
     news.display = "silent";
-    # Home Manager needs a bit of information about you and the paths it should
-    # manage.
+
     home.username = "jolitp";
     home.homeDirectory = "/home/jolitp";
     
@@ -26,43 +25,188 @@
     # release notes.
     home.stateVersion = "24.11"; # Please read the comment before changing.
 
+    nixpkgs.config.allowUnfreePredicate = with pkgs.lib; pkg: builtins.elem (lib.getName pkg) [
+      "obsidian"
+      "steam"
+      "steam-unwrapped"
+      "google-chrome"
+      "anydesk"
+      "libsciter"
+      "discord"
+      "dropbox"
+      "reaper"
+    ];
+
+    nixpkgs.config.permittedInsecurePackages = [
+	"electron-27.3.11"
+	#"qtwebkit-5.212.0-alpha4"
+	"xpdf-4.05"
+    ];
+
+
+#    permittedInsecurePackages = [
+#      "electron-27.3.11"
+#    ];
+
+
+
     # The home.packages option allows you to install Nix packages into your
     # environment.
-    home.packages = with pkgs; [
-      # # Adds the 'hello' command to your environment. It prints a friendly
-      # # "Hello, world!" when run.
-      # pkgs.hello
+    home.packages = 
+      # Stable Packages
+      (with pkgs; [
 
-      # # It is sometimes useful to fine-tune packages, for example, by applying
-      # # overrides. You can do that directly here, just don't forget the
-      # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
-      # # fonts?
-      # (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
+        # # It is sometimes useful to fine-tune packages, for example, by applying
+        # # overrides. You can do that directly here, just don't forget the
+        # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
+        # # fonts?
+        # (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
 
-      # # You can also create simple shell scripts directly inside your
-      # # configuration. For example, this adds a command 'my-hello' to your
-      # # environment:
-      # (pkgs.writeShellScriptBin "my-hello" ''
-      #   echo "Hello, ${config.home.username}!"
-      # '')
-      neovim
-      lazygit
-      fzf
+        nh # nix helper
+        #nvf # neovim configuration and plugin manager - installed in a different way
+        lazygit fzf
+#        oh-my-posh
+        starship
+#        atuin
+        eza bat broot fd yazi ripgrep just zoxide zellij
 
-#      oh-my-posh
-      starship
+        # TODO configure other CLI tools
+        yt-dlp #spelling?
+        tldr yazi thefuck helix ripgrep-all lm_sensors speedtest ranger lf nnn ffmpeg
+        # cal # not found
+        # xpdf # pdfimages cli program and more # removed as insecure
+        s-tui # TUI CPU stress and monitoring utility
+        # grub-reboot # not found
+        doublecmd # double commander - midnight-commander alternative
+        boxxy blesh tig visidata jq git-annex direnv fastfetch powertop dust btop
+        bc # calculator
+        entr # folder watcher
+        # mojo # website scrapper # not found
+        feh # image viewer
+        # qcalc # not found
 
-#      atuin
-      eza
-      bat
-      broot
-      fd
-      yazi
-      ripgrep
-      just
-      zoxide
-      zellij
-    ];
+        # supporting applications for GUIs
+        flatpak gearlever
+        # warehouse # not found - install through flatpak?
+        # flatseal # not found - install through flatpak?
+        boxbuddy devbox bottles
+
+        # GUIs
+        resources espanso obsidian bazecor redshift
+
+        # Games
+        lutris antimicrox lime3ds
+        # citra # not found - install through flatpak?
+        #azahar # 3DS Emulator
+        #azahar # does not install - name is right
+
+        # Internet
+        google-chrome chromium brave firefox librewolf floorp freetube thunderbird
+
+        # Images
+        inkscape blender krita flameshot converseen gimp
+
+        # Videos
+        kdenlive avidemux obs-studio
+
+        # Game Dev
+        # godot-engine - better leave it for specific shell
+        # godots # godot version manager - does not exist in nixpkgs
+        # gdevelop # does not install - name is right
+
+        # misc
+        normcap # Optical Caracter Recognition (OCR)
+        # corekeyboard # virtual keyboard
+        # corekeyboard # not working - name is right
+        nextcloud-client # NextCloud Desktop
+        speedcrunch pdfarranger qbittorrent stacer keepassxc bulky
+        alacritty czkawka vscodium
+        #vscode
+
+        actiona anki anydesk rustdesk appflowy autokey
+        
+        birdtray bleachbit
+
+        # cohesion # does not exist in nixpkgs
+        cheese corectrl
+
+        # disks # Gnome - will not work in Nix
+        darktable discord dropbox
+
+        eyedropper
+
+        filelight fluent-reader fontforge
+
+        #G
+
+        hakuneko handbrake haruna hexchat
+
+        imagemagick input-remapper
+        #irust # Rust REPL # leave it for a specific shell
+
+        jitsi-meet-electron # video conference client
+        junction # application chooser
+
+        # kdeconnect-kde # does not install - name is wrong
+        # kiview # only on flatpak
+        kdiskmark kleopatra # certificate manager
+        
+        libreoffice libresprite lmms localsend losslesscut-bin
+        # logseq # unsafe for using old Electron version
+
+        mpv mediainfo
+
+        newsflash
+
+        openrgb
+
+        # penpot-desktop # not found - name is right
+        # photoscape # not found - does not exist in nixpkgs
+        piper protontricks
+
+        qpwgraph qdirstat qsynth
+        #quiterss # does not build - insecure library + no compiling
+
+        reaper remmina retroarch
+
+        scrcpy # android screen mirror
+        scantailor # post processing for scanned pages
+        skanlite # image scaling
+        hardinfo # system profiler and benchmark
+        szyszka # bulk file renamer
+        screenkey skanpage solaar
+
+        tenacity thunderbird tiled tor
+
+        upscayl
+
+        # vidcutter # does not install - name is right
+        # vir-manager # does not install - name is right
+        vlc
+
+        wezterm winetricks
+
+        xvkbd
+
+        yakuake
+
+        zoom zotero
+
+      ]) # (with pkgs;
+      # Stable Packages
+
+      ++
+
+      # Unstable Packages
+      (with pkgs-unstable; [
+
+        neovim
+
+      ]) # (with pkgs-unstable;
+      # Unstable Packages
+
+    ; # home.packages
+
 
 
     # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -115,7 +259,8 @@
     #
     home.sessionVariables = {
       # EDITOR = "emacs";
-      TESTING = lib.mkDefault "home.nix";
+      # TESTING = lib.mkDefault "home.nix";
+      # FLAKE = "/home/jolitp/dotfiles";
     };
 
 
@@ -135,8 +280,33 @@
 # Vimjoyer video:
 # NVF | The Superior Way To Configure Neovim With Nix
 # https://www.youtube.com/watch?v=uP9jDrRvAwM
+# 
+# NVF's manual
+# https://notashelf.github.io/nvf/index.xhtml#ch-standalone-hm
+    programs.nvf = {
+      enable = true;
+      # your settings need to go into the settings attribute set
+      # most settings are documented in the appendix
+      # https://notashelf.github.io/nvf/options
+      settings = {
+        vim.viAlias = false;
+        vim.vimAlias = true;
+        vim.lsp = {
+          enable = true;
+        };
+      };
+    };
 
+    programs.neovim = {
+      enable = true;
+    };
 
+    programs.nh = {
+      enable = true;
+  #    clean.enable = true;
+  #    clean.extraArgs = "--keep-since 7d --keep 10";
+      flake = "/home/jolitp/dotfiles";
+    };
 
   }; # config
 }
