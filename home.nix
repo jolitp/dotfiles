@@ -263,7 +263,9 @@
         #azahar # does not install - name is right
 
         # Internet
-        google-chrome chromium brave 
+        #google-chrome
+        chromium 
+        #brave 
         #firefox # I can't get to my profile anymore
         librewolf floorp freetube thunderbird
 
@@ -434,6 +436,35 @@
       };
     }; # programs.git
 
+<<<<<<< HEAD
+=======
+# Vimjoyer video:
+# NVF | The Superior Way To Configure Neovim With Nix
+# https://www.youtube.com/watch?v=uP9jDrRvAwM
+# 
+# NVF's manual
+# https://notashelf.github.io/nvf/index.xhtml#ch-standalone-hm
+    #programs.nvf = {
+    #  enable = true;
+    #  # your settings need to go into the settings attribute set
+    #  # most settings are documented in the appendix
+    #  # https://notashelf.github.io/nvf/options
+    #  settings = {
+    #    vim.viAlias = false;
+    #    vim.vimAlias = true;
+    #    vim.lsp = {
+    #      enable = true;
+    #    };
+    #  };
+    #}; # programs.nvf
+    # 
+    # forces neovim's version to 0.10.x, and it gives error in that version
+
+    programs.neovim = {
+      enable = true;
+    };
+
+>>>>>>> 82f8b33 (adds old vscode config for reference)
     programs.nh = {
       enable = true;
       #clean.enable = true;

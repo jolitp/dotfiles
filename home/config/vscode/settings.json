@@ -1,0 +1,219 @@
+{
+    "python.pythonPath": "/usr/bin/python3",
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter-notebook"
+    },
+    "python.linting.pylintArgs": [
+        "--extension-pkg-whitelist=cv2",
+        // "--generate-members",
+    ],
+    "editor.rulers": [
+        100,
+        100
+    ],
+    "security.workspace.trust.banner": "never",
+    "files.trimTrailingWhitespace": true,
+    "pythonTestExplorer.testFramework": "pytest",
+    "python.testing.pytestEnabled": true,
+    "editor.fontSize": 16,
+    "theme-by-language.themes": {
+        "*": "Default Dark+"
+    },
+    "workbench.iconTheme": "vscode-icons",
+    "bracket-pair-colorizer-2.colors": [
+        // original colors
+        // "Gold",
+        // "Orchid",
+        // "LightSkyBlue"
+
+        // pastel colors
+        "#FFADAD",
+        "#FFD6A5",
+        "#FDFFB6",
+        "#CAFFBF",
+        "#9BF6FF",
+        "#A0C4FF",
+        "#BDB2FF",
+        "#FFC6FF",
+        "#FFFFFC",
+    ],
+    "kite.showWelcomeNotificationOnStartup": false,
+    "vscode-neovim.neovimExecutablePaths.linux": "/usr/bin/nvim ",
+    "vim.handleKeys": {
+        // "<C-c>": false,
+        // "<C-v>": false
+    },
+    "debug.onTaskErrors": "debugAnyway",
+    "workbench.colorTheme": "Default Dark+",
+    "indentRainbow.colors": [
+        "rgba(0,0,0,0.1)",
+        "rgba(50,50,50,0.1)",
+        "rgba(100,100,100,0.1)",
+        "rgba(150,150,150,0.1)",
+        "rgba(200,200,200,0.1)",
+        "rgba(255,255,255,0.1)",
+        "rgba(200,200,200,0.1)",
+        "rgba(150,150,150,0.1)",
+        "rgba(100,100,100,0.1)",
+        "rgba(50,50,50,0.1)",
+        "rgba(0,0,0,0.1)",
+
+    ],
+    "[jsonc]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "terminal.integrated.tabs.enabled": true,
+    "terminal.integrated.fontSize": 20,
+    "editor.cursorStyle": "line",
+    "editor.lineNumbers": "on",
+    "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-_",
+    "editor.wordWrap": "off",
+    "python.defaultInterpreterPath": "/usr/bin/python3",
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "notebook.cellToolbarLocation": {
+        "default": "right",
+        "jupyter-notebook": "left"
+    },
+    "editor.accessibilitySupport": "off",
+    // The number of spaces a tab is equal to. This setting is overridden
+    // based on the file contents when `editor.detectIndentation` is true.
+    "editor.tabSize": 2,
+
+    // Insert spaces when pressing Tab. This setting is overriden
+    // based on the file contents when `editor.detectIndentation` is true.
+    "editor.insertSpaces": true,
+
+    // When opening a file, `editor.tabSize` and `editor.insertSpaces`
+    // will be detected based on the file contents. Set to false to keep
+    // the values you've explicitly set, above.
+    "editor.detectIndentation": false,
+    "indentRainbow.colorOnWhiteSpaceOnly": false,
+    "security.workspace.trust.enabled": false,
+    "security.workspace.trust.startupPrompt": "never",
+    "editor.inlayHints.enabled": "off",
+    "workbench.colorCustomizations": {
+      "[Tokyo Night Dark][Poimandres Alternate]": {
+        "editor.lineHighlightBackground": "#00000000",
+        "editor.lineHighlightBorder": "#00000000",
+        "editorGroup.border": "#25252566",
+        "panel.border": "#25252566",
+        "terminal.border": "#25252566",
+        "terminal.ansiBlack": "#363b54",
+        "terminal.ansiRed": "#f7768e",
+        "terminal.ansiGreen": "#41a6b5",
+        "terminal.ansiYellow": "#e0af68",
+        "terminal.ansiBlue": "#7aa2f7",
+        "terminal.ansiMagenta": "#bb9af7",
+        "terminal.ansiCyan": "#7dcfff",
+        "terminal.ansiWhite": "#787c99",
+        "terminal.ansiBrightBlack": "#555555",
+        "terminal.ansiBrightRed": "#ff0000",
+        "terminal.ansiBrightGreen": "#00ff00",
+        "terminal.ansiBrightYellow": "#ffff00",
+        "terminal.ansiBrightBlue": "#5555cc",
+        "terminal.ansiBrightMagenta": "#8855ff",
+        "terminal.ansiBrightCyan": "#5FB3A1",
+        "terminal.ansiBrightWhite": "#ffffff"
+      },
+      "editor.lineHighlightBackground": "#1073cf2d",
+      "editor.lineHighlightBorder": "#9fced11f"
+    },
+    "diffEditor.wordWrap": "off",
+    "editor.guides.indentation": false,
+    "editor.guides.bracketPairs": false,
+    "highlight.regexes": {
+      "((?:<!-- *)?(?:#|// @|//|./\\*+|<!--|--|\\* @|{!|{{!--|{{!) *TODO(?:\\s*\\([^)]+\\))?:?)((?!\\w)(?: *-->| *\\*/| *!}| *--}}| *}}|(?= *(?:[^:]//|/\\*+|<!--|@|--|{!|{{!--|{{!))|(?: +[^\\n@]*?)(?= *(?:[^:]//|/\\*+|<!--|@|--(?!>)|{!|{{!--|{{!))|(?: +[^@\\n]+)?))": {
+        "filterFileRegex": ".*(?<!CHANGELOG.md)$",
+        "decorations": [
+          {
+            "overviewRulerColor": "#ffcc00",
+            "backgroundColor": "#ffcc00",
+            "color": "#1f1f1f",
+            "fontWeight": "bold"
+          },
+          {
+            "backgroundColor": "#ffcc00",
+            "color": "#1f1f1f"
+          }
+        ]
+      },
+      "((?:<!-- *)?(?:#|// @|//|./\\*+|<!--|--|\\* @|{!|{{!--|{{!) *(?:FIXME|FIX|BUG|UGLY|DEBUG|HACK)(?:\\s*\\([^)]+\\))?:?)((?!\\w)(?: *-->| *\\*/| *!}| *--}}| *}}|(?= *(?:[^:]//|/\\*+|<!--|@|--|{!|{{!--|{{!))|(?: +[^\\n@]*?)(?= *(?:[^:]//|/\\*+|<!--|@|--(?!>)|{!|{{!--|{{!))|(?: +[^@\\n]+)?))": {
+        "filterFileRegex": ".*(?<!CHANGELOG.md)$",
+        "decorations": [
+          {
+            "overviewRulerColor": "#cc0000",
+            "backgroundColor": "#cc0000",
+            "color": "#1f1f1f",
+            "fontWeight": "bold"
+          },
+          {
+            "backgroundColor": "#cc0000",
+            "color": "#1f1f1f"
+          }
+        ]
+      },
+      "((?:<!-- *)?(?:#|// @|//|./\\*+|<!--|--|\\* @|{!|{{!--|{{!) *(?:REVIEW|OPTIMIZE|TSC)(?:\\s*\\([^)]+\\))?:?)((?!\\w)(?: *-->| *\\*/| *!}| *--}}| *}}|(?= *(?:[^:]//|/\\*+|<!--|@|--|{!|{{!--|{{!))|(?: +[^\\n@]*?)(?= *(?:[^:]//|/\\*+|<!--|@|--(?!>)|{!|{{!--|{{!))|(?: +[^@\\n]+)?))": {
+        "filterFileRegex": ".*(?<!CHANGELOG.md)$",
+        "decorations": [
+          {
+            "overviewRulerColor": "#00ccff",
+            "backgroundColor": "#00ccff",
+            "color": "#1f1f1f",
+            "fontWeight": "bold"
+          },
+          {
+            "backgroundColor": "#00ccff",
+            "color": "#1f1f1f"
+          }
+        ]
+      },
+      "((?:<!-- *)?(?:#|// @|//|./\\*+|<!--|--|\\* @|{!|{{!--|{{!) *(?:IDEA)(?:\\s*\\([^)]+\\))?:?)((?!\\w)(?: *-->| *\\*/| *!}| *--}}| *}}|(?= *(?:[^:]//|/\\*+|<!--|@|--|{!|{{!--|{{!))|(?: +[^\\n@]*?)(?= *(?:[^:]//|/\\*+|<!--|@|--(?!>)|{!|{{!--|{{!))|(?: +[^@\\n]+)?))": {
+        "filterFileRegex": ".*(?<!CHANGELOG.md)$",
+        "decorations": [
+          {
+            "overviewRulerColor": "#cc00cc",
+            "backgroundColor": "#cc00cc",
+            "color": "#1f1f1f",
+            "fontWeight": "bold"
+          },
+          {
+            "backgroundColor": "#cc00cc",
+            "color": "#1f1f1f"
+          }
+        ]
+      }
+    },
+    "terminal.integrated.env.linux": {
+      "RETRONVIM_PATH": "$HOME/.vscode/extensions/yeferyv.retronvim-0.0.4",
+      "PATH": "$HOME/.pixi/bin:$HOME/.local/share/fnm/aliases/default/bin:${env:PATH}",
+      "FNM_MULTISHELL_PATH": "$HOME/.local/share/fnm/aliases/default",
+      "EDITOR": "nvim -u $HOME/.vscode/extensions/yeferyv.retronvim-0.0.3/nvim/init.lua",
+      "VISUAL": "code",
+      "ZDOTDIR": "${env:HOME}/.vscode/extensions/yeferyv.retronvim-0.0.4/zsh",
+      "STARSHIP_CONFIG": "${env:HOME}/.vscode/extensions/yeferyv.retronvim-0.0.4/zsh/starship.toml"
+    },
+    "vscode-kanata.includesAndWorkspaces": "workspace",
+    "vim.cursorStylePerMode.visual": "block-outline",
+    "vim.visualModeKeyBindings": [],
+    "vsicons.dontShowNewVersionMessage": true,
+    "console-ninja.featureSet": "Community",
+    "typst-lsp.serverPath": "/home/jolitp/Applications/bin/typst-lsp-x86_64-unknown-linux-gnu",
+    "jupyter.interactiveWindow.creationMode": "perFile",
+    "git.enableSmartCommit": true,
+    "git.confirmSync": false,
+    "redhat.telemetry.enabled": false,
+    "cSpell.userWords": [
+      "dotenv"
+    ],
+    "todo-tree.highlights.backgroundColourScheme": [
+      "red",
+      "orange",
+      "green",
+      "blue",
+      "indigo",
+      "violet"
+    ],
+}
