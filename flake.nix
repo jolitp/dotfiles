@@ -11,7 +11,22 @@
     home-manager.url = "github:nix-community/home-manager/release-24.11";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
-    nvf.url = "github:notashelf/nvf";
+    # Optional, if you intend to follow nvf's obsidian-nvim input
+    # you must also add it as a flake input.
+    #obsidian-nvim.url = "github:epwalsh/obsidian.nvim";
+
+    # Required, nvf works best and only directly supports flakes
+    #nvf = {
+    #  url = "github:notashelf/nvf";
+    #  # You can override the input nixpkgs to follow your system's
+    #  # instance of nixpkgs. This is safe to do as nvf does not depend
+    #  # on a binary cache.
+    #  inputs.nixpkgs.follows = "nixpkgs-unstable";
+    #  # Optionally, you can also override individual plugins
+    #  # for example:
+    #  #inputs.obsidian-nvim.follows = "obsidian-nvim"; # <- this will use the obsidian-nvim from your inputs
+    #};
+
     #neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
 
   }; # inputs
@@ -21,7 +36,7 @@
       nixpkgs, 
       nixpkgs-unstable, 
       home-manager, 
-      nvf, 
+      #nvf, 
       ... 
     }@inputs:
     let
@@ -51,7 +66,7 @@
 
       speciaArgs = {
         inherit system;
-        inherit pkgs;
+        #inherit pkgs;
         inherit pkgs-unstable;
       };
 
@@ -63,17 +78,18 @@
       # jolitp user's config
       jolitp = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
+        #inherit pkgs-unstable; # error
 
         modules = [ 
-	  nvf.homeManagerModules.default # <- this imports the home-manager module that provides the options
-          ./home.nix # <- your home entrypoint, `programs.nvf.*` may be defined here
+	  #nvf.homeManagerModules.default # <- this imports the home-manager module that provides the options
+          ./home.nix
 	  #{
 	  #  nixpkgs.overlays = overlays;
 	  #}
 	]; # modules
         
         extraSpecialArgs = {
-          inherit pkgs;
+          #inherit pkgs;
           inherit pkgs-unstable;
         };
       }; # jolitp = home-manager.lib.homeManagerConfiguration

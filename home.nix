@@ -68,7 +68,7 @@
 #        oh-my-posh
         starship
 #        atuin
-        eza bat broot fd yazi ripgrep just zoxide zellij
+        eza bat broot fd yazi ripgrep just zoxide zellij xclip
 
         # TODO configure other CLI tools
         yt-dlp #spelling?
@@ -101,7 +101,9 @@
         #azahar # does not install - name is right
 
         # Internet
-        google-chrome chromium brave firefox librewolf floorp freetube thunderbird
+        google-chrome chromium brave 
+        #firefox # I can't get to my profile anymore
+        librewolf floorp freetube thunderbird
 
         # Images
         inkscape blender krita flameshot converseen gimp
@@ -283,23 +285,23 @@
 # 
 # NVF's manual
 # https://notashelf.github.io/nvf/index.xhtml#ch-standalone-hm
-    programs.nvf = {
-      enable = true;
-      # your settings need to go into the settings attribute set
-      # most settings are documented in the appendix
-      # https://notashelf.github.io/nvf/options
-      settings = {
-        vim.viAlias = false;
-        vim.vimAlias = true;
-        vim.lsp = {
-          enable = true;
-        };
-      };
-    };
+    #programs.nvf = {
+    #  enable = true;
+    #  # your settings need to go into the settings attribute set
+    #  # most settings are documented in the appendix
+    #  # https://notashelf.github.io/nvf/options
+    #  settings = {
+    #    vim.viAlias = false;
+    #    vim.vimAlias = true;
+    #    vim.lsp = {
+    #      enable = true;
+    #    };
+    #  };
+    #};
 
-    programs.neovim = {
-      enable = true;
-    };
+    #programs.neovim = {
+    #  enable = true;
+    #};
 
     programs.nh = {
       enable = true;
@@ -307,6 +309,22 @@
   #    clean.extraArgs = "--keep-since 7d --keep 10";
       flake = "/home/jolitp/dotfiles";
     };
+
+    programs.alacritty = {
+      enable = true;
+      settings = {
+        
+      }; # settings
+
+    }; # programs.alacritty
+
+    programs.zellij = {
+      enable = true;
+      settings = {
+        copy_command = "xclip -selection clipboard";
+      }; # settings
+
+    }; # programs.zellij
 
   }; # config
 }
