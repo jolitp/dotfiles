@@ -1,4 +1,4 @@
-{ config, pkgs, pkgs-unstable, lib, ... }:
+{ config, pkgs, pkgs-unstable, lib, inputs, ... }:
 
 {
   imports = [
@@ -25,7 +25,17 @@
     # release notes.
     home.stateVersion = "24.11"; # Please read the comment before changing.
 
-    nixpkgs.config.allowUnfreePredicate = with pkgs.lib; pkg: builtins.elem (lib.getName pkg) [
+    nixpkgs = {
+      overlays = [
+        inputs.nur.overlay
+      ];
+      config = {
+        allowUnfree = true;
+      };
+    };
+
+    #nixpkgs.config.allowUnfreePredicate = with pkgs.lib; pkg: builtins.elem (lib.getName pkg) [
+    nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
       "obsidian"
       "steam"
       "steam-unwrapped"
@@ -35,7 +45,11 @@
       "discord"
       "dropbox"
       "reaper"
+      "languagetool"
     ];
+
+    #inputs.firefox-addons.packages.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
+    #];
 
     nixpkgs.config.permittedInsecurePackages = [
 	"electron-27.3.11"
@@ -78,7 +92,9 @@
         s-tui # TUI CPU stress and monitoring utility
         # grub-reboot # not found
         doublecmd # double commander - midnight-commander alternative
-        boxxy blesh tig visidata jq git-annex direnv fastfetch powertop dust btop
+        boxxy blesh tig visidata jq 
+	#git-annex 
+	direnv fastfetch powertop dust btop
         bc # calculator
         entr # folder watcher
         # mojo # website scrapper # not found
@@ -125,7 +141,9 @@
         alacritty czkawka vscodium
         #vscode
 
-        actiona anki anydesk rustdesk appflowy autokey
+        actiona anki anydesk 
+	#rustdesk 
+	appflowy autokey
         
         birdtray bleachbit
 
@@ -317,6 +335,78 @@
       }; # settings
 
     }; # programs.alacritty
+
+    programs.firefox = {
+      enable = true;
+
+      profiles.jolitp = {
+        bookmarks.configfile = ./home/config/firefox/firefox-bookmarks.html;
+        #bookmarks = [
+	#  {
+        #     name = "MyNisOS";
+	#     url = "https://mynixos.com/";
+	#  }
+	#]; # bookmarks = [
+	settings = {
+	  # ... look them up
+	};
+        
+        search.engines = {
+	  "Nix Packages" = {
+	    urls = [
+	      {
+                template = "https://search.nixos.org/packages";
+		params = [
+		  { name = "type"; value = "packages"; }
+		  { name = "query"; value = "{searchTerms}"; }
+		]; # params
+		icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
+		definedAliases = [ "@np" ];
+	      }
+	    ]; # urls
+	  }; # "Nix Packages"
+	}; # search.engines
+	search.force = true;
+
+	userChrome = # CSS to change the browser theme
+	''  
+	''; # userChrome = # CSS to change the browser theme
+
+        #extensions = with inputs.firefox-addons.packages."x86_64-linux"; [
+        extensions = with pkgs.nur.repos.rycee.firefox-addons; [
+	  darkreader
+	  ublock-origin
+	  languagetool
+	  enhancer-for-nebula
+	  noscript
+	  privacy-badger
+	  # share-backported # not found
+	  sidebery
+	  single-file
+	  stylebot-web
+	  tranquility-1 # tranquility reader
+	  translate-web-pages
+	  # yet another speeddial # not found
+	  enhancer-for-youtube
+	  youtube-high-definition
+	  downthemall
+	  markdownload
+	  # whatsapp redirect # not found
+	  # whatsend # not found
+	  canvasblocker
+          # duplicate tabs closer # not found
+	  # hide youtube fullscreen controls # not found
+	  # medium parser # not found 
+	  # path of exile trade - fuzzy search # not found
+	  sponsorblock # youtube sponsorblock
+	  user-agent-string-switcher # should be the same (without the "string")
+	  vimium-c
+	  # web signer (softplan) # not found
+
+        ]; # extensions
+
+      };
+    };
 
     programs.zellij = {
       enable = true;

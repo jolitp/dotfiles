@@ -11,6 +11,13 @@
     home-manager.url = "github:nix-community/home-manager/release-24.11";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
+    nur.url = "github:nix-community/nur";
+
+    firefox-addons = {
+      url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
+      inputs.nixpkgs.follows = "nixpkgs";
+    }; # firefox-addons
+
     # Optional, if you intend to follow nvf's obsidian-nvim input
     # you must also add it as a flake input.
     #obsidian-nvim.url = "github:epwalsh/obsidian.nvim";
@@ -91,6 +98,7 @@
         extraSpecialArgs = {
           #inherit pkgs;
           inherit pkgs-unstable;
+	  inherit inputs;
         };
       }; # jolitp = home-manager.lib.homeManagerConfiguration
 
