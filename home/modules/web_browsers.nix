@@ -5,12 +5,12 @@
     home.packages = 
     # Stable Packages
     (with pkgs; [
-      # Internet
+      mullvad-browser
       google-chrome
-      chromium 
-      brave 
-      librewolf 
-      floorp 
+      brave
+      librewolf
+      floorp
+      tor
     ]) # (with pkgs;
     ++
     # Unstable Packages
@@ -93,5 +93,26 @@
         ]; # extensions
       }; # profiles.jolitp = {
     }; # programs.firefox = {
+
+    programs.chromium = {
+      enable = true;
+
+      extensions = [
+        "cfhdojbkjhnklbpkdaibdccddilifddb" # Adblock Plus - free ad blocker
+        "gighmmpiobklfepjocnamgkkbiglidom" # AdBlock — block ads across the web
+        "oldceeleldhonbafppcapldpdifcinji" # AI Grammar Checker & Paraphraser – LanguageTool
+        "fhlinfpmdlijegjlpgedcmglkakaghnk" # Better PathOfExile Trading
+        "eimadpbcbfnmbkopoojfekhnkhdbieeh" # Dark Reader
+        "fnaicdffflnofjppbagibeoednhnbjhg" # floccus bookmarks sync
+        "hmgdpdkbogmjhompkkeafjjpndfnghei" # Group download files by hostname
+        "bmhfelbhbkeoldaiphchjibggnoodpcj" # Mobile View Switcher
+        "mpiodijhokgodhhofbcjdecpffjipkle" # SingleFile
+        "ddkjiahejlhfcafbddmgiahcphecmpfh" # uBlock Origin Lite
+        "mbflpfaamifmmmkdjkcmpofpccfmlmap" # Video Downloader - MPMux
+        "penndbmahnpapepljikkjmakcobdahne" # Vimeo™ Video Downloader Pro
+        "bbafmabaelnnkondpfpjmdklbmfnbmol" # Web Signer
+      ];
+
+    }; # programs.chromium
   }; # config
 }
