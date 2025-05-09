@@ -1,15 +1,6 @@
 { config, pkgs, lib, ... }:
 let
   myAliases = {
-    # TODO change to exa/eza/lsd
-    # Listing (ls)
-    #ll = "ls -l";
-    #la = "ls -a";
-    #lla = "ls -la";
-
-    # cd -> broot
-    #cd = "broot";
-
     # ls -> eza
     ls = "eza --group-directories-first --icons ";
     lt = "eza --group-directories-first --icons --tree";
@@ -37,15 +28,12 @@ let
     # LazyGit
     lg = "lazygit";
 
-    # Histroy
-#    h = "history";
-#    hg = "history | grep";
 
     #Nix
     # TODO replace with NH (Nix helper) later
-#    nrs = "sudo nixos-rebuild switch --flake";
-#    nfu = "nix flake update";
-#    nhms = "home-manager switch --flake";
+    nrs = "nh os switch"; # "sudo nixos-rebuild switch --flake";
+    nfu = "nix flake update";
+    nhms = "nh home switch"; # "home-manager switch --flake";
   }; # myAliases
 in
 {
@@ -86,9 +74,6 @@ in
       shellAliases = myAliases;
     }; # programs.zsh
 
-    home.sessionVariables = {
-      TESTING = lib.mkForce "sh.nix";
-    };
 
 #    programs.oh-my-posh = {
 #      useTheme = "agnoster";
