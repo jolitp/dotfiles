@@ -215,6 +215,7 @@
         # # fonts?
         # (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
 
+        chezmoi
         cheat
         nh # nix helper
         alejandra
