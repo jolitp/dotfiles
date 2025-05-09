@@ -74,60 +74,9 @@ in
       shellAliases = myAliases;
     }; # programs.zsh
 
-
-#    programs.oh-my-posh = {
-#      useTheme = "agnoster";
-#    };
     programs.starship = {
       enable = true;
         settings =  pkgs.lib.importTOML ./../config/starship/tokyo-night.toml;
     }; # programs.starship
-
-#    programs.atuin = {
-#      enable = true;
-#    };
-
-    programs.eza = {
-      enable = true;
-      #icons = "always";
-
-      git = true;
-
-    }; # programs.eza
-
-    programs.bat = {
-      enable = true;
-      config = {
-        pager = "less -FR";
-        theme = "Nord";
-      };
-    }; # programs.bat
-
-    programs.broot = {
-      enable = true;
-      settings = {
-        ext-colors = {
-          nix = "cyan";
-	};
-      };
-    }; #programs.broot
-
-    programs.fd.enable = true;
-    programs.yazi.enable = true;
-    programs.ripgrep.enable = true;
-
-    programs.zoxide = {
-      enable = true;
-      enableBashIntegration = true;
-    };
-
-    programs.zellij = {
-      enable = true;
-      enableBashIntegration = true;
-      settings = {
-        theme = "nord";
-      };
-    };
-
   }; # config
 }
