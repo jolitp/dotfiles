@@ -118,10 +118,9 @@
         #azahar # does not install - name is right
 
         # Internet
-        #google-chrome
+        google-chrome
         chromium 
-        #brave 
-        #firefox # I can't get to my profile anymore
+        brave 
         librewolf floorp freetube thunderbird
 
         # Images
@@ -291,9 +290,6 @@
       };
     }; # programs.git
 
-    programs.nvim {
-      enable = true;
-    };
 
     programs.nh = {
       enable = true;

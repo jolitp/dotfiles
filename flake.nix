@@ -79,7 +79,7 @@
       nixos-vm = lib.nixosSystem {
         inherit system;
         modules = [ 
-          ./hosts/${laptop}/configuration.nix
+          ./hosts/${systemSettings.hostname}/configuration.nix
         ];
       }; # nixos-vm
 

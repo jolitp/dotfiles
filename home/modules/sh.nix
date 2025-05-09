@@ -95,7 +95,7 @@ in
 #    };
     programs.starship = {
       enable = true;
-        settings =  pkgs.lib.importTOML ./home/config/starship/tokyo-night.toml;
+        settings =  pkgs.lib.importTOML ./../config/starship/tokyo-night.toml;
     }; # programs.starship
 
 #    programs.atuin = {
