@@ -1,0 +1,24 @@
+(defvar
+  mw-interval 100 ;; ms
+  mw-distance 120 ;; pixels
+
+  mm-interval 1 ;; ms
+  mm-ramp-up  4000 ;; ms
+  mm-min-dist 1 ;; pixels
+  mm-max-dist 10 ;; pixels
+)
+(defalias
+  ;; opp  (macro o p p   spc n o t spc i m p l e m e n t e d)
+  ;; curr (macro c u r r spc n o t spc i m p l e m e n t e d)
+
+  mmup (movemouse-accel-up    $mm-interval $mm-ramp-up $mm-min-dist $mm-max-dist)
+  mmdn (movemouse-accel-down  $mm-interval $mm-ramp-up $mm-min-dist $mm-max-dist)
+  mmlt (movemouse-accel-left  $mm-interval $mm-ramp-up $mm-min-dist $mm-max-dist)
+  mmrt (movemouse-accel-right $mm-interval $mm-ramp-up $mm-min-dist $mm-max-dist)
+
+;; mouse wheel
+  mwup (mwheel-up    $mw-interval $mw-distance)
+  mwdn (mwheel-down  $mw-interval $mw-distance)
+  mwlt (mwheel-left  $mw-interval $mw-distance)
+  mwrt (mwheel-right $mw-interval $mw-distance)
+)

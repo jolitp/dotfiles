@@ -1,0 +1,31 @@
+;;==============================================================
+;;jolitp kanata keyboard confguration for G613 wireless keyboard
+;;===============================================================
+
+
+;; ============================ template for empty layer ============================
+;;
+;; (deflayer name
+;;  _    _    _    _    _    _         _    _    _    _    _    _    _    _    _    _
+;;  _    _    _    _    _    _         _    _    _    _    _    _    _    _         _
+;;  _    _    _    _    _    _         _    _    _    _    _    _    _    _         _
+;;  _    _    _    _    _    _         _    _    _    _    _    _         _         _
+;;  _    _    _    _    _    _         _    _    _    _    _    _              _    _
+;;  _    _    _                  _                    _         _         _    _    _
+;; )
+;; ==================================================================================
+
+(defalias
+    lsl ;; left shift layer
+    (multi lsft (layer-while-held lss))
+
+    rsc ;; release left shift then caps
+    (multi (release-key lsft) caps)
+
+
+    rsl ;; right shift layer
+    (multi lsft (layer-while-held rss))
+
+    lsc ;; release right shift then caps
+    (multi (release-key rsft) caps)
+)

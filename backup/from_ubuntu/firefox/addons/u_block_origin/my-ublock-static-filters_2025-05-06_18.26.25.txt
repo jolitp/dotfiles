@@ -1,0 +1,65 @@
+! Oct 27, 2024 https://www.aliexpress.com
+www.aliexpress.com###J_xiaomi_dialog
+
+! Oct 30, 2024 https://www.jusbrasil.com.br
+www.jusbrasil.com.br##.appbar-end_root__hVnLa
+www.jusbrasil.com.br##.appbar-start_root__8HElb
+
+! Nov 5, 2024 https://stackoverflow.com
+stackoverflow.com###credential_picker_container
+
+! Nov 14, 2024 https://medium.com
+medium.com##.fj.co.q.ab.tg.tf.te.td.tc.tb.v.ta.t.sz
+
+! Nov 16, 2024 https://www.instagram.com
+www.instagram.com##.xl56j7k.x1iyjqo2.xdt5ytf.x78zum5.x9f619.x1qjc9v5
+www.instagram.com##.x1jfb8zj.x1qrby5j.x1n2onr6.x7ja8zs.x1t2pt76.x1lytzrv.xedcshv.xarpa2k.x3igimt.x12ejxvf.xaigb6o.x1beo9mf.x1h91t0o.x4k7w5x.x1uvtmcs
+www.instagram.com##.xzkaem6.x1n2onr6
+
+! Nov 21, 2024 https://bitbucket.org
+bitbucket.org##.css-1yhw6wq
+
+! Dec 10, 2024 https://mobalytics.gg
+mobalytics.gg##.m-1rudalm
+mobalytics.gg##.m-bz6vl > .m-rd9h93
+
+! Dec 21, 2024 https://gamefaqs.gamespot.com
+gamefaqs.gamespot.com###faq_header_wrap
+
+! Dec 28, 2024 https://myanimelist.net
+myanimelist.net##.any_status
+myanimelist.net##.clearfix.info-block
+
+! Dec 31, 2024 https://medium.com
+medium.com##.fj.co.q.ab.vh.vg.vf.ve.vd.vc.v.vb.t.va
+medium.com##.yr.bh.ui.uh.bx
+
+! Jan 2, 2025 https://stilldiscount.com
+stilldiscount.com##.bxdlqlvtwwcbljywjjnfjkbvivuvzwystvllbqzzdpzwxgynartcradi.ttyrngxwrungbfowtwxvujbzzonlireewgzzzluqrmserynxczcradi
+
+! Jan 16, 2025 https://babia.to
+babia.to##.notice--cookie.notice--primary.js-notice.notice > .uix_noticeInner > .notice-content
+
+! Mar 18, 2025 https://groups.google.com
+groups.google.com##.gb_Hd.gb_pd.gb_ld
+groups.google.com##.gb_Ed
+groups.google.com##.D1OdOb > div:nth-of-type(1)
+
+! Apr 22, 2025 https://www.wired.com
+www.wired.com##.wide-adrail.narrow.grid-layout--adrail.dJomLc.ArticlePageDisclaimerGrid-gIJgHl.grid-items-2.grid-margins.grid.sjrqk.GridWrapper-cAzTTK
+www.wired.com##.site-navigation.gWHjzm.StandardNavigationWrapper-gtbPYz
+www.wired.com##.fFkhPE.LinkBannerLinkList-bZKQBP.dJaWon.NavWrapper-ifJrDf
+www.wired.com##.cviwN.LinkBannerWrapper-gsBfES
+
+! Apr 24, 2025 https://askubuntu.com
+askubuntu.com##.s-topbar--container
+askubuntu.com##.js-top-bar.l0.t0.ps-fixed.s-topbar
+
+! Apr 24, 2025 https://www.youtube.com
+www.youtube.com##ytd-rich-section-renderer.ytd-rich-grid-renderer.style-scope
+
+! Apr 27, 2025 https://www.reddit.com
+www.reddit.com##.res-floater-belowNavbar
+
+! May 2, 2025 https://www.youtube.com
+www.youtube.com###big-yoodle

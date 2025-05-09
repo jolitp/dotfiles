@@ -1,0 +1,462 @@
+{
+    "schemeVersion": 2,
+    "enabled": true,
+    "fetchNews": true,
+    "theme": {
+        "mode": 1,
+        "brightness": 100,
+        "contrast": 100,
+        "grayscale": 0,
+        "sepia": 0,
+        "useFont": false,
+        "fontFamily": "Open Sans",
+        "textStroke": 0,
+        "engine": "dynamicTheme",
+        "stylesheet": "",
+        "darkSchemeBackgroundColor": "#181a1b",
+        "darkSchemeTextColor": "#e8e6e3",
+        "lightSchemeBackgroundColor": "#dcdad7",
+        "lightSchemeTextColor": "#181a1b",
+        "scrollbarColor": "auto",
+        "selectionColor": "auto",
+        "styleSystemControls": false,
+        "lightColorScheme": "Default",
+        "darkColorScheme": "Default",
+        "immediateModify": false
+    },
+    "presets": [],
+    "customThemes": [
+        {
+            "url": [
+                "dumpoir.com"
+            ],
+            "theme": {
+                "mode": 1,
+                "brightness": 50,
+                "contrast": 150,
+                "grayscale": 0,
+                "sepia": 0,
+                "useFont": false,
+                "fontFamily": "Open Sans",
+                "textStroke": 0,
+                "engine": "dynamicTheme",
+                "stylesheet": "",
+                "darkSchemeBackgroundColor": "#181a1b",
+                "darkSchemeTextColor": "#e8e6e3",
+                "lightSchemeBackgroundColor": "#dcdad7",
+                "lightSchemeTextColor": "#181a1b",
+                "scrollbarColor": "auto",
+                "selectionColor": "auto",
+                "styleSystemControls": false,
+                "lightColorScheme": "Default",
+                "darkColorScheme": "Default",
+                "immediateModify": false
+            }
+        },
+        {
+            "url": [
+                "www.svgrepo.com"
+            ],
+            "theme": {
+                "mode": 0,
+                "brightness": 75,
+                "contrast": 100,
+                "grayscale": 0,
+                "sepia": 0,
+                "useFont": false,
+                "fontFamily": "Open Sans",
+                "textStroke": 0,
+                "engine": "dynamicTheme",
+                "stylesheet": "",
+                "darkSchemeBackgroundColor": "#181a1b",
+                "darkSchemeTextColor": "#e8e6e3",
+                "lightSchemeBackgroundColor": "#dcdad7",
+                "lightSchemeTextColor": "#181a1b",
+                "scrollbarColor": "auto",
+                "selectionColor": "auto",
+                "styleSystemControls": false,
+                "lightColorScheme": "Default",
+                "darkColorScheme": "Default",
+                "immediateModify": false
+            }
+        },
+        {
+            "url": [
+                "www.flaticon.com"
+            ],
+            "theme": {
+                "mode": 0,
+                "brightness": 70,
+                "contrast": 100,
+                "grayscale": 0,
+                "sepia": 0,
+                "useFont": false,
+                "fontFamily": "Open Sans",
+                "textStroke": 0,
+                "engine": "dynamicTheme",
+                "stylesheet": "",
+                "darkSchemeBackgroundColor": "#181a1b",
+                "darkSchemeTextColor": "#e8e6e3",
+                "lightSchemeBackgroundColor": "#dcdad7",
+                "lightSchemeTextColor": "#181a1b",
+                "scrollbarColor": "auto",
+                "selectionColor": "auto",
+                "styleSystemControls": false,
+                "lightColorScheme": "Default",
+                "darkColorScheme": "Default",
+                "immediateModify": false
+            }
+        },
+        {
+            "url": [
+                "www.reshot.com"
+            ],
+            "theme": {
+                "mode": 1,
+                "brightness": 100,
+                "contrast": 100,
+                "grayscale": 0,
+                "sepia": 0,
+                "useFont": false,
+                "fontFamily": "Open Sans",
+                "textStroke": 0,
+                "engine": "dynamicTheme",
+                "stylesheet": "",
+                "darkSchemeBackgroundColor": "#181a1b",
+                "darkSchemeTextColor": "#e8e6e3",
+                "lightSchemeBackgroundColor": "#dcdad7",
+                "lightSchemeTextColor": "#181a1b",
+                "scrollbarColor": "auto",
+                "selectionColor": "auto",
+                "styleSystemControls": false,
+                "lightColorScheme": "Default",
+                "darkColorScheme": "Default",
+                "immediateModify": false
+            }
+        },
+        {
+            "url": [
+                "thenounproject.com"
+            ],
+            "theme": {
+                "mode": 0,
+                "brightness": 100,
+                "contrast": 100,
+                "grayscale": 0,
+                "sepia": 0,
+                "useFont": false,
+                "fontFamily": "Open Sans",
+                "textStroke": 0,
+                "engine": "dynamicTheme",
+                "stylesheet": "",
+                "darkSchemeBackgroundColor": "#181a1b",
+                "darkSchemeTextColor": "#e8e6e3",
+                "lightSchemeBackgroundColor": "#dcdad7",
+                "lightSchemeTextColor": "#181a1b",
+                "scrollbarColor": "auto",
+                "selectionColor": "auto",
+                "styleSystemControls": false,
+                "lightColorScheme": "Default",
+                "darkColorScheme": "Default",
+                "immediateModify": false
+            }
+        },
+        {
+            "url": [
+                "www.svgfind.com"
+            ],
+            "theme": {
+                "mode": 0,
+                "brightness": 100,
+                "contrast": 100,
+                "grayscale": 0,
+                "sepia": 0,
+                "useFont": false,
+                "fontFamily": "Open Sans",
+                "textStroke": 0,
+                "engine": "dynamicTheme",
+                "stylesheet": "",
+                "darkSchemeBackgroundColor": "#181a1b",
+                "darkSchemeTextColor": "#e8e6e3",
+                "lightSchemeBackgroundColor": "#dcdad7",
+                "lightSchemeTextColor": "#181a1b",
+                "scrollbarColor": "auto",
+                "selectionColor": "auto",
+                "styleSystemControls": false,
+                "lightColorScheme": "Default",
+                "darkColorScheme": "Default",
+                "immediateModify": false
+            }
+        },
+        {
+            "url": [
+                "iconscout.com"
+            ],
+            "theme": {
+                "mode": 0,
+                "brightness": 100,
+                "contrast": 100,
+                "grayscale": 0,
+                "sepia": 0,
+                "useFont": false,
+                "fontFamily": "Open Sans",
+                "textStroke": 0,
+                "engine": "dynamicTheme",
+                "stylesheet": "",
+                "darkSchemeBackgroundColor": "#181a1b",
+                "darkSchemeTextColor": "#e8e6e3",
+                "lightSchemeBackgroundColor": "#dcdad7",
+                "lightSchemeTextColor": "#181a1b",
+                "scrollbarColor": "auto",
+                "selectionColor": "auto",
+                "styleSystemControls": false,
+                "lightColorScheme": "Default",
+                "darkColorScheme": "Default",
+                "immediateModify": false
+            }
+        },
+        {
+            "url": [
+                "loja.uiclap.com"
+            ],
+            "theme": {
+                "mode": 0,
+                "brightness": 70,
+                "contrast": 100,
+                "grayscale": 0,
+                "sepia": 0,
+                "useFont": false,
+                "fontFamily": "Open Sans",
+                "textStroke": 0,
+                "engine": "dynamicTheme",
+                "stylesheet": "",
+                "darkSchemeBackgroundColor": "#181a1b",
+                "darkSchemeTextColor": "#e8e6e3",
+                "lightSchemeBackgroundColor": "#dcdad7",
+                "lightSchemeTextColor": "#181a1b",
+                "scrollbarColor": "auto",
+                "selectionColor": "auto",
+                "styleSystemControls": false,
+                "lightColorScheme": "Default",
+                "darkColorScheme": "Default",
+                "immediateModify": false
+            }
+        },
+        {
+            "url": [
+                "old.reddit.com"
+            ],
+            "theme": {
+                "mode": 0,
+                "brightness": 55,
+                "contrast": 150,
+                "grayscale": 0,
+                "sepia": 0,
+                "useFont": false,
+                "fontFamily": "Open Sans",
+                "textStroke": 0,
+                "engine": "dynamicTheme",
+                "stylesheet": "",
+                "darkSchemeBackgroundColor": "#181a1b",
+                "darkSchemeTextColor": "#e8e6e3",
+                "lightSchemeBackgroundColor": "#dcdad7",
+                "lightSchemeTextColor": "#181a1b",
+                "scrollbarColor": "auto",
+                "selectionColor": "auto",
+                "styleSystemControls": false,
+                "lightColorScheme": "Default",
+                "darkColorScheme": "Default",
+                "immediateModify": false
+            }
+        },
+        {
+            "url": [
+                "svgedit.netlify.app"
+            ],
+            "theme": {
+                "mode": 1,
+                "brightness": 100,
+                "contrast": 100,
+                "grayscale": 0,
+                "sepia": 0,
+                "useFont": false,
+                "fontFamily": "Open Sans",
+                "textStroke": 0,
+                "engine": "dynamicTheme",
+                "stylesheet": "",
+                "darkSchemeBackgroundColor": "#181a1b",
+                "darkSchemeTextColor": "#e8e6e3",
+                "lightSchemeBackgroundColor": "#dcdad7",
+                "lightSchemeTextColor": "#181a1b",
+                "scrollbarColor": "auto",
+                "selectionColor": "auto",
+                "styleSystemControls": false,
+                "lightColorScheme": "Default",
+                "darkColorScheme": "Default",
+                "immediateModify": false
+            }
+        },
+        {
+            "url": [
+                "www.shadcn-svelte.com"
+            ],
+            "theme": {
+                "mode": 1,
+                "brightness": 100,
+                "contrast": 100,
+                "grayscale": 0,
+                "sepia": 0,
+                "useFont": false,
+                "fontFamily": "Open Sans",
+                "textStroke": 0,
+                "engine": "dynamicTheme",
+                "stylesheet": "",
+                "darkSchemeBackgroundColor": "#181a1b",
+                "darkSchemeTextColor": "#e8e6e3",
+                "lightSchemeBackgroundColor": "#dcdad7",
+                "lightSchemeTextColor": "#181a1b",
+                "scrollbarColor": "auto",
+                "selectionColor": "auto",
+                "styleSystemControls": false,
+                "lightColorScheme": "Default",
+                "darkColorScheme": "Default",
+                "immediateModify": false
+            }
+        },
+        {
+            "url": [
+                "poe2db.tw"
+            ],
+            "theme": {
+                "mode": 1,
+                "brightness": 100,
+                "contrast": 100,
+                "grayscale": 0,
+                "sepia": 0,
+                "useFont": false,
+                "fontFamily": "Open Sans",
+                "textStroke": 0,
+                "engine": "dynamicTheme",
+                "stylesheet": "",
+                "darkSchemeBackgroundColor": "#181a1b",
+                "darkSchemeTextColor": "#e8e6e3",
+                "lightSchemeBackgroundColor": "#dcdad7",
+                "lightSchemeTextColor": "#181a1b",
+                "scrollbarColor": "auto",
+                "selectionColor": "auto",
+                "styleSystemControls": false,
+                "lightColorScheme": "Default",
+                "darkColorScheme": "Default",
+                "immediateModify": false
+            }
+        },
+        {
+            "url": [
+                "docs.google.com"
+            ],
+            "theme": {
+                "mode": 0,
+                "brightness": 100,
+                "contrast": 100,
+                "grayscale": 0,
+                "sepia": 0,
+                "useFont": false,
+                "fontFamily": "Open Sans",
+                "textStroke": 0,
+                "engine": "dynamicTheme",
+                "stylesheet": "",
+                "darkSchemeBackgroundColor": "#181a1b",
+                "darkSchemeTextColor": "#e8e6e3",
+                "lightSchemeBackgroundColor": "#dcdad7",
+                "lightSchemeTextColor": "#181a1b",
+                "scrollbarColor": "auto",
+                "selectionColor": "auto",
+                "styleSystemControls": false,
+                "lightColorScheme": "Default",
+                "darkColorScheme": "Default",
+                "immediateModify": false
+            }
+        }
+    ],
+    "enabledByDefault": true,
+    "enabledFor": [
+        "surrealdb.com",
+        "nixos-and-flakes.thiscute.world"
+    ],
+    "disabledFor": [
+        "christitus.com",
+        "www.youtube.com",
+        "svalboard.com",
+        "typeractive.xyz",
+        "logosbynick.com",
+        "web.whatsapp.com",
+        "www.lastepochtools.com",
+        "sitandr.github.io",
+        "demo.freshrss.org",
+        "dygma.com",
+        "maxroll.gg",
+        "distrobox.it",
+        "pdp.com",
+        "/mnt/HOME/Downloads/__FIREFOX__/Boleto%20Jo%C3%A3o%20Lu%C3%ADs%20Teixeira%20Pinto%20(8_15_2024%207_36_59%20PM).html",
+        "python-poetry.org",
+        "htmlcolorcodes.com",
+        "www.myfonts.com",
+        "www.brastemp.com.br",
+        "web.telegram.org",
+        "myriad-dreamin.github.io",
+        "us.account.battle.net",
+        "www.notion.so",
+        "design.penpot.app",
+        "www.reshot.com",
+        "svgedit.netlify.app",
+        "www.shadcn-svelte.com",
+        "poe2db.tw",
+        "www.silverfast.com",
+        "ui.shadcn.com",
+        "svelte.dev",
+        "www.dsers.com",
+        "www.maggiorana.com.br",
+        "excalidraw.com",
+        "old.reddit.com",
+        "www.poewiki.net",
+        "www.usf.edu.br",
+        "downloadlynet.ir",
+        "shop.samsung.com",
+        "time.graphics",
+        "icons8.com",
+        "store.google.com",
+        "www.reddit.com",
+        "www.nixhub.io",
+        "github.com"
+    ],
+    "changeBrowserTheme": false,
+    "syncSettings": true,
+    "syncSitesFixes": false,
+    "automation": {
+        "enabled": false,
+        "mode": "",
+        "behavior": "OnOff"
+    },
+    "time": {
+        "activation": "18:00",
+        "deactivation": "9:00"
+    },
+    "location": {
+        "latitude": null,
+        "longitude": null
+    },
+    "previewNewDesign": false,
+    "previewNewestDesign": false,
+    "enableForPDF": true,
+    "enableForProtectedPages": false,
+    "enableContextMenus": false,
+    "detectDarkTheme": false,
+    "displayedNews": [
+        "thanks-2023"
+    ],
+    "installation": {
+        "date": 1726541061624,
+        "reason": "update",
+        "version": "4.9.89"
+    }
+}

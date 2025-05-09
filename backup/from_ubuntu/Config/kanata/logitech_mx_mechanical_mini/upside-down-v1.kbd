@@ -1,0 +1,60 @@
+;;==============================================================
+;;jolitp kanata keyboard confguration for G613 wireless keyboard
+;;===============================================================
+
+;; The layers for this version of the config are taken from
+;; https://github.com/manna-harbour/miryoku/tree/master/docs/reference
+
+(include modules/cfg.kbd)
+(include modules/new-key-definitions.kbd)
+
+(include modules/upside-down/source.kbd)
+
+;; Layer Base
+(include modules/upside-down/aliases/alias-querty-v1.kbd)
+(include modules/upside-down/layers/layer-querty-v1.kbd)
+
+;; Layer Games
+(include modules/upside-down/aliases/alias-querty-games-v1.kbd)
+(include modules/upside-down/layers/layer-querty-games-v1.kbd)
+
+;; Aditional Features
+(include modules/upside-down/aliases/alias-common.kbd)
+
+;; Layer Nav (Navigation)
+(include modules/upside-down/aliases/alias-navigation.kbd)
+(include modules/upside-down/layers/layer-navigation.kbd)
+
+;; Layer Mouse
+(include modules/upside-down/aliases/alias-mouse.kbd)
+(include modules/upside-down/layers/layer-mouse.kbd)
+
+;; Layer Button - To be used with a mouse
+(include modules/upside-down/aliases/alias-buttons.kbd)
+(include modules/upside-down/layers/layer-buttons.kbd)
+
+;; Layer Media
+(include modules/upside-down/aliases/alias-media.kbd)
+(include modules/upside-down/layers/layer-media.kbd)
+
+;; Layer Num (Numbers)
+(include modules/upside-down/aliases/alias-numbers.kbd)
+(include modules/upside-down/layers/layer-numbers.kbd)
+
+;; Layer Sym (Symbols)
+(include modules/upside-down/aliases/alias-symbols.kbd)
+(include modules/upside-down/layers/layer-symbols.kbd)
+
+;; Layer FUn (Functions, F1-F12)
+(include modules/upside-down/aliases/alias-functions.kbd)
+(include modules/upside-down/layers/layer-functions.kbd)
+
+;; diacritics
+(include modules/upside-down/aliases/alias-diacritics.kbd)
+(include modules/upside-down/layers/layer-diacritics.kbd)
+
+;; Alternative Layouts
+;; devorak
+;; colemak-dh
+;; custom
+

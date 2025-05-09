@@ -1,0 +1,34 @@
+(defvar
+  tap_timeout 200
+  hold_timeout 250
+)
+(defalias
+  E&C (tap-hold 100 100 esc lctl) ;; caps lock -> tap: esc, hold: ctrl
+
+  dia (layer-while-held diacritics)
+  sqd (tap-hold 300 300 ' @dia) ;; single quote or diacritics
+
+;; Layers (thumbs)
+;; left thumb as trigger / right side focused layer
+  Nav (layer-while-held Navigation)
+  Mou (layer-while-held Mouse)
+  But (layer-while-held Buttons)
+  Med (layer-while-held Media)
+
+  _&Nv (tap-hold $tap_timeout $hold_timeout spc @Nav)
+  T&Ms (tap-hold $tap_timeout $hold_timeout tab @Mou)
+  E&Md (tap-hold $tap_timeout $hold_timeout esc @Med)
+
+;; right thumb as trigger / left side focused layer
+  Num (layer-while-held Numbers)
+  Sym (layer-while-held Symbols)
+  Fun (layer-while-held Functions)
+
+  B&Nm (tap-hold $tap_timeout $hold_timeout bspc @Num)
+  E&Sy (tap-hold $tap_timeout $hold_timeout ret @Sym)
+  D&F1 (tap-hold $tap_timeout $hold_timeout del @Fun)
+
+;; Home row mods
+
+
+)

@@ -1,0 +1,37 @@
+;;==============================================================
+;;jolitp kanata keyboard confguration for G613 wireless keyboard
+;;===============================================================
+
+
+;; ============================ template for empty layer ============================
+;;
+;; (deflayer name
+;;  _    _    _    _    _    _         _    _    _    _    _    _    _    _    _    _
+;;  _    _    _    _    _    _         _    _    _    _    _    _    _    _         _
+;;  _    _    _    _    _    _         _    _    _    _    _    _    _    _         _
+;;  _    _    _    _    _    _         _    _    _    _    _    _         _         _
+;;  _    _    _    _    _    _         _    _    _    _    _    _              _    _
+;;  _    _    _                  _                    _         _         _    _    _
+;; )
+;; ==================================================================================
+
+;; diacritics aliases
+(defalias
+  dia (layer-while-held diacritics)
+  ;; single quote or diacritics
+  sqd (tap-hold 300 300 ' @dia)
+
+  ;; combine-before (definitions)
+  grave-macro      (multi (macro RA-grv) (release-layer diacritics))
+  cedila-macro     (macro RA-,)
+  tilde-macro      (multi (macro RA-S-grv) (release-layer diacritics))
+  acute-macro      (multi (macro RA-') (release-layer diacritics))
+  circunflex-macro (multi (macro RA-6) (release-layer diacritics))
+
+  ;; combine-after
+  c-g  @grave-macro      ;; combine grave ◌̀  (U+0300)
+  c-cd @cedila-macro     ;; combine cedila ◌̧  (U+0327)
+  c-t  @tilde-macro      ;; combine tilde ◌̃  (U+0303)
+  c-a  @acute-macro      ;; combine acute ◌́  (U+0301)
+  c-cf @circunflex-macro ;; combine circunflex ◌̂  (U+0302)
+)

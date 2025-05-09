@@ -1,0 +1,28 @@
+{
+  "timeStamp": 1746566831250,
+  "version": "1.63.2",
+  "userSettings": {
+    "importedLists": []
+  },
+  "selectedFilterLists": [
+    "user-filters",
+    "ublock-filters",
+    "ublock-badware",
+    "ublock-privacy",
+    "ublock-unbreak",
+    "ublock-quick-fixes",
+    "easylist",
+    "easyprivacy",
+    "urlhaus-1",
+    "plowe-0"
+  ],
+  "hiddenSettings": {},
+  "whitelist": [
+    "chrome-extension-scheme",
+    "moz-extension-scheme"
+  ],
+  "dynamicFilteringString": "behind-the-scene * * noop\nbehind-the-scene * inline-script noop\nbehind-the-scene * 1p-script noop\nbehind-the-scene * 3p-script noop\nbehind-the-scene * 3p-frame noop\nbehind-the-scene * image noop\nbehind-the-scene * 3p noop",
+  "urlFilteringString": "",
+  "hostnameSwitchesString": "no-large-media: behind-the-scene false\nno-csp-reports: * true",
+  "userFilters": "! Oct 27, 2024 https://www.aliexpress.com\nwww.aliexpress.com###J_xiaomi_dialog\n\n! Oct 30, 2024 https://www.jusbrasil.com.br\nwww.jusbrasil.com.br##.appbar-end_root__hVnLa\nwww.jusbrasil.com.br##.appbar-start_root__8HElb\n\n! Nov 5, 2024 https://stackoverflow.com\nstackoverflow.com###credential_picker_container\n\n! Nov 14, 2024 https://medium.com\nmedium.com##.fj.co.q.ab.tg.tf.te.td.tc.tb.v.ta.t.sz\n\n! Nov 16, 2024 https://www.instagram.com\nwww.instagram.com##.xl56j7k.x1iyjqo2.xdt5ytf.x78zum5.x9f619.x1qjc9v5\nwww.instagram.com##.x1jfb8zj.x1qrby5j.x1n2onr6.x7ja8zs.x1t2pt76.x1lytzrv.xedcshv.xarpa2k.x3igimt.x12ejxvf.xaigb6o.x1beo9mf.x1h91t0o.x4k7w5x.x1uvtmcs\nwww.instagram.com##.xzkaem6.x1n2onr6\n\n! Nov 21, 2024 https://bitbucket.org\nbitbucket.org##.css-1yhw6wq\n\n! Dec 10, 2024 https://mobalytics.gg\nmobalytics.gg##.m-1rudalm\nmobalytics.gg##.m-bz6vl > .m-rd9h93\n\n! Dec 21, 2024 https://gamefaqs.gamespot.com\ngamefaqs.gamespot.com###faq_header_wrap\n\n! Dec 28, 2024 https://myanimelist.net\nmyanimelist.net##.any_status\nmyanimelist.net##.clearfix.info-block\n\n! Dec 31, 2024 https://medium.com\nmedium.com##.fj.co.q.ab.vh.vg.vf.ve.vd.vc.v.vb.t.va\nmedium.com##.yr.bh.ui.uh.bx\n\n! Jan 2, 2025 https://stilldiscount.com\nstilldiscount.com##.bxdlqlvtwwcbljywjjnfjkbvivuvzwystvllbqzzdpzwxgynartcradi.ttyrngxwrungbfowtwxvujbzzonlireewgzzzluqrmserynxczcradi\n\n! Jan 16, 2025 https://babia.to\nbabia.to##.notice--cookie.notice--primary.js-notice.notice > .uix_noticeInner > .notice-content\n\n! Mar 18, 2025 https://groups.google.com\ngroups.google.com##.gb_Hd.gb_pd.gb_ld\ngroups.google.com##.gb_Ed\ngroups.google.com##.D1OdOb > div:nth-of-type(1)\n\n! Apr 22, 2025 https://www.wired.com\nwww.wired.com##.wide-adrail.narrow.grid-layout--adrail.dJomLc.ArticlePageDisclaimerGrid-gIJgHl.grid-items-2.grid-margins.grid.sjrqk.GridWrapper-cAzTTK\nwww.wired.com##.site-navigation.gWHjzm.StandardNavigationWrapper-gtbPYz\nwww.wired.com##.fFkhPE.LinkBannerLinkList-bZKQBP.dJaWon.NavWrapper-ifJrDf\nwww.wired.com##.cviwN.LinkBannerWrapper-gsBfES\n\n! Apr 24, 2025 https://askubuntu.com\naskubuntu.com##.s-topbar--container\naskubuntu.com##.js-top-bar.l0.t0.ps-fixed.s-topbar\n\n! Apr 24, 2025 https://www.youtube.com\nwww.youtube.com##ytd-rich-section-renderer.ytd-rich-grid-renderer.style-scope\n\n! Apr 27, 2025 https://www.reddit.com\nwww.reddit.com##.res-floater-belowNavbar\n\n! May 2, 2025 https://www.youtube.com\nwww.youtube.com###big-yoodle"
+}

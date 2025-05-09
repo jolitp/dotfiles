@@ -1,0 +1,7 @@
+(defalias
+  undo  C-z
+  redo  C-S-z
+  cut   C-x
+  cpy   C-c
+  paste C-v
+)

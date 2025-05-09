@@ -1,0 +1,38 @@
+;;==============================================================
+;;jolitp kanata keyboard confguration for G613 wireless keyboard
+;;===============================================================
+
+
+;; ============================ template for empty layer ============================
+;;
+;; (deflayer name
+;;  _    _    _    _    _    _         _    _    _    _    _    _    _    _    _    _
+;;  _    _    _    _    _    _         _    _    _    _    _    _    _    _         _
+;;  _    _    _    _    _    _         _    _    _    _    _    _    _    _         _
+;;  _    _    _    _    _    _         _    _    _    _    _    _         _         _
+;;  _    _    _    _    _    _         _    _    _    _    _    _              _    _
+;;  _    _    _                  _                    _         _         _    _    _
+;; )
+;; ==================================================================================
+
+(defvar
+  ;; pointer movement
+  interval-between-movement-actions 16 ;; (ms)
+  ibma $interval-between-movement-actions
+
+  ramp-time 2000 ;; (ms)
+  rp $ramp-time
+
+  ;; normal speed (no other key held)
+  minimum-distance-px 1 ;; (px)
+  min-dist $minimum-distance-px
+  maximum-distance-px 30 ;; (px)
+  max-dist $maximum-distance-px
+
+  ;; scroll wheel
+  interval-between-scroll-actions 16 ;; (ms)
+  ibsa $interval-between-scroll-actions
+
+  scroll-distance 12 ;; (multiple of 120)
+  scrl-d $scroll-distance
+)

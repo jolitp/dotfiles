@@ -1,0 +1,29 @@
+;;==============================================================
+;;jolitp kanata keyboard confguration for G613 wireless keyboard
+;;===============================================================
+
+
+;; ============================ template for empty layer ============================
+;;
+;; (deflayer name
+;;  _    _    _    _    _    _         _    _    _    _    _    _    _    _    _    _
+;;  _    _    _    _    _    _         _    _    _    _    _    _    _    _         _
+;;  _    _    _    _    _    _         _    _    _    _    _    _    _    _         _
+;;  _    _    _    _    _    _         _    _    _    _    _    _         _         _
+;;  _    _    _    _    _    _         _    _    _    _    _    _              _    _
+;;  _    _    _                  _                    _         _         _    _    _
+;; )
+;; ==================================================================================
+
+(include modules/cfg.kbd)
+(include modules/source.kbd)
+;; (include modules/aliases/alias-all.kbd)
+(include modules/aliases/alias-esc-and-ctrl.kbd)
+(include modules/aliases/alias-layer-toggle-move.kbd)
+(include modules/aliases/alias-tap-space-holdmove-layer.kbd)
+(include modules/aliases/alias-underscore.kbd)
+(include modules/layers/layer-querty-v1.kbd)
+(include modules/layers/layer-move.kbd)
+(include modules/aliases/alias-both-shifts-to-caps.kbd)
+(include modules/layers/layers-shift.kbd)
+

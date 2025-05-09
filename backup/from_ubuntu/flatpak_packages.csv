@@ -1,0 +1,135 @@
+AnyDesk	com.anydesk.Anydesk	6.3.3	stable	system
+Boxy SVG	com.boxy_svg.BoxySVG	4.66.0	stable	system
+Brave	com.brave.Browser	1.78.94	stable	system
+calibre	com.calibre_ebook.calibre	8.3.0	stable	system
+GrafX2	com.chez.GrafX2	2.7	stable	system
+Discord	com.discordapp.Discord	0.0.94	stable	system
+Pinta	com.github.PintaProject.Pinta	3.0	stable	system
+ScanTailor Advanced	com.github._4lex4.ScanTailor-Advanced	v1.0.16	stable	system
+NormCap	com.github.dynobo.normcap	0.5.9	stable	system
+Eyedropper	com.github.finefindus.eyedropper	2.1.0	stable	system
+LibreSprite	com.github.libresprite.LibreSprite	1.1-dev	stable	system
+Czkawka	com.github.qarmin.czkawka	9.0.0	stable	system
+Szyszka	com.github.qarmin.szyszka	3.0.0	stable	system
+Flatseal	com.github.tchx84.Flatseal	2.3.1	stable	system
+Frog	com.github.tenderowl.frog	1.6.0	stable	system
+SyncThingy	com.github.zocker_160.SyncThingy	0.8.1	stable	system
+Gitnuro	com.jetpackduba.Gitnuro	1.4.3	stable	system
+Logseq	com.logseq.Logseq	0.10.9	stable	system
+OBS Studio	com.obsproject.Studio	31.0.3	stable	system
+Pixelorama	com.orama_interactive.Pixelorama	1.1.1	stable	system
+VidCutter	com.ozmartians.VidCutter	6.0.5.4	stable	system
+RawTherapee	com.rawtherapee.RawTherapee	5.11	stable	system
+TreeSheets	com.strlen.TreeSheets	14853365846	stable	system
+Penpot Desktop	com.sudovanilla.penpot-desktop	0.3.1	stable	system
+Birdtray	com.ulduzsoft.Birdtray	1.11.4	stable	system
+Bottles	com.usebottles.bottles	51.21	stable	system
+Bruno	com.usebruno.Bruno	v2.2.0	stable	system
+Visual Studio Code	com.visualstudio.code	1.99.3	stable	system
+Xpano	cz.krupkat.Xpano	0.19.3	stable	system
+Reaper	fm.reaper.Reaper	v7.35	stable	system
+HandBrake	fr.handbrake.ghb	1.9.2	stable	system
+Natron	fr.natron.Natron	2.5.0	stable	system
+AppFlowy	io.appflowy.AppFlowy	0.9.1	stable	system
+FreeTube	io.freetubeapp.FreeTube	0.23.5 Beta	stable	system
+GDevelop	io.gdevelop.ide	5.5.228	stable	system
+HexChat	io.github.Hexchat	2.16.2	stable	system
+Godots	io.github.MakovWait.Godots	v1.3.stable	stable	system
+OpenToonz	io.github.OpenToonz	1.7.1	stable	system
+Cohesion	io.github.brunofin.Cohesion	1.0.9	stable	system
+FSearch	io.github.cboxdoerfer.FSearch	0.2.3	stable	system
+BoxBuddy	io.github.dvlv.boxbuddyrs	2.5.3	stable	system
+Warehouse	io.github.flattool.Warehouse	2.0.2	stable	system
+HakuNeko	io.github.hakuneko.HakuNeko	v6.1.7	stable	system
+KDiskMark	io.github.jonmagon.kdiskmark	3.1.4	stable	system
+Kiview	io.github.nyre221.kiview	1.1	stable	system
+PeaZip	io.github.peazip.PeaZip	10.4.0	stable	system
+peazip i386 addon	io.github.peazip.PeaZip.Addon.i386	1.0.0	stable	system
+IRust	io.github.sigmasd.IRust	1.71.21	stable	system
+REAL Video Enhancer	io.github.tntwise.REAL-Video-Enhancer	2.2.5	stable	system
+LibreWolf	io.gitlab.librewolf-community	138.0.1-2	stable	system
+Newsflash	io.gitlab.news_flash.NewsFlash	3.3.5	stable	system
+LMMS	io.lmms.LMMS	1.2.2	stable	system
+Podman Desktop	io.podman_desktop.PodmanDesktop	1.18.0	stable	system
+espansoGUI	io.unobserved.espansoGUI	23.10	stable	system
+Gear Lever	it.mijorus.gearlever	3.2.2	stable	system
+Obsidian	md.obsidian.Obsidian	1.8.4	stable	system
+Fluent Reader	me.hyliu.fluentreader	1.1.4	stable	system
+Anki	net.ankiweb.Anki	25.02.4	stable	system
+MediaInfo	net.mediaarea.MediaInfo	25.04	stable	system
+MeshLab	net.meshlab.MeshLab	2023.12	stable	system
+Resources	net.nokyan.Resources	1.8.0	stable	system
+Scribus	net.scribus.Scribus	1.6.3	stable	system
+LosslessCut	no.mifi.losslesscut	3.55.1	stable	system
+Audacious	org.atheme.audacious	4.4.2	stable	system
+Avidemux	org.avidemux.Avidemux	2.8.1	stable	system
+Blender	org.blender.Blender	4.4.0	stable	system
+Codecs	org.blender.Blender.Codecs		stable	system
+CoreKeyboard	org.cubocore.CoreKeyboard	4.5.0	stable	system
+Ferdium	org.ferdium.Ferdium	7.0.1	stable	system
+Flameshot	org.flameshot.Flameshot	12.1.0	stable	system
+FontForge	org.fontforge.FontForge	20230101	stable	system
+TAP-plugins	org.freedesktop.LinuxAudio.Plugins.TAP	1.0.1	23.08	system
+TAP-plugins	org.freedesktop.LinuxAudio.Plugins.TAP	1.0.1	24.08	system
+SWH	org.freedesktop.LinuxAudio.Plugins.swh	0.4.17	23.08	system
+SWH	org.freedesktop.LinuxAudio.Plugins.swh	0.4.17	24.08	system
+Freedesktop Platform	org.freedesktop.Platform	freedesktop-sdk-22.08.27	22.08	system
+Freedesktop Platform	org.freedesktop.Platform	freedesktop-sdk-23.08.30	23.08	system
+Freedesktop Platform	org.freedesktop.Platform	freedesktop-sdk-24.08.18	24.08	system
+Mesa	org.freedesktop.Platform.GL.default	24.0.9	22.08	system
+Mesa (Extra)	org.freedesktop.Platform.GL.default	24.0.9	22.08-extra	system
+Mesa	org.freedesktop.Platform.GL.default	25.0.3	23.08	system
+Mesa (Extra)	org.freedesktop.Platform.GL.default	25.0.3	23.08-extra	system
+Mesa	org.freedesktop.Platform.GL.default	25.0.3	24.08	system
+Mesa (Extra)	org.freedesktop.Platform.GL.default	25.0.3	24.08extra	system
+nvidia-535-183-01	org.freedesktop.Platform.GL.nvidia-535-183-01		1.4	system
+Mesa	org.freedesktop.Platform.GL32.default	25.0.3	24.08	system
+nvidia-535-183-01	org.freedesktop.Platform.GL32.nvidia-535-183-01		1.4	system
+FFmpeg extension with extra codecs	org.freedesktop.Platform.ffmpeg-full		23.08	system
+FFmpeg extension with extra codecs	org.freedesktop.Platform.ffmpeg-full		24.08	system
+i386	org.freedesktop.Platform.ffmpeg_full.i386		24.08	system
+openh264	org.freedesktop.Platform.openh264	2.1.0	2.2.0	system
+openh264	org.freedesktop.Platform.openh264	2.4.1	2.4.1	system
+openh264	org.freedesktop.Platform.openh264	2.5.1	2.5.1	system
+Freedesktop SDK	org.freedesktop.Sdk	freedesktop-sdk-22.08.27	22.08	system
+Freedesktop SDK	org.freedesktop.Sdk	freedesktop-sdk-23.08.30	23.08	system
+Freedesktop SDK	org.freedesktop.Sdk	freedesktop-sdk-24.08.18	24.08	system
+OpenJDK 17 SDK Extension	org.freedesktop.Sdk.Extension.openjdk17		23.08	system
+OpenJDK 17 SDK Extension	org.freedesktop.Sdk.Extension.openjdk17		24.08	system
+Cheese	org.gnome.Cheese	44.1	stable	system
+GNOME Application Platform version 45	org.gnome.Platform		45	system
+GNOME Application Platform version 46	org.gnome.Platform		46	system
+GNOME Application Platform version 47	org.gnome.Platform		47	system
+GNOME Application Platform version 48	org.gnome.Platform		48	system
+i386	org.gnome.Platform.Compat.i386		47	system
+Pika Backup	org.gnome.World.PikaBackup	0.7.4	stable	system
+Godot Engine	org.godotengine.Godot	4.4.1	stable	system
+Breeze GTK theme	org.gtk.Gtk3theme.Breeze	6.3.4	3.22	system
+Inkscape	org.inkscape.Inkscape	1.3.2	stable	system
+Jitsi Meet	org.jitsi.jitsi-meet	2025.4.0	stable	system
+KDE Application Platform	org.kde.Platform		5.15-22.08	system
+KDE Application Platform	org.kde.Platform		5.15-23.08	system
+KDE Application Platform	org.kde.Platform		5.15-24.08	system
+KDE Application Platform	org.kde.Platform		6.6	system
+KDE Application Platform	org.kde.Platform		6.7	system
+KDE Application Platform	org.kde.Platform		6.8	system
+KDE Application Platform	org.kde.Platform		6.9	system
+digiKam	org.kde.digikam	8.6.0	stable	system
+Kdenlive	org.kde.kdenlive	25.04.0	stable	system
+Subtitle Composer	org.kde.subtitlecomposer	0.8.1	stable	system
+RetroArch	org.libretro.RetroArch	1.21.0	stable	system
+LocalSend	org.localsend.localsend_app	1.17.0	stable	system
+Tiled	org.mapeditor.Tiled	1.11.1	stable	system
+Thunderbird	org.mozilla.Thunderbird	128.10.0esr	stable	system
+Firefox	org.mozilla.firefox	138.0.1	stable	system
+MyPaint	org.mypaint.MyPaint	2.0.1	stable	system
+OpenRGB	org.openrgb.OpenRGB	0.9	stable	system
+Remmina	org.remmina.Remmina	1.4.40	stable	system
+Shotcut	org.shotcut.Shotcut	25.03.29	stable	system
+Tenacity	org.tenacityaudio.Tenacity	1.3.4	stable	system
+Upscayl	org.upscayl.Upscayl	2.15.0	stable	system
+WezTerm	org.wezfurlong.wezterm	20240203-110809-5046fc22	stable	system
+gecko	org.winehq.Wine.gecko		stable-24.08	system
+mono	org.winehq.Wine.mono		stable-24.08	system
+Zotero	org.zotero.Zotero	7.0.15	stable	system
+Junction	re.sonny.Junction	1.9	stable	system

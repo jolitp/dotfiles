@@ -1,0 +1,33 @@
+;;==============================================================
+;;jolitp kanata keyboard confguration for G613 wireless keyboard
+;;===============================================================
+
+
+;; ============================ template for empty layer ============================
+;;
+;; (deflayer name
+;;  _    _    _    _    _    _         _    _    _    _    _    _    _    _    _    _
+;;  _    _    _    _    _    _         _    _    _    _    _    _    _    _         _
+;;  _    _    _    _    _    _         _    _    _    _    _    _    _    _         _
+;;  _    _    _    _    _    _         _    _    _    _    _    _         _         _
+;;  _    _    _    _    _    _         _    _    _    _    _    _              _    _
+;;  _    _    _                  _                    _         _         _    _    _
+;; )
+;; ==================================================================================
+
+
+
+;; home row mods
+(defalias
+;; left side
+  a-m (tap-hold 200 200 a lmet)
+  s-a (tap-hold 200 200 s lalt)
+  d-c (tap-hold 200 200 d lctl)
+  f-s (tap-hold 200 200 f lsft)
+
+;; right side
+  sc-m (tap-hold 200 200 ; rmet)
+  l-a  (tap-hold 200 200 l ralt)
+  k-c  (tap-hold 200 200 k rctl)
+  j-s  (tap-hold 200 200 j rsft)
+)

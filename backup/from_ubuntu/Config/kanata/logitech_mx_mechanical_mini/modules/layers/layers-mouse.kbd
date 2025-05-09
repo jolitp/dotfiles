@@ -1,0 +1,41 @@
+;;==============================================================
+;;jolitp kanata keyboard confguration for G613 wireless keyboard
+;;===============================================================
+
+
+;; ============================ template for empty layer ============================
+;;
+;; (deflayer name
+;;  _    _    _    _    _    _         _    _    _    _    _    _    _    _    _    _
+;;  _    _    _    _    _    _         _    _    _    _    _    _    _    _         _
+;;  _    _    _    _    _    _         _    _    _    _    _    _    _    _         _
+;;  _    _    _    _    _    _         _    _    _    _    _    _         _         _
+;;  _    _    _    _    _    _         _    _    _    _    _    _              _    _
+;;  _    _    _                  _                    _         _         _    _    _
+;; )
+;; ==================================================================================
+
+(deflayer mouse
+    _    _    _    _    _    _      _       _       _       _       _    _    _    _    _    _
+    _    _    _    _    _    _      _       _       _       _       _    _    _    _         _
+
+;;  tab  q    w    e    r    t      y       u       i       o       p    [    ]    \         end
+    _    mbck mrgt mmid mlft mfwd   _       _       _       _       _    _    _    _         _
+
+;;  caps a    s    d    f    g      h       j       k       l       ;    '         ret       pgup
+    @E&s lmet lalt lctl lsft @scrl  @m-mv-l @m-mv-d @m-mv-u @m-mv-r _    _         _         _
+    @fst _    _    _    _    _      _       _       _       _       _    _              lrld _
+    @nml _    _                mlft                         _            _         lrld lrld lrld
+)
+
+(deflayer scroll
+    _    _    _    _    _     _      _       _       _       _       _    _    _    _    _    _
+    _    _    _    _    _     _      _       _       _       _       _    _    _    _         _
+    _    _    _    _    _     _      _       _       _       _       _    _    _    _         _
+
+;;  caps a    s    d    f     g      h       j       k       l       ;    '         ret       pgup
+    _    _    _    _    _     _      @scrl-l @scrl-d @scrl-u @scrl-r _    _         _         _
+
+    _    _    _    _    _     _      _       _       _       _       _    _              _    _
+    _    _    _                  _                           _            _         _    _    _
+)

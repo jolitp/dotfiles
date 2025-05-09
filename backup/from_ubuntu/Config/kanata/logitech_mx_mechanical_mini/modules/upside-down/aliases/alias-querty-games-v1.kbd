@@ -1,0 +1,4 @@
+(defalias
+  L_GMs (layer-switch qwerty_games)
+  L_DFT (layer-switch qwerty)
+)

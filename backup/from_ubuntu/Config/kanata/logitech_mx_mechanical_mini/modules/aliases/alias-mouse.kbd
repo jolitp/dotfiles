@@ -1,0 +1,54 @@
+;;==============================================================
+;;jolitp kanata keyboard confguration for G613 wireless keyboard
+;;===============================================================
+
+
+;; ============================ template for empty layer ============================
+;;
+;; (deflayer name
+;;  _    _    _    _    _    _         _    _    _    _    _    _    _    _    _    _
+;;  _    _    _    _    _    _         _    _    _    _    _    _    _    _         _
+;;  _    _    _    _    _    _         _    _    _    _    _    _    _    _         _
+;;  _    _    _    _    _    _         _    _    _    _    _    _         _         _
+;;  _    _    _    _    _    _         _    _    _    _    _    _              _    _
+;;  _    _    _                  _                    _         _         _    _    _
+;; )
+;; ==================================================================================
+
+(defalias
+;; layers
+mouse (layer-switch mouse)
+nml (layer-switch qwerty)
+scrl (layer-while-held scroll)
+
+;; mouse pointer movement
+;;
+;; mov accel parameters:
+;; 1. interval (unit: ms) between movement actions
+;; 2. time it takes (unit: ms) to linearly ramp up from the minimum distance to the maximum distance
+;; 4. maximum distance (unit: pixels) of each movement
+m-mv-u (movemouse-accel-up $ibma $rp $min-dist $max-dist)
+m-mv-d (movemouse-accel-down $ibma $rp $min-dist $max-dist)
+m-mv-l (movemouse-accel-left $ibma $rp $min-dist $max-dist)
+m-mv-r (movemouse-accel-right $ibma $rp $min-dist $max-dist)
+
+;; setting speed parameters:
+;; 1. This action accepts one number (unit: percentage)
+;; by which the mouse movements will be accelerated.
+fst (movemouse-speed 500)
+slw (movemouse-speed 25)
+E&s (tap-hold 100 100 esc @slw)
+;; caps lock -> tap: esc, hold: slow
+
+;; scroll wheel movement
+;; mov accel parameters:
+;; 1. the interval (unit: ms) between scroll actions
+;; 2. the distance (unit: arbitrary).
+;; In both Windows and Linux,
+;; 120 distance units is equivalent
+;; to a notch movement on a physical wheel.
+scrl-u (mwheel-up $ibsa $scrl-d)
+scrl-d (mwheel-down $ibsa $scrl-d)
+scrl-l (mwheel-left $ibsa $scrl-d)
+scrl-r (mwheel-right $ibsa $scrl-d)
+)
