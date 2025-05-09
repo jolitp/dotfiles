@@ -2,6 +2,10 @@
 
 # TODO manage configurations with chezmoi
 # TODO create a nextcloud-client systemd service
+#
+# TODO install ptgui
+#  @nh2/ptgui-pro.nix
+#  https://gist.github.com/nh2/5d35a0a85948882baf992b6512290461
 
 # TODO configure neovim
 #   DONE configure lazyvim outside of nix
@@ -19,6 +23,8 @@
 #        s (undo, redo, yank, paste, etc.) with fully customizable animations and appearance.
 #     TODO comment
 #     TODO ...
+#
+# TODO add banana cursor
 #
 # TODO break home.nix into modules
 #   TODO hosts
@@ -528,6 +534,7 @@
           vimium-c
           # web signer (softplan) # not found
           floccus
+          # auto-highlight # not found
         ]; # extensions
       }; # profiles.jolitp = {
     }; # programs.firefox = {
