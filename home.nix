@@ -443,6 +443,10 @@
       };
     }; # programs.git
 
+    programs.nvim {
+      enable = true;
+    };
+
     programs.nh = {
       enable = true;
       #clean.enable = true;
