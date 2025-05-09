@@ -1,6 +1,5 @@
 { config, pkgs, pkgs-unstable, lib, inputs, userSettings, ... }:
 
-
 {
   imports = [
     ./modules/sh.nix
@@ -58,7 +57,7 @@
 
     # The home.packages option allows you to install Nix packages into your
     # environment.
-    home.packages = 
+    home.packages =
       # Stable Packages
       (with pkgs; [
 
@@ -82,6 +81,9 @@
         #atuin
         eza bat broot fd yazi 
         ripgrep just zoxide zellij xclip
+
+        # Internet
+        freetube thunderbird
 
         # TODO configure other CLI tools
         yt-dlp #spelling?
@@ -118,11 +120,6 @@
         #azahar # 3DS Emulator
         #azahar # does not install - name is right
 
-        # Internet
-        google-chrome
-        chromium 
-        brave 
-        librewolf floorp freetube thunderbird
 
         # Images
         inkscape blender krita 

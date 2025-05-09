@@ -1,11 +1,26 @@
-
 { config, pkgs, pkgs-unstable, lib, inputs, userSettings, ... }:
 
 {
   config = {
+    home.packages = 
+    # Stable Packages
+    (with pkgs; [
+      # Internet
+      google-chrome
+      chromium 
+      brave 
+      librewolf 
+      floorp 
+    ]) # (with pkgs;
+    ++
+    # Unstable Packages
+    (with pkgs-unstable; [
+    ]) # (with pkgs-unstable;
+    # Unstable Packages
+    ; # home.packages
+
     programs.firefox = {
       enable = true;
-      
       profiles.jolitp = {
         # bookmarks sync is done using floccus browser extension & NextCloud bookmarks
         #https://floccus.org/
@@ -78,6 +93,5 @@
         ]; # extensions
       }; # profiles.jolitp = {
     }; # programs.firefox = {
-
-  } # config
+  }; # config
 }
