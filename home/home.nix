@@ -1,169 +1,17 @@
-{ config, pkgs, pkgs-unstable, lib, inputs, ... }:
+{ config, pkgs, pkgs-unstable, lib, inputs, userSettings, ... }:
 
-# TODO manage configurations with chezmoi
-# TODO create a nextcloud-client systemd service
-#
-# TODO install ptgui
-#  @nh2/ptgui-pro.nix
-#  https://gist.github.com/nh2/5d35a0a85948882baf992b6512290461
-
-# TODO configure neovim
-#   DONE configure lazyvim outside of nix
-#     TODO setup git and github repo
-#   TODO find other plugins
-#   https://github.com/rockerBOO/awesome-neovim
-#     TODO oil
-#     TODO obsidian
-#     TODO Better Diagnostic Virtual Text
-#     TODO lsp_lines.nvim
-#     TODO markid - highlight same-name identifiers with the same color
-#     TODO tree-sitter-just - Tree-sitter grammar for Justfiles
-#     TODO nvim-neoclip.lua - Clipboard manager neovim plugin with telescope integration 
-#     TODO y3owk1n/undo-glow.nvim - Animated glow/highlight effects for Neovim operation
-#        s (undo, redo, yank, paste, etc.) with fully customizable animations and appearance.
-#     TODO comment
-#     TODO ...
-#
-# TODO add banana cursor
-#
-# TODO break home.nix into modules
-#   TODO hosts
-#     TODO hardware
-#   TODO systemd services
-#   TODO home manager users
-#     TODO user-space applications
-#       TODO gui programs
-#       TODO cli programs
-#     TODO themes
-#
-# TODO configure chrome
-#   TODO add profile [?]
-#   TODO add extensions
-#   TODO add settings
-#
-# TODO configure shell
-#   TODO bash
-#   TODO zsh
-#   https://www.youtube.com/watch?v=bTLYiNvRIVI
-#   https://github.com/ChristianChiarulli/machfiles
-#     TODO suggestions
-#     TODO completions
-#     TODO syntax highlight
-#     TODO vi mode
-#   TODO fish
-#   TODO nushell
-#
-# TODO add settings to firefox
-#   TODO pres middle mouse button to move page
-#   TODO sidebar at the right side
-#   TODO page zoom 150%
-#   TODO configurar toolbar
-#
-# TODO configure git in home manager
-# TODO configure espanso
-# TODO add and configure stylix
-#   TODO mouse pointer is huge in gtk apps
-#
-# TODO configure games
-#  TODO lutris
-#  TODO antimicrox
-#  TODO install azahar
-#  TODO lime3ds
-#  TODO configure freetube
-#    TODO with the exported profiles
-#  TODO configure NextCloud Desktop
-#  TODO configure qbittorrent
-#  TODO configure keepassxc
-#
-#  TODO configure vscodium
-#    TODO settings
-#    TODO extensions
-#      TODO adblock plus
-#      TODO adblock
-#      TODO languagetool
-#      TODO aliexpress - search by image [?] (2x)
-#      TODO better pathofexile trading
-#      TODO darkreader
-#      TODO floccus
-#      TODO group downlaod files by hostname
-#      TODO mobile view switcher
-#      TODO single file
-#      TODO ublock origin lite
-#      TODO video downloader - mpmux
-#      TODO vimeo tm video downloader pro
-#      TODO web signer (softplan)
-#    TODO profiles for each language
-#    TODO snippets [?]
-#
-#  TODO add auto update [?]
-#  TODO add auto cleanup [?]
-#
-#  TODO configure darktable
-#  TODO configure discrod
-#  TODO configure dropbox
-#  TODO configure haruna player
-#  TODO configure input-remapper
-#  TODO configure junction
-#  TODO configure libreoffice
-#    TODO language portutues brasil
-#    TODO languagetool
-#  TODO configure mpv
-#  TODO configure newsflash [?]
-#  TODO configure piper
-#  TODO confiture retroarch
-#  TODO configure scrcpy
-#  TODO configure solaar
-#  TODO configure thunderbird
-#  TODO configure tor
-#  TODO configure wezterm
-#
-#  TODO configure KDE
-#    TODO KDE system settings
-#      TODO appearance
-#        TODO theme
-#        TODO color
-#        TODO fonts
-#      TODO workspace behavior
-#        TODO desktop effects
-#        TODO screen edges
-#        TODO screen locking
-#        TODO virtual desktop
-#      TODO window manager
-#        TODO task switcher
-#      TODO shortcuts
-#        TODO flameshot
-#        TODO krunner
-#        TODO yakuake
-#        TODO activity switching
-#        TODO keyboard layout switching
-#      TODO startup and shutdown
-#        TODO login screen
-#        TODO backgroud services
-#      TODO search
-#        TODO plasma search
-#      TODO applications
-#        TODO locations
-#        TODO default appliacations
-#      TODO display and monitor
-#        TODO night color
-#      TODO software update
-#      TODO titlebar buttons
-#      TODO 
-#    TODO configure dolphin
-#    TODO configure pannels
-#    TODO configure wallpaper
 
 {
   imports = [
-    ./sh.nix
-    ./cli.nix
+    ./modules/sh.nix
+    ./modules/cli.nix
   ]; # imports
 
   config = {
     news.display = "silent";
 
-    home.username = "jolitp";
-    home.homeDirectory = "/home/jolitp";
+    home.username = "${userSettings.username}";
+    home.homeDirectory = "/home/${userSettings.username}";
     
     targets.genericLinux.enable = true; # enable this on non-nixos 
 
@@ -412,7 +260,7 @@
   #
   #  home.file.".config/hypr/hyperland.conf".source = ./hyperland.conf;
       #".bashrc".source = lib.mkDefault ./home/config/bash/.bashrc;
-      ".profile".source = lib.mkDefault ./home/config/bash/.profile;
+      ".profile".source = lib.mkDefault ./config/bash/.profile;
     };
 
     # Home Manager can also manage your environment variables through 'home.sessionVariables'. 
@@ -436,8 +284,8 @@
     # Git user's configuration
     programs.git = {
       enable = true;
-      userName = "jolitp";
-      userEmail = "jolitp@gmail.com";
+      userName = "${userSettings.username}";
+      userEmail = "${userSettings.email}";
       extraConfig = {
         init.defaultBranch = "main";
       };
@@ -451,7 +299,7 @@
       enable = true;
       #clean.enable = true;
       #clean.extraArgs = "--keep-since 7d --keep 10";
-      flake = "/home/jolitp/dotfiles";
+      flake = "/home/${userSettings.username}/dotfiles";
     };
 
     programs.alacritty = {
@@ -474,7 +322,7 @@
         # bookmarks sync is done using floccus browser extension & NextCloud bookmarks
         #https://floccus.org/
 
-        #bookmarks.configfile = ./home/config/firefox/firefox-bookmarks.html;
+        #bookmarks.configfile = ./config/firefox/firefox-bookmarks.html;
         #bookmarks = [
         #  {
               #     name = "MyNisOS";
@@ -561,3 +409,156 @@
 
   }; # config
 }
+
+# TODO manage configurations with chezmoi
+# TODO create a nextcloud-client systemd service
+#
+# TODO install ptgui
+#  @nh2/ptgui-pro.nix
+#  https://gist.github.com/nh2/5d35a0a85948882baf992b6512290461
+
+# TODO configure neovim
+#   DONE configure lazyvim outside of nix
+#     TODO setup git and github repo
+#   TODO find other plugins
+#   https://github.com/rockerBOO/awesome-neovim
+#     TODO oil
+#     TODO obsidian
+#     TODO Better Diagnostic Virtual Text
+#     TODO lsp_lines.nvim
+#     TODO markid - highlight same-name identifiers with the same color
+#     TODO tree-sitter-just - Tree-sitter grammar for Justfiles
+#     TODO nvim-neoclip.lua - Clipboard manager neovim plugin with telescope integration 
+#     TODO y3owk1n/undo-glow.nvim - Animated glow/highlight effects for Neovim operation
+#        s (undo, redo, yank, paste, etc.) with fully customizable animations and appearance.
+#     TODO comment
+#     TODO ...
+#
+# TODO add banana cursor
+#
+# TODO break home.nix into modules
+#   TODO hosts
+#     TODO hardware
+#   TODO systemd services
+#   TODO home manager users
+#     TODO user-space applications
+#       TODO gui programs
+#       TODO cli programs
+#     TODO themes
+#
+# TODO configure chrome
+#   TODO add profile [?]
+#   TODO add extensions
+#   TODO add settings
+#
+# TODO configure shell
+#   TODO bash
+#   TODO zsh
+#   https://www.youtube.com/watch?v=bTLYiNvRIVI
+#   https://github.com/ChristianChiarulli/machfiles
+#     TODO suggestions
+#     TODO completions
+#     TODO syntax highlight
+#     TODO vi mode
+#   TODO fish
+#   TODO nushell
+#
+# TODO add settings to firefox
+#   TODO pres middle mouse button to move page
+#   TODO sidebar at the right side
+#   TODO page zoom 150%
+#   TODO configurar toolbar
+#
+# TODO configure git in home manager
+# TODO configure espanso
+# TODO add and configure stylix
+#   TODO mouse pointer is huge in gtk apps
+#
+# TODO configure games
+#  TODO lutris
+#  TODO antimicrox
+#  TODO install azahar
+#  TODO lime3ds
+#  TODO configure freetube
+#    TODO with the exported profiles
+#  TODO configure NextCloud Desktop
+#  TODO configure qbittorrent
+#  TODO configure keepassxc
+#
+#  TODO configure vscodium
+#    TODO settings
+#    TODO extensions
+#      TODO adblock plus
+#      TODO adblock
+#      TODO languagetool
+#      TODO aliexpress - search by image [?] (2x)
+#      TODO better pathofexile trading
+#      TODO darkreader
+#      TODO floccus
+#      TODO group downlaod files by hostname
+#      TODO mobile view switcher
+#      TODO single file
+#      TODO ublock origin lite
+#      TODO video downloader - mpmux
+#      TODO vimeo tm video downloader pro
+#      TODO web signer (softplan)
+#    TODO profiles for each language
+#    TODO snippets [?]
+#
+#  TODO add auto update [?]
+#  TODO add auto cleanup [?]
+#
+#  TODO configure darktable
+#  TODO configure discrod
+#  TODO configure dropbox
+#  TODO configure haruna player
+#  TODO configure input-remapper
+#  TODO configure junction
+#  TODO configure libreoffice
+#    TODO language portutues brasil
+#    TODO languagetool
+#  TODO configure mpv
+#  TODO configure newsflash [?]
+#  TODO configure piper
+#  TODO confiture retroarch
+#  TODO configure scrcpy
+#  TODO configure solaar
+#  TODO configure thunderbird
+#  TODO configure tor
+#  TODO configure wezterm
+#
+#  TODO configure KDE
+#    TODO KDE system settings
+#      TODO appearance
+#        TODO theme
+#        TODO color
+#        TODO fonts
+#      TODO workspace behavior
+#        TODO desktop effects
+#        TODO screen edges
+#        TODO screen locking
+#        TODO virtual desktop
+#      TODO window manager
+#        TODO task switcher
+#      TODO shortcuts
+#        TODO flameshot
+#        TODO krunner
+#        TODO yakuake
+#        TODO activity switching
+#        TODO keyboard layout switching
+#      TODO startup and shutdown
+#        TODO login screen
+#        TODO backgroud services
+#      TODO search
+#        TODO plasma search
+#      TODO applications
+#        TODO locations
+#        TODO default appliacations
+#      TODO display and monitor
+#        TODO night color
+#      TODO software update
+#      TODO titlebar buttons
+#      TODO 
+#    TODO configure dolphin
+#    TODO configure pannels
+#    TODO configure wallpaper

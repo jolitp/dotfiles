@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ config, pkgs, systemSettings, userSettings, ... }:
 
 {
   imports =
@@ -22,7 +22,7 @@
     programs.zsh.enable = true;
     programs.fish.enable = true;
 
-    networking.hostName = "nixos-vm"; # Define your hostname.
+    networking.hostName = "${systemSettings.hostname}"; # Define your hostname.
     # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
     # Configure network proxy if necessary
@@ -33,7 +33,7 @@
     networking.networkmanager.enable = true;
 
     # Set your time zone.
-    time.timeZone = "America/Sao_Paulo";
+    time.timeZone = "${systemSettings.timezone}";
 
     # Select internationalisation properties.
     i18n.defaultLocale = "en_US.UTF-8";
@@ -89,7 +89,7 @@
     # Define a user account. Don't forget to set a password with ‘passwd’.
     users.users.jolitp = {
       isNormalUser = true;
-      description = "jolitp";
+      description = "${userSettings.username}";
       extraGroups = [ "networkmanager" "wheel" ];
       packages = with pkgs; [
         kdePackages.kate
