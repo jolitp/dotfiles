@@ -104,7 +104,7 @@
 
       nixos-vm = lib.nixosSystem {
         inherit system;
-        modules = [ ./configuration.nix ];
+        modules = [ ./hosts/laptop/configuration.nix ];
       }; # nixos-vm
 
       speciaArgs = {
