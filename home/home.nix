@@ -6,6 +6,7 @@
     ./modules/cli.nix
     ./modules/gui/web_browsers.nix
     ./modules/gui/terminals.nix
+    ./modules/gui/games.nix
   ]; # imports
 
   config = {
@@ -113,7 +114,7 @@
         resources espanso obsidian bazecor redshift
 
         # Games
-        lutris antimicrox lime3ds
+        antimicrox lime3ds
         # citra # not found - install through flatpak?
         #azahar # 3DS Emulator
         #azahar # does not install - name is right
@@ -232,10 +233,10 @@
         winetricks
 
         # X
-        xvkbd
+        #xvkbd # virtual keyboard for x11
 
         # Y
-        yakuake
+        yakuake # does not have a configuration
 
         # Z
         zoom zotero zig
