@@ -23,10 +23,14 @@
     # E
     # F
     # G
+    programs.ghostty.enable = true;
+
     # H
     # I
     # J
     # K
+    programs.kitty.enable = true;
+
     # L
     # M
     # N
@@ -39,6 +43,7 @@
     # U
     # V
     # W
+    programs.wezterm.enable = true;
     # X
     # Y
     # Z

@@ -166,7 +166,6 @@
         filelight fluent-reader fontforge
 
         # G
-        ghostty
 
         # H
         hakuneko handbrake haruna hexchat
@@ -230,7 +229,7 @@
         vlc
 
         # W
-        wezterm winetricks
+        winetricks
 
         # X
         xvkbd
