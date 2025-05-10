@@ -4,7 +4,8 @@
   imports = [
     ./modules/sh.nix
     ./modules/cli.nix
-    ./modules/web_browsers.nix
+    ./modules/gui/web_browsers.nix
+    ./modules/gui/terminals.nix
   ]; # imports
 
   config = {
