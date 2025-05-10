@@ -77,10 +77,7 @@
         nixd # nix language server
         #nvf # neovim configuration and plugin manager - installed in a different way
         
-        #oh-my-posh
-        
         #atuin
-        
 
         bc # calculator # does not have configuration, enable option errors out
         doublecmd # double commander - midnight-commander alternative # does not have a configuration
@@ -109,15 +106,23 @@
         boxbuddy devbox bottles
         # warehouse # not found - install through flatpak
         # flatseal # not found - install through flatpak
+        protontricks
+        winetricks
 
         # GUIs
         resources espanso obsidian bazecor redshift
 
         # Games
-        antimicrox lime3ds
+        lutris # does not have a configuration
+        antimicrox # does not have a configuration
+        lime3ds # not found? no error? deprecated
+        ryujinx # does not have a configuration
+
+        # TODO get them from other means
         # citra # not found - install through flatpak?
         #azahar # 3DS Emulator
         #azahar # does not install - name is right
+        #azahar # does not have a configuration
 
         # Internet
         freetube thunderbird
@@ -172,7 +177,7 @@
         hakuneko handbrake haruna hexchat
 
         # I
-        imagemagick input-remapper
+        imagemagick
         #irust # Rust REPL # leave it for a specific shell
 
         # J
@@ -201,14 +206,15 @@
         # P
         # penpot-desktop # not found - name is right
         # photoscape # not found - does not exist in nixpkgs
-        piper protontricks
+        piper
 
         # Q
         qpwgraph qdirstat qsynth
         #quiterss # does not build - insecure library + no compiling
 
         # R
-        reaper remmina retroarch
+        reaper remmina
+        retroarch # does not have a configuration
 
         # S
         scrcpy # android screen mirror
@@ -230,7 +236,6 @@
         vlc
 
         # W
-        winetricks
 
         # X
         #xvkbd # virtual keyboard for x11
@@ -239,7 +244,8 @@
         yakuake # does not have a configuration
 
         # Z
-        zoom zotero zig
+        zoom zotero
+        zig # was needed for neovim to stop showing errors
 
       ]) # (with pkgs;
       # Stable Packages

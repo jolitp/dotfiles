@@ -11,16 +11,18 @@
     # G
     # H
     # I
+    #programs.input-remapper.enable=true; # not found (name is right)
     # J
     # K
     # L
-    programs.lutris.enable = true;
+    #programs.lutris.enable = true; # does not have a configuration
     # M
     # N
     # O
     # P
     # Q
     # R
+    #programs.retroarch.enable = true; # does not have a configuration
     # S
     # T
     # U
