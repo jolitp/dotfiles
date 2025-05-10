@@ -83,7 +83,7 @@
         ];
       }; # nixos-vm
 
-      speciaArgs = {
+      specialArgs = {
         inherit system;
         #inherit pkgs;
         inherit pkgs-unstable;
