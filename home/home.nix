@@ -69,47 +69,44 @@
         # # fonts?
         # (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
 
-        chezmoi
-        cheat
+        chezmoi # dotfiles manager
         nh # nix helper
-        alejandra
-        nixd
+        alejandra # nix formatter
+        nixd # nix language server
         #nvf # neovim configuration and plugin manager - installed in a different way
-        lazygit fzf
+        
         #oh-my-posh
-        starship
+        
         #atuin
-        eza bat broot fd yazi 
-        ripgrep just zoxide zellij xclip
+        
 
-        # Internet
-        freetube thunderbird
+        bc # calculator # does not have configuration, enable option errors out
+        doublecmd # double commander - midnight-commander alternative # does not have a configuration
+        cheat # command line cheat sheets # does not have a configuration
+        dust # does not have configuration, enable option errors out
+        entr # folder watcher # calculator # does not have configuration, enable option errors out
+        ffmpeg # does not have configuration, enable option errors out
+        just # does not have configuration, enable option errors out
+        lm_sensors # does not have configuration, enable option errors out
+        ripgrep-all # does not have configuration, enable option errors out
+        speedtest # does not have configuration, enable option errors out
+        s-tui # TUI CPU stress and monitoring utility # does not heave a configureation
+        tldr # does not have configuration, enable option errors out
+        visidata # does not have configuration, enable option errors out
+        xclip # does not have configuration, enable option errors out
+        powertop # errors when configured
 
-        # TODO configure other CLI tools
-        yt-dlp #spelling?
-        tldr thefuck 
-        helix ripgrep-all 
-        lm_sensors speedtest ranger 
-        lf nnn ffmpeg
         # cal # not found
-        # xpdf # pdfimages cli program and more # removed as insecure
-        s-tui # TUI CPU stress and monitoring utility
+        # xpdf # pdfimages cli program and more # removed as insecure # find alternative
         # grub-reboot # not found
-        doublecmd # double commander - midnight-commander alternative
-        boxxy blesh tig visidata jq 
-	      #git-annex 
-	      direnv fastfetch powertop dust btop
-        bc # calculator
-        entr # folder watcher
         # mojo # website scrapper # not found
-        feh # image viewer
         # qcalc # not found
 
         # supporting applications for GUIs
         flatpak gearlever
-        # warehouse # not found - install through flatpak?
-        # flatseal # not found - install through flatpak?
         boxbuddy devbox bottles
+        # warehouse # not found - install through flatpak
+        # flatseal # not found - install through flatpak
 
         # GUIs
         resources espanso obsidian bazecor redshift
@@ -120,6 +117,8 @@
         #azahar # 3DS Emulator
         #azahar # does not install - name is right
 
+        # Internet
+        freetube thunderbird
 
         # Images
         inkscape blender krita 
@@ -143,55 +142,74 @@
         czkawka vscodium
         #vscode
 
+        # A
         actiona anki anydesk 
 	      #rustdesk 
 	      appflowy autokey
         
+        # B
         birdtray bleachbit
 
+        # C
         # cohesion # does not exist in nixpkgs
         cheese corectrl
 
+        # D
         # disks # Gnome - will not work in Nix
         darktable discord dropbox
 
+        # E
         eyedropper
 
+        # F
         filelight fluent-reader fontforge
 
+        # G
         ghostty
 
+        # H
         hakuneko handbrake haruna hexchat
 
+        # I
         imagemagick input-remapper
         #irust # Rust REPL # leave it for a specific shell
 
+        # J
         jitsi-meet-electron # video conference client
         junction # application chooser
 
+        # K
         # kdeconnect-kde # does not install - name is wrong
         # kiview # only on flatpak
         kdiskmark kleopatra # certificate manager
         
+        # L
         libreoffice libresprite
         lmms localsend losslesscut-bin
         # logseq # unsafe for using old Electron version
 
+        # M
         mpv mediainfo
 
+        # N
         newsflash
 
+        # O
         openrgb
 
+        # P
         # penpot-desktop # not found - name is right
         # photoscape # not found - does not exist in nixpkgs
         piper protontricks
 
+        # Q
         qpwgraph qdirstat qsynth
         #quiterss # does not build - insecure library + no compiling
 
+        # R
         reaper remmina retroarch
 
+        # S
         scrcpy # android screen mirror
         scantailor # post processing for scanned pages
         skanlite # image scaling
@@ -199,20 +217,27 @@
         szyszka # bulk file renamer
         screenkey skanpage solaar
 
+        # T
         tenacity thunderbird tiled tor
 
+        # U
         upscayl
 
+        # V
         # vidcutter # does not install - name is right
         # vir-manager # does not install - name is right
         vlc
 
+        # W
         wezterm winetricks
 
+        # X
         xvkbd
 
+        # Y
         yakuake
 
+        # Z
         zoom zotero zig
 
       ]) # (with pkgs;

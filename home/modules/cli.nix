@@ -2,64 +2,8 @@
 
 {
   config = {
-    programs.fzf = {
-      enable = true;
-      enableBashIntegration = true;
-    }; # programs.fzf
-
-    programs.eza = {
-      enable = true;
-      #icons = "always";
-      git = true;
-    }; # programs.eza
-
-    programs.bat = {
-      enable = true;
-      config = {
-        pager = "less -FR";
-        theme = "Nord";
-      }; # config
-    }; # programs.bat
-
-    programs.broot = {
-      enable = true;
-      settings = {
-        ext-colors = {
-          nix = "cyan";
-	      }; # ext-colors
-      }; # settings
-    }; #programs.broot
-
-    programs.fd.enable = true;
-    programs.yazi.enable = true;
-    programs.ripgrep.enable = true;
-
-    programs.zoxide = {
-      enable = true;
-      enableBashIntegration = true;
-    }; # programs.zoxide
-
-    # Git user's configuration
-    programs.git = {
-      enable = true;
-      userName = "${userSettings.username}";
-      userEmail = "${userSettings.email}";
-      extraConfig = {
-        init.defaultBranch = "main";
-      }; # extraConfig
-    }; # programs.git
-
-    programs.nh = {
-      enable = true;
-      flake = "/home/${userSettings.username}/dotfiles";
-
-      # needs to be set in the nixos module
-      # does not work in the home-manager module
-      # it errors out with null
-      #clean.enable = true;
-      #clean.extraArgs = "--keep-since 7d"; 
-    }; # programs.nh
-
+    # A
+    # TODO move alacritty to a terminals.nix module
     programs.alacritty = {
       enable = true;
       settings = {
@@ -72,7 +16,124 @@
         }; # font
       }; # settings
     }; # programs.alacritty
+
+    # B
+    programs.bat = {
+      enable = true;
+      config = {
+        pager = "less -FR";
+        theme = "Nord";
+      }; # config
+    }; # programs.bat
+
+    programs.boxxy.enable = true; # Puts bad Linux applications in a box with only their files
+
+    programs.broot = {
+      enable = true;
+      settings = {
+        ext-colors = {
+          nix = "cyan";
+	      }; # ext-colors
+      }; # settings
+    }; #programs.broot
+    programs.btop.enable = true;
+
+    # C
+    # D
+    programs.direnv.enable = true;
+
+    # E
+    programs.eza = {
+      enable = true;
+      #icons = "always";
+      git = true;
+    }; # programs.eza
     
+    # F
+    programs.fastfetch.enable = true;
+    programs.feh.enable = true;
+    programs.fd.enable = true;
+
+    programs.fzf = {
+      enable = true;
+      enableBashIntegration = true;
+    }; # programs.fzf
+
+    # G
+    # Git user's configuration
+    programs.git = {
+      enable = true;
+      userName = "${userSettings.username}";
+      userEmail = "${userSettings.email}";
+      extraConfig = {
+        init.defaultBranch = "main";
+      }; # extraConfig
+    }; # programs.git
+
+    # H
+    programs.helix = {
+      enable = true;
+    };
+    programs.htop.enable = true;
+    # I
+    # J
+    programs.jq.enable = true;
+    # - The option definition `programs.just.enable' in `/nix/store/(...)-source/home/modules/c…
+    #   'program.just' is deprecated, simply add 'pkgs.just' to 'home.packages' instead.
+    #programs.just = {
+    #  enable = true;
+    #};
+    # K
+    # L
+    programs.lazygit = {
+      enable = true;
+    };
+    programs.lf.enable = true;
+    # M
+    # N
+    programs.nh = {
+      enable = true;
+      flake = "/home/${userSettings.username}/dotfiles";
+
+      # needs to be set in the nixos module
+      # does not work in the home-manager module
+      # it errors out with null
+      #clean.enable = true;
+      #clean.extraArgs = "--keep-since 7d"; 
+    }; # programs.nh
+    programs.nnn.enable = true;
+
+    programs.neovim = {
+      enable = true;
+      
+      vimAlias = true;
+      viAlias = true;
+    }; # programs.neovim
+
+    # O
+    # P
+    # programs.powertop.enable = true; # error
+
+    # Q
+    # R
+    programs.ranger.enable = true;
+    programs.ripgrep.enable = true;
+
+    # S
+    programs.starship = {
+      enable = true;
+    };
+    # T
+    #programs.tldr.enable = true; # does not have configuration
+    # U
+    # V
+    # W
+    # X
+    # Y
+    programs.yazi.enable = true;
+    programs.yt-dlp.enable = true;
+    
+    # Z
     programs.zellij = {
       enable = true;
       settings = {
@@ -84,11 +145,9 @@
       }; # settings
     }; # programs.zellij
 
-    programs.neovim = {
+    programs.zoxide = {
       enable = true;
-      
-      vimAlias = true;
-      viAlias = true;
-    }; # programs.neovim
+      enableBashIntegration = true;
+    }; # programs.zoxide
   }; # config
 }
