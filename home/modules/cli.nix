@@ -51,9 +51,13 @@
 
     programs.nh = {
       enable = true;
-      #clean.enable = true;
-      #clean.extraArgs = "--keep-since 7d --keep 10";
       flake = "/home/${userSettings.username}/dotfiles";
+
+      # needs to be set in the nixos module
+      # does not work in the home-manager module
+      # it errors out with null
+      #clean.enable = true;
+      #clean.extraArgs = "--keep-since 7d"; 
     }; # programs.nh
 
     programs.alacritty = {
