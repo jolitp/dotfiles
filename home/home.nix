@@ -119,10 +119,10 @@
         redshift
 
         # Games
-        lutris # does not have a configuration
-        antimicrox # does not have a configuration
-        lime3ds # not found? no error? deprecated
-        ryujinx # does not have a configuration
+        #lutris # does not have a configuration
+        #antimicrox # does not have a configuration
+        #lime3ds # not found? no error? deprecated
+        #ryujinx # does not have a configuration
 
         # TODO get them from other means
         # citra # not found - install through flatpak?
