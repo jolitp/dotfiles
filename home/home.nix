@@ -4,6 +4,7 @@
   imports = [
     ./modules/sh.nix
     ./modules/cli.nix
+    ./modules/gui
     ./modules/gui/web_browsers.nix
     ./modules/gui/terminals.nix
     ./modules/gui/games.nix
@@ -108,9 +109,14 @@
         # flatseal # not found - install through flatpak
         protontricks
         winetricks
+        devbox
 
         # GUIs
-        resources espanso obsidian bazecor redshift
+        resources 
+        espanso 
+        obsidian 
+        bazecor 
+        redshift
 
         # Games
         lutris # does not have a configuration
