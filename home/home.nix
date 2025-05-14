@@ -11,6 +11,8 @@
   ]; # imports
 
   config = {
+
+    #home-manager.backupFileExtension = "backup";
     news.display = "silent";
 
     home.username = "${userSettings.username}";

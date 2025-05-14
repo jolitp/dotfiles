@@ -141,7 +141,7 @@
       }; # settings
       enableBashIntegration = true;
       settings = {
-        theme = "nord";
+        theme = "tokyo-night-dark";
       }; # settings
     }; # programs.zellij
 

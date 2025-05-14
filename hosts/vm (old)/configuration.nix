@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, systemSettings, userSettings, stylix, ... }:
+{ config, pkgs, systemSettings, userSettings, ... }:
 
 {
   imports =
@@ -33,81 +33,7 @@
     networking.networkmanager.enable = true;
 
     # Set your time zone.
-    # time.timeZone = "America/Sao_Paulo";
     time.timeZone = "${systemSettings.timezone}";
-
-    stylix.enable = true;
-
-    # Stylix theme
-    stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/tokyo-night-dark.yaml";
-
-    # (alternativelly) create you own theme:
-    # stylix.base16scheme = {
-    #   base00 = "282828";
-    #   base01 = "3c3836";
-    #   base02 = "504945";
-    #   base03 = "665c54";
-    #   base04 = "bdae93";
-    #   base05 = "d5c4a1";
-    #   base06 = "ebdbb2";
-    #   base07 = "fbf1c7";
-    #   base08 = "fb4934";
-    #   base09 = "fe8019";
-    #   base0A = "fabd2f";
-    #   base0B = "b8bb26";
-    #   base0C = "8ec07c";
-    #   base0D = "83a598";
-    #   base0E = "d3869b";
-    #   base0F = "d65d0e";
-    # }
-    
-    # Generate theme from wallpaper
-    # stylix.image = ./my-cool-wallpaper.png;
-    stylix.image = ../../theme/wallpapers/tokyo-night.jpg;
-
-    # You can apply cursors too
-    # but, I will just try uing banana cursor
-
-    # Fonts
-    # stylix.fonts = {
-    #   monospace = {
-    #     package = pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; };
-    #     name = "JetBrainsMono Nerd Font Mono";
-    #   };
-    #   sansSerif = {
-    #     package = pkgs.dejavu_fonts;
-    #     name = "DejaVu Sans";
-    #   };
-    #   serif = {
-    #     package = pkgs.dejavu_fonts;
-    #     name = "DejaVu Serif";
-    #   };
-    # };
-    #
-    # stylix.fonts.sizes = {
-    #   applications = 12;
-    #   terminal = 16;
-    #   desktop = 12;
-    #   popups = 12;
-    # };
-    #
-    # stylix.opacity = {
-    #   applications = 1.0;
-    #   terminal = 1.0;
-    #   desktop = 1.0;
-    #   popups = 1.0;
-    # };
-
-    # NOTE: you can override a specific program's style in home manager using:
-    # stylix.targets.nixvim.enable = false;
-    #
-    # Or, cherry pick a single option:
-    # wayland.windowManager.hyprland.settings.general."cool.active_border" = 
-    #   lib.mkForce "rgb(${config.stylix.base16Scheme.base0E})";
-    # Remember to put lib in the parameter set on the top of the file
-
-    # Theme polarity (light/dark)
-    # stylix.polarity = "dark"; # "light" or "either"
 
     # Select internationalisation properties.
     i18n.defaultLocale = "en_US.UTF-8";
@@ -164,7 +90,6 @@
     users.users.jolitp = {
       isNormalUser = true;
       description = "${userSettings.username}";
-      #description = "jolitp";
       extraGroups = [ "networkmanager" "wheel" ];
       packages = with pkgs; [
         kdePackages.kate
@@ -177,9 +102,6 @@
 
     # Allow unfree packages
     nixpkgs.config.allowUnfree = true;
-
-    # Enable the Flakes feature and the accompanying new nix command-line tool
-    nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
     # List packages installed in system profile. To search, run:
     # $ nix search wget
@@ -201,7 +123,7 @@
     # List services that you want to enable:
 
     # Enable the OpenSSH daemon.
-    services.openssh.enable = true;
+    # services.openssh.enable = true;
 
     # Open ports in the firewall.
     # networking.firewall.allowedTCPPorts = [ ... ];
@@ -216,5 +138,7 @@
     # Before changing this value read the documentation for this option
     # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
     system.stateVersion = "24.11"; # Did you read the comment?
+
+    nix.settings.experimental-features = [ "nix-command" "flakes" ];
   };
 }

@@ -15,6 +15,14 @@
       inputs.nixpkgs.follows = "nixpkgs";
     }; # firefox-addons
 
+    stylix = {
+      url = "github:danth/stylix/release-24.11";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        home-manager.follows = "home-manager";
+      };
+    };
+
   }; # inputs
 
   outputs = { 
@@ -22,6 +30,7 @@
       nixpkgs, 
       nixpkgs-unstable, 
       home-manager, 
+      stylix,
       #nvf, 
       ... 
     }@inputs:
@@ -30,7 +39,7 @@
       # ---- SYSTEM SETTINGS ---- #
       systemSettings = {
         system_architecture = "x86_64-linux"; # system architecture
-        hostname = "laptop"; # hostname
+        hostname = "vm"; # hostname
         #profile = "personal"; # select a profile defined from my profiles directory
         timezone = "America/Sao_Paulo"; # select timezone
         locale = "en_US.UTF-8"; # select locale
@@ -76,20 +85,22 @@
 
     # System Configurations
     nixosConfigurations = {
-      nixos-vm = lib.nixosSystem {
+      vm = lib.nixosSystem {
         inherit system;
-        modules = [ 
-          ./hosts/${systemSettings.hostname}/configuration.nix
+        modules = [
+           # ./hosts/${systemSettings.hostname}/configuration.nix
+           ./hosts/vm/configuration.nix
+           stylix.nixosModules.stylix
         ];
-      }; # nixos-vm
+        specialArgs = {
+          inherit system;
+          #inherit pkgs;
+          inherit pkgs-unstable;
+          inherit systemSettings;
+          inherit userSettings;
+        };
+      }; # vm
 
-      specialArgs = {
-        inherit system;
-        #inherit pkgs;
-        inherit pkgs-unstable;
-        inherit systemSettings;
-        inherit userSettings;
-      };
     }; # nixosConfigurations
 
     # Home Manager Configurations
@@ -102,12 +113,12 @@
 
         modules = [ 
         ./home/home.nix
-	      ]; # modules
+        ]; # modules
         
         extraSpecialArgs = {
           #inherit pkgs;
           inherit pkgs-unstable;
-	        inherit inputs;
+          inherit inputs;
           inherit userSettings;
         };
       }; # jolitp = home-manager.lib.homeManagerConfiguration
