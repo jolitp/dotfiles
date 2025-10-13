@@ -12,11 +12,13 @@
 
   config = {
 
-    #home-manager.backupFileExtension = "backup";
     news.display = "silent";
 
     home.username = "${userSettings.username}";
     home.homeDirectory = "/home/${userSettings.username}";
+
+    # error: The option `programs.home-manager.backupFileExtension' does not exist. Definition values:
+    #programs.home-manager.backupFileExtension = "backup";
     
     targets.genericLinux.enable = true; # enable this on non-nixos 
 
@@ -34,6 +36,24 @@
         allowUnfree = true;
       }; # config
     }; # nixpkgs
+
+    # fixes:
+    # Existing file '/home/jolitp/.gtkrc-2.0' is in the way of
+    # '/nix/store/z80n1f627ncp6hgcwrjydrilp4na1412-home-manager-files/.gtkrc-2.0', 
+    # will be moved to '/home/jolitp/.gtkrc-2.0.backup
+    #
+    # error:
+    # ┃        error: The option `programs.plasma' does not exist. Definition values:
+    #     - In `/nix/store/4z7dsckrpxvq53ja5f5cgams17h2v2zy-source/home/home.nix':
+    #         {
+    #           configFile = {
+    #             kded5rc = {
+    #               Module-gtkconfig = {
+    #                 autoload = false;
+    #         ...
+    #programs.plasma.configFile.kded5rc = {
+    # "Module-gtkconfig"."autoload" = false;
+    #};
 
     #nixpkgs.config.allowUnfreePredicate = with pkgs.lib; pkg: builtins.elem (lib.getName pkg) [
     nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
@@ -150,6 +170,7 @@
         # godot-engine - better leave it for specific shell
         # godots # godot version manager - does not exist in nixpkgs
         # gdevelop # does not install - name is right
+        aseprite
 
         # misc
         normcap # Optical Caracter Recognition (OCR)
