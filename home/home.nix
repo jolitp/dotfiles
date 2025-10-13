@@ -54,6 +54,7 @@
 
     nixpkgs.config.permittedInsecurePackages = [
 	    "electron-27.3.11"
+      "electron-32.3.3"
 	    #"qtwebkit-5.212.0-alpha4"
 	    "xpdf-4.05"
     ]; # nixpkgs.config.permittedInsecurePackages
@@ -106,7 +107,8 @@
 
         # supporting applications for GUIs
         flatpak gearlever
-        boxbuddy devbox bottles
+        boxbuddy devbox 
+        #bottles
         # warehouse # not found - install through flatpak
         # flatseal # not found - install through flatpak
         protontricks
@@ -136,11 +138,13 @@
         freetube thunderbird
 
         # Images
-        inkscape blender krita 
-        flameshot converseen gimp
+        inkscape blender #krita 
+        flameshot 
+        # converseen 
+        gimp
 
         # Videos
-        kdenlive avidemux obs-studio
+        kdenlive avidemux #obs-studio
 
         # Game Dev
         # godot-engine - better leave it for specific shell
@@ -182,7 +186,8 @@
         # G
 
         # H
-        hakuneko handbrake haruna hexchat
+        hakuneko handbrake 
+        #haruna hexchat
 
         # I
         imagemagick
@@ -203,7 +208,9 @@
         # logseq # unsafe for using old Electron version
 
         # M
-        mpv mediainfo
+        #mpv 
+        mediainfo
+        # morgen # electron error
 
         # N
         newsflash
