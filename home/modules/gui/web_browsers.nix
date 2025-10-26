@@ -59,7 +59,7 @@
         ''; # userChrome = # CSS to change the browser theme
 
         #extensions = with inputs.firefox-addons.packages."x86_64-linux"; [
-        extensions = with pkgs.nur.repos.rycee.firefox-addons; [
+        extensions.packages = with pkgs.nur.repos.rycee.firefox-addons; [
           darkreader
           ublock-origin
           languagetool

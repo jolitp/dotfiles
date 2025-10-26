@@ -17,9 +17,7 @@
     home.username = "${userSettings.username}";
     home.homeDirectory = "/home/${userSettings.username}";
 
-    # error: The option `programs.home-manager.backupFileExtension' does not exist. Definition values:
-    #programs.home-manager.backupFileExtension = "backup";
-    
+   
     targets.genericLinux.enable = true; # enable this on non-nixos 
 
     # You should not change this value, 
@@ -30,7 +28,7 @@
 
     nixpkgs = {
       overlays = [
-        inputs.nur.overlay
+        inputs.nur.overlays.default
       ]; # overlays
       config = {
         allowUnfree = true;
@@ -75,6 +73,7 @@
     nixpkgs.config.permittedInsecurePackages = [
 	    "electron-27.3.11"
       "electron-32.3.3"
+      "mbedtls-2.28.10" # What depend on this?
 	    #"qtwebkit-5.212.0-alpha4"
 	    "xpdf-4.05"
     ]; # nixpkgs.config.permittedInsecurePackages
@@ -87,7 +86,29 @@
       # Stable Packages
       (with pkgs; [
 
-        nerdfonts fira-code fira-code-symbols
+        # error: nerdfonts has been separated into individual font packages under the namespace nerd-fonts.
+        fira-code
+        fira-code-symbols
+        nerd-fonts.fira-code
+        # nerd-fonts.fira-code-symbols
+
+        # Cintiq 16 tools
+        # ddcutil # needs sudo, needs to be installed system-wide
+        brightnessctl
+        # xrandr # for X11 only
+
+        # (nerdfonts.override {
+        #   fonts = [
+        #     "FiraCode"
+        #     "JetBrainsMono"
+        #     "CascadiaCode"
+        #     "CodeNewRoman"
+        #   ];
+        # })
+        
+        # DID NOT WORK AS A FIX
+        # nerdfonts.fira-code fira-code-symbols
+        # nerdfonts.fira-code-symbols
 
         # # It is sometimes useful to fine-tune packages, for example, by applying
         # # overrides. You can do that directly here, just don't forget the
@@ -164,7 +185,9 @@
         gimp
 
         # Videos
-        kdenlive avidemux #obs-studio
+        # error: The top-level kdenlive alias has been removed.
+        # kdenlive 
+        avidemux #obs-studio
 
         # Game Dev
         # godot-engine - better leave it for specific shell
@@ -196,17 +219,21 @@
 
         # D
         # disks # Gnome - will not work in Nix
+        # gnome-disk-utility # does not appear on menu
         darktable discord dropbox
 
         # E
         eyedropper
 
         # F
-        filelight fluent-reader fontforge
+        # error: The top-level filelight alias has been removed.
+        # filelight 
+        fluent-reader fontforge
 
         # G
 
         # H
+        hardinfo2 # system profiler and benchmark
         hakuneko handbrake 
         #haruna hexchat
 
@@ -221,7 +248,11 @@
         # K
         # kdeconnect-kde # does not install - name is wrong
         # kiview # only on flatpak
-        kdiskmark kleopatra # certificate manager
+        kdiskmark 
+        # error: The top-level kleopatra alias has been removed.
+        # kleopatra # certificate manager
+        kdePackages.partitionmanager
+        kanata
         
         # L
         libreoffice libresprite
@@ -249,16 +280,21 @@
         #quiterss # does not build - insecure library + no compiling
 
         # R
-        reaper remmina
+        reaper 
+        remmina
         retroarch # does not have a configuration
+        rustdesk
 
         # S
         scrcpy # android screen mirror
         scantailor # post processing for scanned pages
-        skanlite # image scaling
-        hardinfo # system profiler and benchmark
+        # error: The top-level skanlite alias has been removed.
+        # skanlite # image scaling
         szyszka # bulk file renamer
-        screenkey skanpage solaar
+        screenkey 
+        # error: The top-level skanpage alias has been removed.
+        # skanpage 
+        solaar
 
         # T
         tenacity thunderbird tiled tor
@@ -277,7 +313,8 @@
         #xvkbd # virtual keyboard for x11
 
         # Y
-        yakuake # does not have a configuration
+        # error: The top-level yakuake alias has been removed.
+        # yakuake # does not have a configuration
 
         # Z
         zoom zotero
@@ -345,6 +382,10 @@
 
     # Let Home Manager install and manage itself.
     programs.home-manager.enable = true;
+    # error: The option `programs.home-manager.backupFileExtension' does not exist. Definition values:
+    # error persists after changing it's place
+    # use `... -b backup` command flag
+    # programs.home-manager.backupFileExtension = "backup";
 
   }; # config
 }

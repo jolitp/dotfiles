@@ -107,8 +107,6 @@
      neovim
      git
      ddcutil # Wacom brightness tuning utility
-     nix-output-monitor
-     nvd
   ];
 
   hardware.i2c.enable = true;

@@ -17,17 +17,6 @@
     { device = "/dev/disk/by-uuid/23291ed3-e7c0-4896-9f59-d808208bc086";
       fsType = "ext4";
     };
-  # /home in a separate partition
-  # fileSystems."/home" =
-  #   { device = "/dev/disk/by-label/HOME";
-  #     fsType = "ext4";
-  #   };
-
-  # just mount /mnt/HOME and symlink the home folders (Downloads, Pictures, Videos, etc.)
-  fileSystems."/mnt/HOME" =
-    { device = "/dev/disk/by-label/HOME";
-      fsType = "ext4";
-    };
 
   swapDevices =
     [ { device = "/dev/disk/by-uuid/6711280c-d217-4d4e-ae9f-22fbc227590a"; }

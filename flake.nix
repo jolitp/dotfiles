@@ -2,10 +2,10 @@
   description = "dotfiles flake";
 
   inputs = {
-    nixpkgs.url = "nixpkgs/nixos-24.11"; # Mine will be a more recent one
+    nixpkgs.url = "nixpkgs/nixos-25.05"; # Change periodically to the latest version
     nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
 
-    home-manager.url = "github:nix-community/home-manager/release-24.11";
+    home-manager.url = "github:nix-community/home-manager/release-25.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
     nur.url = "github:nix-community/nur";
@@ -16,10 +16,12 @@
     }; # firefox-addons
 
     stylix = {
-      url = "github:danth/stylix/release-24.11";
+      url = "github:danth/stylix/release-25.05";
       inputs = {
         nixpkgs.follows = "nixpkgs";
-        home-manager.follows = "home-manager";
+
+# warning: input 'stylix' has an override for a non-existent input 'home-manager'
+        # home-manager.follows = "home-manager";
       };
     };
 
@@ -39,7 +41,7 @@
       # ---- SYSTEM SETTINGS ---- #
       systemSettings = {
         system_architecture = "x86_64-linux"; # system architecture
-        hostname = "vm"; # hostname
+        hostname = "desktop"; # hostname
         #profile = "personal"; # select a profile defined from my profiles directory
         timezone = "America/Sao_Paulo"; # select timezone
         locale = "en_US.UTF-8"; # select locale
@@ -85,6 +87,23 @@
 
     # System Configurations
     nixosConfigurations = {
+
+      desktop = lib.nixosSystem {
+        inherit system;
+        modules = [
+           # ./hosts/${systemSettings.hostname}/configuration.nix
+           ./hosts/desktop/configuration.nix
+           stylix.nixosModules.stylix
+        ];
+        specialArgs = {
+          inherit system;
+          #inherit pkgs;
+          inherit pkgs-unstable;
+          inherit systemSettings;
+          inherit userSettings;
+        };
+      }; # desktop
+
       vm = lib.nixosSystem {
         inherit system;
         modules = [
