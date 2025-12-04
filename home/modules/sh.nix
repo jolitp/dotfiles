@@ -77,7 +77,7 @@ in
     programs.starship = {
       enable = true;
         # settings =  pkgs.lib.importTOML ./../config/starship/tokyo-night.toml;
-        settings =  pkgs.lib.importTOML ./../config/starship/catppuccin-mocha.toml;
+        settings =  pkgs.lib.importTOML ./../config/starship/catppuccin-mocha-changed.toml;
     }; # programs.starship
   }; # config
 }
