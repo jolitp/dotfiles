@@ -122,6 +122,10 @@
     # S
     programs.starship = {
       enable = true;
+# sh.nix imports the TOML file with settings
+      # settings = {
+      #
+      # };
     };
     # T
     #programs.tldr.enable = true; # does not have configuration
@@ -141,7 +145,7 @@
       }; # settings
       enableBashIntegration = true;
       settings = {
-        theme = "tokyo-night-dark";
+        theme = "catppuccin-mocha";
       }; # settings
     }; # programs.zellij
 
