@@ -2,10 +2,10 @@
   description = "dotfiles flake";
 
   inputs = {
-    nixpkgs.url = "nixpkgs/nixos-25.05"; # Change periodically to the latest version
+    nixpkgs.url = "nixpkgs/nixos-25.11"; # Change periodically to the latest version
     nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
 
-    home-manager.url = "github:nix-community/home-manager/release-25.05";
+    home-manager.url = "github:nix-community/home-manager/release-25.11";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
     nur.url = "github:nix-community/nur";
@@ -16,7 +16,7 @@
     }; # firefox-addons
 
     stylix = {
-      url = "github:danth/stylix/release-25.05";
+      url = "github:danth/stylix/release-25.11";
       inputs = {
         nixpkgs.follows = "nixpkgs";
 
@@ -41,7 +41,7 @@
       # ---- SYSTEM SETTINGS ---- #
       systemSettings = {
         system_architecture = "x86_64-linux"; # system architecture
-        hostname = "desktop"; # hostname
+        hostname = "laptop"; # hostname
         #profile = "personal"; # select a profile defined from my profiles directory
         timezone = "America/Sao_Paulo"; # select timezone
         locale = "en_US.UTF-8"; # select locale
@@ -52,7 +52,7 @@
         #gpuType = "amd"; # amd, intel or nvidia; only makes some slight mods for amd at the moment
       };
 
-       # ----- USER SETTINGS ----- #
+      # ----- USER SETTINGS ----- #
       userSettings = rec {
         username = "jolitp"; # username
         name = "João Luís"; # name/identifier
@@ -93,6 +93,22 @@
         modules = [
            # ./hosts/${systemSettings.hostname}/configuration.nix
            ./hosts/desktop/configuration.nix
+           stylix.nixosModules.stylix
+        ];
+        specialArgs = {
+          inherit system;
+          #inherit pkgs;
+          inherit pkgs-unstable;
+          inherit systemSettings;
+          inherit userSettings;
+        };
+      }; # desktop
+
+      laptop = lib.nixosSystem {
+        inherit system;
+        modules = [
+           # ./hosts/${systemSettings.hostname}/configuration.nix
+           ./hosts/laptop/configuration.nix
            stylix.nixosModules.stylix
         ];
         specialArgs = {

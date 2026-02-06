@@ -200,7 +200,10 @@
         # corekeyboard # virtual keyboard
         # corekeyboard # not working - name is right
         nextcloud-client # NextCloud Desktop
-        speedcrunch pdfarranger qbittorrent stacer keepassxc bulky
+        speedcrunch pdfarranger qbittorrent
+        # error: 'stacer' has been removed because it was abandoned upstream and relied upon vulnerable software
+        # stacer # removed
+        keepassxc bulky
         #alacritty 
         czkawka vscodium
         #vscode
@@ -287,7 +290,7 @@
 
         # S
         scrcpy # android screen mirror
-        scantailor # post processing for scanned pages
+        scantailor-advanced # post processing for scanned pages
         # error: The top-level skanlite alias has been removed.
         # skanlite # image scaling
         szyszka # bulk file renamer
@@ -301,6 +304,7 @@
 
         # U
         upscayl
+        unzip
 
         # V
         # vidcutter # does not install - name is right

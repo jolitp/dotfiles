@@ -9,7 +9,7 @@
       google-chrome
       brave
       librewolf
-      floorp
+      floorp-bin
       tor
     ]) # (with pkgs;
     ++

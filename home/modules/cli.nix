@@ -61,7 +61,7 @@
 
     # G
     # Git user's configuration
-    programs.git = {
+    programs.git.settings = {
       enable = true;
       userName = "${userSettings.username}";
       userEmail = "${userSettings.email}";
