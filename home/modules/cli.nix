@@ -61,13 +61,13 @@
 
     # G
     # Git user's configuration
-    programs.git.settings = {
+    programs.git = {
       enable = true;
-      userName = "${userSettings.username}";
-      userEmail = "${userSettings.email}";
-      extraConfig = {
-        init.defaultBranch = "main";
-      }; # extraConfig
+      settings = {
+        user.name = "${userSettings.username}";
+        user.email = "${userSettings.email}";
+      };
+      #init.defaultBranch = "main";
     }; # programs.git
 
     # H
