@@ -10,6 +10,73 @@
       ./hardware-configuration.nix
     ];
 
+  # srouce:
+  # https://discourse.nixos.org/t/installing-nvidia-drivers-on-a-laptop-in-nixos/70951
+
+  # Enable OpenGL
+  hardware.graphics = {
+    enable = true;
+    enable32Bit = true;
+  };
+
+  # Configure the NVIDIA driver
+  hardware.nvidia = {
+    modesetting.enable = true;
+    open = true; # Use the open-source kernel module
+    nvidiaSettings = true;
+    package = config.boot.kernelPackages.nvidiaPackages.stable;
+    
+    prime = {
+      offload = {
+        enable = true;
+        enableOffloadCmd = true;
+        # use `nvidia-offload` command to run any program (from terminal) on the nvidia gpu
+      };
+      # Use the Bus IDs you found earlier
+      amdgpuBusId = "PCI:5:0:0";
+      nvidiaBusId = "PCI:1:0:0";
+    };
+  };
+
+  # Load the nvidia driver for Xorg and Wayland
+  services.xserver.videoDrivers = [ "modesetting" "nvidia" ]; 
+  
+  programs.steam.enable = true;
+  programs.steam.gamescopeSession.enable = true;
+  programs.gamemode.enable = true;
+  
+  environment.sessionVariables = {
+    STEAM_EXTRA_COMPAT_TOOLS_PATHS = "/home/jolitp/.steam/root/compatibilitytools.d";
+  };
+
+  # NVIDIA
+  # drivers.nvidia.enable = true;
+
+  # hardware.graphics.enable = true;
+  # services.xserver.videoDrivers = [ "nvidia" "amdgpu" ];
+  # hardware.nvidia.open = false;
+#   hardware.nvidia.modesetting.enable = true;
+
+  # Nvidia Optimus Prime
+  # sync vs offload
+/*
+  hardware.nvidia.prime = {
+#     sync.enable = true;
+    offload = {
+      enable = true;
+      enableOffloadCmd = true;
+    };
+
+  # integrated
+    amdgpuBusId = "PCI:5:0:0"; # checked
+  # dedicated
+    nvidiaBusId = "PCI:1:0:0"; # checked
+  # To find the ids use the `lspci` command:
+  # $ nix shell nixpkgs#pciutils -c lspci | grep ' VGA '
+  };*/
+
+
+
   # Shells
   environment.shells = with pkgs; [ bash zsh fish ];
   users.defaultUserShell = pkgs.bash;
@@ -20,7 +87,7 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "nixos"; # Define your hostname.
+  networking.hostName = "laptop"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
@@ -97,6 +164,8 @@
 
   # Install firefox.
   programs.firefox.enable = true;
+  
+  programs.gnome-disks.enable = true;
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -109,6 +178,9 @@
     keepassxc
     git
     nh
+    mangohud
+    protonup-ng
+    bottles
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

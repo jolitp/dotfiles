@@ -11,7 +11,6 @@
   ]; # imports
 
   config = {
-
     news.display = "silent";
 
     home.username = "${userSettings.username}";
@@ -164,10 +163,13 @@
         redshift
 
         # Games
-        #lutris # does not have a configuration
-        #antimicrox # does not have a configuration
-        #lime3ds # not found? no error? deprecated
-        #ryujinx # does not have a configuration
+        lutris # does not have a configuration
+        antimicrox # does not have a configuration
+        # lime3ds # not found? no error? deprecated
+        # ryujinx # error: 'ryujinx' has been replaced by 'ryubing' as the new upstream
+        ryubing
+
+        heroic
 
         # TODO get them from other means
         # citra # not found - install through flatpak?
@@ -190,9 +192,9 @@
         avidemux #obs-studio
 
         # Game Dev
-        # godot-engine - better leave it for specific shell
-        # godots # godot version manager - does not exist in nixpkgs
-        # gdevelop # does not install - name is right
+        godot-engine # - better leave it for specific shell
+        godots # godot version manager - does not exist in nixpkgs
+        gdevelop # does not install - name is right
         aseprite
 
         # misc

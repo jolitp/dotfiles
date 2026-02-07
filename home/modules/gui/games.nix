@@ -1,7 +1,7 @@
 { config, pkgs, pkgs-unstable, lib, inputs, userSettings, ... }:
 
 {
-  config = {
+  config.programs = {
     # A
     # B
     # C
@@ -10,19 +10,21 @@
     # F
     # G
     # H
+    # heroic.enable = true; # does not exist
     # I
-    #programs.input-remapper.enable=true; # not found (name is right)
+    # input-remapper.enable=true; # not found (name is right)
     # J
     # K
     # L
-    #programs.lutris.enable = true; # does not have a configuration
+    # lutris.enable = true; # does not have a configuration
     # M
+    mangohud.enable = true;
     # N
     # O
     # P
     # Q
     # R
-    #programs.retroarch.enable = true; # does not have a configuration
+    retroarch.enable = true; # does not have a configuration
     # S
     # T
     # U
