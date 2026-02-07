@@ -84,8 +84,28 @@
   programs.fish.enable = true;
 
   # Bootloader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  # boot.loader.systemd-boot.enable = true;
+  # boot.loader.efi.canTouchEfiVariables = true;
+  boot = {# Bootloader
+    loader = {
+      efi.canTouchEfiVariables = true;
+      grub ={
+        enable = true;
+        device = "nodev";
+        efiSupport = true;
+        useOSProber = true;
+        theme = "${
+          (pkgs.fetchFromGitHub {
+            owner = "catppuccin";
+            repo = "grub";
+            rev = "0a37ab19f654e77129b409fed371891c01ffd0b9";
+            hash = "sha256-jgM22pvCQvb0bjQQXoiqGMgScR9AgCK3OfDF5Ud+/mk=";
+          })
+        }/src/catppuccin-mocha-grub-theme";
+      };
+      timeout = 3;
+    };
+  };
 
   networking.hostName = "laptop"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -181,6 +201,9 @@
     mangohud
     protonup-ng
     bottles
+    kdePackages.kdeconnect-kde
+    virt-manager
+    ddcutil
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

@@ -92,7 +92,6 @@
         # nerd-fonts.fira-code-symbols
 
         # Cintiq 16 tools
-        # ddcutil # needs sudo, needs to be installed system-wide
         brightnessctl
         # xrandr # for X11 only
 
@@ -161,6 +160,7 @@
         obsidian 
         bazecor 
         redshift
+        anytype
 
         # Games
         lutris # does not have a configuration
@@ -247,7 +247,6 @@
         junction # application chooser
 
         # K
-        # kdeconnect-kde # does not install - name is wrong # need to install system-wide
         # kiview # only on flatpak
         kdiskmark 
         # error: The top-level kleopatra alias has been removed.
@@ -306,7 +305,6 @@
 
         # V
         vidcutter # does not install - name is right
-        # vir-manager # does not install - name is right # system-wide
         vlc
 
         # W
