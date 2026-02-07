@@ -74,7 +74,7 @@
       "electron-32.3.3"
       "mbedtls-2.28.10" # What depend on this?
 	    #"qtwebkit-5.212.0-alpha4"
-	    "xpdf-4.05"
+	    "xpdf-4.06"
     ]; # nixpkgs.config.permittedInsecurePackages
 
     fonts.fontconfig.enable = true;
@@ -121,7 +121,7 @@
         nixd # nix language server
         #nvf # neovim configuration and plugin manager - installed in a different way
         
-        #atuin
+        atuin
 
         bc # calculator # does not have configuration, enable option errors out
         doublecmd # double commander - midnight-commander alternative # does not have a configuration
@@ -140,7 +140,7 @@
         powertop # errors when configured
 
         # cal # not found
-        # xpdf # pdfimages cli program and more # removed as insecure # find alternative
+        xpdf # pdfimages cli program and more # removed as insecure # find alternative
         # grub-reboot # not found
         # mojo # website scrapper # not found
         # qcalc # not found
@@ -173,7 +173,7 @@
 
         # TODO get them from other means
         # citra # not found - install through flatpak?
-        #azahar # 3DS Emulator
+        azahar # 3DS Emulator
         #azahar # does not install - name is right
         #azahar # does not have a configuration
 
@@ -181,38 +181,38 @@
         freetube thunderbird
 
         # Images
-        inkscape blender #krita 
+        inkscape blender 
+        krita 
         flameshot 
-        # converseen 
+        converseen 
         gimp
 
         # Videos
         # error: The top-level kdenlive alias has been removed.
-        # kdenlive 
+        kdePackages.kdenlive 
         avidemux #obs-studio
 
         # Game Dev
-        godot-engine # - better leave it for specific shell
-        godots # godot version manager - does not exist in nixpkgs
+        godot # better leave it for specific shell
         gdevelop # does not install - name is right
         aseprite
 
         # misc
         normcap # Optical Caracter Recognition (OCR)
-        # corekeyboard # virtual keyboard
         # corekeyboard # not working - name is right
         nextcloud-client # NextCloud Desktop
         speedcrunch pdfarranger qbittorrent
         # error: 'stacer' has been removed because it was abandoned upstream and relied upon vulnerable software
-        # stacer # removed
+        # stacer # removed from nixpkgs
         keepassxc bulky
-        #alacritty 
-        czkawka vscodium
-        #vscode
+        
+        czkawka 
+	      vscodium
+        # vscode # cannot install together with vscodium
 
         # A
         actiona anki anydesk 
-	      #rustdesk 
+	      rustdesk 
 	      appflowy autokey
         
         # B
@@ -223,16 +223,13 @@
         cheese corectrl
 
         # D
-        # disks # Gnome - will not work in Nix
-        # gnome-disk-utility # does not appear on menu
         darktable discord dropbox
 
         # E
         eyedropper
 
         # F
-        # error: The top-level filelight alias has been removed.
-        # filelight 
+        kdePackages.filelight 
         fluent-reader fontforge
 
         # G
@@ -240,18 +237,17 @@
         # H
         hardinfo2 # system profiler and benchmark
         hakuneko handbrake 
-        #haruna hexchat
+        haruna hexchat
 
         # I
         imagemagick
-        #irust # Rust REPL # leave it for a specific shell
 
         # J
         jitsi-meet-electron # video conference client
         junction # application chooser
 
         # K
-        # kdeconnect-kde # does not install - name is wrong
+        # kdeconnect-kde # does not install - name is wrong # need to install system-wide
         # kiview # only on flatpak
         kdiskmark 
         # error: The top-level kleopatra alias has been removed.
@@ -265,7 +261,7 @@
         # logseq # unsafe for using old Electron version
 
         # M
-        #mpv 
+        mpv 
         mediainfo
         # morgen # electron error
 
@@ -309,8 +305,8 @@
         unzip
 
         # V
-        # vidcutter # does not install - name is right
-        # vir-manager # does not install - name is right
+        vidcutter # does not install - name is right
+        # vir-manager # does not install - name is right # system-wide
         vlc
 
         # W
@@ -320,7 +316,7 @@
 
         # Y
         # error: The top-level yakuake alias has been removed.
-        # yakuake # does not have a configuration
+        kdePackages.yakuake # does not have a configuration
 
         # Z
         zoom zotero
