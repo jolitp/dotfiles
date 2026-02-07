@@ -10,7 +10,15 @@ In the `dotfiles` directory:
 sudo nixos-rebuild switch --flake .
 ```
 
+Or anywhere:
+
+```bash
+sudo nixos-rebuild switch --flake ~/dotfiles
+```
+
 ### Update package versions in the `flake.lock` file
+
+In the `dotfiles` directory:
 
 ```bash
 nix flake update
@@ -18,11 +26,19 @@ nix flake update
 
 ### Update package versions in the `flake.lock` file & reabuild the system
 
+In the `dotfiles` directory:
+
 ```bash
 nix flake update && sudo nixos-rebuild switch --flake .
 ```
 
 ## Home manager
+
+### Rebuild home configuration
+
+```bash
+home-manager switch -b backup --flake ~/dotfiles
+```
 
 ### Rollback home manager configurations
 
