@@ -12,6 +12,13 @@
 
   # srouce:
   # https://discourse.nixos.org/t/installing-nvidia-drivers-on-a-laptop-in-nixos/70951
+  
+  hardware.bluetooth.enable = true;
+  services.flatpak.enable = true;
+  
+  virtualisation.docker = {
+    enable = true;
+  };
 
   # Enable OpenGL
   hardware.graphics = {
@@ -27,12 +34,13 @@
     package = config.boot.kernelPackages.nvidiaPackages.stable;
     
     prime = {
-      offload = {
-        enable = true;
-        enableOffloadCmd = true;
-        # use `nvidia-offload` command to run any program (from terminal) on the nvidia gpu
-      };
+      # offload = {
+      #   enable = true;
+      #   enableOffloadCmd = true;
+      #   # use `nvidia-offload` command to run any program (from terminal) on the nvidia gpu
+      # };
       # Use the Bus IDs you found earlier
+      sync.enable = true;
       amdgpuBusId = "PCI:5:0:0";
       nvidiaBusId = "PCI:1:0:0";
     };
@@ -47,6 +55,11 @@
   
   environment.sessionVariables = {
     STEAM_EXTRA_COMPAT_TOOLS_PATHS = "/home/jolitp/.steam/root/compatibilitytools.d";
+
+    # Prisma:
+    PRISMA_QUERY_ENGINE_LIBRARY = "${pkgs.prisma-engines}/lib/libquery_engine.node";
+    PRISMA_QUERY_ENGINE_BINARY = "${pkgs.prisma-engines}/bin/query-engine";
+    PRISMA_SCHEMA_ENGINE_BINARY = "${pkgs.prisma-engines}/bin/schema-engine";
   };
 
   # NVIDIA
@@ -175,7 +188,7 @@
   users.users.jolitp = {
     isNormalUser = true;
     description = "jolitp";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" ];
     packages = with pkgs; [
       kdePackages.kate
     #  thunderbird
@@ -204,6 +217,16 @@
     kdePackages.kdeconnect-kde
     virt-manager
     ddcutil
+    distrobox
+
+    # For Prisma:
+    nodePackages_latest.pnpm
+    nodePackages_latest.vercel
+    nodePackages_latest.prisma
+    openssl
+    nodejs_22
+
+
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

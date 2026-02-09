@@ -11,6 +11,25 @@
   ]; # imports
 
   config = {
+
+
+    home.pointerCursor = {
+      name = "Banana"; # Name of the theme
+      package = pkgs.banana-cursor;
+      size = 24; # Recommended size
+      gtk.enable = true;
+      x11.enable = true;
+    };
+
+    gtk = {
+      enable = true;
+      cursorTheme = {
+        name = "Banana";
+        package = pkgs.banana-cursor;
+      };
+    };
+
+
     news.display = "silent";
 
     home.username = "${userSettings.username}";
@@ -89,6 +108,7 @@
         fira-code
         fira-code-symbols
         nerd-fonts.fira-code
+        nerd-fonts.jetbrains-mono
         # nerd-fonts.fira-code-symbols
 
         # Cintiq 16 tools
@@ -137,6 +157,7 @@
         visidata # does not have configuration, enable option errors out
         xclip # does not have configuration, enable option errors out
         powertop # errors when configured
+        unrar
 
         # cal # not found
         xpdf # pdfimages cli program and more # removed as insecure # find alternative
@@ -146,7 +167,7 @@
 
         # supporting applications for GUIs
         flatpak gearlever
-        boxbuddy devbox 
+        devbox 
         #bottles
         # warehouse # not found - install through flatpak
         # flatseal # not found - install through flatpak
@@ -168,8 +189,26 @@
         # lime3ds # not found? no error? deprecated
         # ryujinx # error: 'ryujinx' has been replaced by 'ryubing' as the new upstream
         ryubing
-
         heroic
+        mgba
+        duckstation
+        sameboy
+        stella
+        kega-fusion
+        snes9x
+        mame
+        mesen
+        melonDS
+        desmume
+        yabause
+        gopher64
+        mupen64plus
+        flycast
+        pcsx2
+        dolphin-emu
+        cemu
+        xemu
+        # gens-gs
 
         # TODO get them from other means
         # citra # not found - install through flatpak?
@@ -178,7 +217,7 @@
         #azahar # does not have a configuration
 
         # Internet
-        freetube thunderbird
+        thunderbird
 
         # Images
         inkscape blender 
@@ -190,7 +229,19 @@
         # Videos
         # error: The top-level kdenlive alias has been removed.
         kdePackages.kdenlive 
-        avidemux #obs-studio
+        # avidemux # nixos version is bugged on wayland
+        # the flatpak version also is bugged
+        obs-studio
+        
+        # programming
+        zed
+        nodejs
+        # npm
+        pnpm
+        svelte-language-server
+        prisma-engines
+        prisma
+
 
         # Game Dev
         godot # better leave it for specific shell
@@ -216,14 +267,22 @@
 	      appflowy autokey
         
         # B
-        birdtray bleachbit
+        birdtray
+        bleachbit
+        boxbuddy 
+        banana-cursor
+
 
         # C
         # cohesion # does not exist in nixpkgs
         cheese corectrl
+        clapgrep
+
 
         # D
-        darktable discord dropbox
+        darktable discord dropbox 
+        distroshelf # does not show up
+        davinci-resolve
 
         # E
         eyedropper
@@ -257,23 +316,30 @@
         # L
         libreoffice libresprite
         lmms localsend losslesscut-bin
-        # logseq # unsafe for using old Electron version
+        logseq
+        lact
+
 
         # M
         mpv 
         mediainfo
         # morgen # electron error
+        mission-center
+        masterpdfeditor
+
 
         # N
         newsflash
 
         # O
         openrgb
+        onlyoffice-desktopeditors
 
         # P
-        # penpot-desktop # not found - name is right
+        penpot-desktop # not found - name is right
         # photoscape # not found - does not exist in nixpkgs
         piper
+
 
         # Q
         qpwgraph qdirstat qsynth
@@ -297,7 +363,10 @@
         solaar
 
         # T
-        tenacity thunderbird tiled tor
+        tenacity 
+        thunderbird 
+        tiled 
+        tor-browser
 
         # U
         upscayl
@@ -328,6 +397,7 @@
       # Unstable Packages
       (with pkgs-unstable; [
 
+        freetube 
         #neovim
 
       ]) # (with pkgs-unstable;

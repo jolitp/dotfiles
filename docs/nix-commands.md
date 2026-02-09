@@ -29,7 +29,7 @@ nix flake update
 In the `dotfiles` directory:
 
 ```bash
-nix flake update && sudo nixos-rebuild switch --flake .
+nix flake update && sudo nixos-rebuild switch --flake . && home-manager switch -b backup --flake ~/dotfiles
 ```
 
 ## Home manager
