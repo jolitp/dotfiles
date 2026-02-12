@@ -234,6 +234,8 @@
 
     dnsmasq
 
+    python3
+
     # For Prisma:
     # nodePackages_latest.pnpm
     # nodePackages_latest.vercel
