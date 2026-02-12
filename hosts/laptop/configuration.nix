@@ -13,6 +13,16 @@
   # srouce:
   # https://discourse.nixos.org/t/installing-nvidia-drivers-on-a-laptop-in-nixos/70951
   
+  # Enable libvirtd service
+  virtualisation.libvirtd.enable = true;
+
+  # Enable virt-manager program
+  programs.virt-manager.enable = true;
+
+  # Enable KVM kernel modules (adjust for your CPU type if necessary)
+  boot.kernelModules = [ "kvm-amd" ];
+
+
   hardware.bluetooth.enable = true;
   services.flatpak.enable = true;
   
@@ -218,6 +228,8 @@
     virt-manager
     ddcutil
     distrobox
+
+    dnsmasq
 
     # For Prisma:
     # nodePackages_latest.pnpm
