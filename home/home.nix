@@ -12,20 +12,20 @@
 
   config = {
 
-    # catppuccin = {
-    #   enable = true;
-    #   flavor = "mocha";
-    #   accent = "mauve";
-    # };
-    #
-    # # qt theme
-    # qt = {
-    #   platformTheme.name = "gtk";
-    #   style.name = "kvantum";
-    #   # style.name = "adwaita-dark";
-    #   # style.package = pkgs.adwaita-qt;
-    # };
-    #
+    catppuccin = {
+      enable = true;
+      flavor = "mocha";
+      accent = "mauve";
+    };
+
+    # qt theme
+    qt = {
+      # platformTheme.name = "gtk";
+      style.name = "kvantum";
+      # style.name = "adwaita-dark";
+      # style.package = pkgs.adwaita-qt;
+    };
+
     # # gtk theme
     # gtk = {
     #   enable = true;
