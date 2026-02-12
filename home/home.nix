@@ -1,4 +1,12 @@
-{ config, pkgs, pkgs-unstable, lib, inputs, userSettings, ... }:
+{
+  config,
+  pkgs,
+  pkgs-unstable,
+  lib,
+  inputs,
+  userSettings,
+  ...
+}:
 
 {
   imports = [
@@ -41,47 +49,27 @@
       }; # config
     }; # nixpkgs
 
-    # fixes:
-    # Existing file '/home/jolitp/.gtkrc-2.0' is in the way of
-    # '/nix/store/z80n1f627ncp6hgcwrjydrilp4na1412-home-manager-files/.gtkrc-2.0', 
-    # will be moved to '/home/jolitp/.gtkrc-2.0.backup
-    #
-    # error:
-    # ┃        error: The option `programs.plasma' does not exist. Definition values:
-    #     - In `/nix/store/4z7dsckrpxvq53ja5f5cgams17h2v2zy-source/home/home.nix':
-    #         {
-    #           configFile = {
-    #             kded5rc = {
-    #               Module-gtkconfig = {
-    #                 autoload = false;
-    #         ...
-    #programs.plasma.configFile.kded5rc = {
-    # "Module-gtkconfig"."autoload" = false;
-    #};
-
-    #nixpkgs.config.allowUnfreePredicate = with pkgs.lib; pkg: builtins.elem (lib.getName pkg) [
-    nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
-      "obsidian"
-      "steam"
-      "steam-unwrapped"
-      "google-chrome"
-      "anydesk"
-      "libsciter"
-      "discord"
-      "dropbox"
-      "reaper"
-      "languagetool"
-    ]; # nixpkgs.config.allowUnfreePredicate
-
-    #inputs.firefox-addons.packages.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
-    #];
+    nixpkgs.config.allowUnfreePredicate =
+      pkg:
+      builtins.elem (lib.getName pkg) [
+        "obsidian"
+        "steam"
+        "steam-unwrapped"
+        "google-chrome"
+        "anydesk"
+        "libsciter"
+        "discord"
+        "dropbox"
+        "reaper"
+        "languagetool"
+      ]; # nixpkgs.config.allowUnfreePredicate
 
     nixpkgs.config.permittedInsecurePackages = [
-	    "electron-27.3.11"
+      "electron-27.3.11"
       "electron-32.3.3"
       "mbedtls-2.28.10" # What depend on this?
-	    #"qtwebkit-5.212.0-alpha4"
-	    "xpdf-4.06"
+      #"qtwebkit-5.212.0-alpha4"
+      "xpdf-4.06"
     ]; # nixpkgs.config.permittedInsecurePackages
 
     fonts.fontconfig.enable = true;
@@ -111,7 +99,7 @@
         #     "CodeNewRoman"
         #   ];
         # })
-        
+
         # DID NOT WORK AS A FIX
         # nerdfonts.fira-code fira-code-symbols
         # nerdfonts.fira-code-symbols
@@ -124,13 +112,12 @@
 
         # vimPlugins.nvim-treesitter.withPlugins
 
-
         chezmoi # dotfiles manager
         nh # nix helper
         alejandra # nix formatter
         nixd # nix language server
         #nvf # neovim configuration and plugin manager - installed in a different way
-        
+
         atuin
 
         bc # calculator # does not have configuration, enable option errors out
@@ -158,8 +145,9 @@
         # qcalc # not found
 
         # supporting applications for GUIs
-        flatpak gearlever
-        devbox 
+        flatpak
+        gearlever
+        devbox
         #bottles
         # warehouse # not found - install through flatpak
         # flatseal # not found - install through flatpak
@@ -168,10 +156,10 @@
         devbox
 
         # GUIs
-        resources 
-        # espanso 
-        obsidian 
-        bazecor 
+        resources
+        # espanso
+        obsidian
+        bazecor
         redshift
         anytype
 
@@ -212,19 +200,20 @@
         thunderbird
 
         # Images
-        inkscape blender 
-        krita 
-        flameshot 
-        converseen 
+        inkscape
+        blender
+        krita
+        flameshot
+        converseen
         gimp
 
         # Videos
         # error: The top-level kdenlive alias has been removed.
-        kdePackages.kdenlive 
+        kdePackages.kdenlive
         # avidemux # nixos version is bugged on wayland
         # the flatpak version also is bugged
         obs-studio
-        
+
         # programming
         zed
         nodejs
@@ -233,7 +222,6 @@
         svelte-language-server
         prisma-engines
         prisma
-
 
         # Game Dev
         godot # better leave it for specific shell
@@ -244,35 +232,42 @@
         normcap # Optical Caracter Recognition (OCR)
         # corekeyboard # not working - name is right
         nextcloud-client # NextCloud Desktop
-        speedcrunch pdfarranger qbittorrent
+        speedcrunch
+        pdfarranger
+        qbittorrent
         # error: 'stacer' has been removed because it was abandoned upstream and relied upon vulnerable software
         # stacer # removed from nixpkgs
-        keepassxc bulky
-        
-        czkawka 
-	      vscodium
+        keepassxc
+        bulky
+
+        czkawka
+        vscodium
         # vscode # cannot install together with vscodium
 
         # A
-        actiona anki anydesk 
-	      rustdesk 
-	      appflowy autokey
-        
+        actiona
+        anki
+        anydesk
+        rustdesk
+        appflowy
+        autokey
+
         # B
         birdtray
         bleachbit
-        boxbuddy 
+        boxbuddy
         banana-cursor
-
 
         # C
         # cohesion # does not exist in nixpkgs
-        cheese corectrl
+        cheese
+        corectrl
         clapgrep
 
-
         # D
-        darktable discord dropbox 
+        darktable
+        discord
+        dropbox
         distroshelf # does not show up
         davinci-resolve
 
@@ -281,15 +276,18 @@
         espanso-wayland
 
         # F
-        kdePackages.filelight 
-        fluent-reader fontforge
+        kdePackages.filelight
+        fluent-reader
+        fontforge
 
         # G
 
         # H
         hardinfo2 # system profiler and benchmark
-        hakuneko handbrake 
-        haruna hexchat
+        hakuneko
+        handbrake
+        haruna
+        hexchat
 
         # I
         imagemagick
@@ -300,26 +298,27 @@
 
         # K
         # kiview # only on flatpak
-        kdiskmark 
+        kdiskmark
         # error: The top-level kleopatra alias has been removed.
         # kleopatra # certificate manager
         kdePackages.partitionmanager
         kanata
-        
+
         # L
-        libreoffice libresprite
-        lmms localsend losslesscut-bin
+        libreoffice
+        libresprite
+        lmms
+        localsend
+        losslesscut-bin
         logseq
         lact
 
-
         # M
-        mpv 
+        mpv
         mediainfo
         # morgen # electron error
         mission-center
         masterpdfeditor
-
 
         # N
         newsflash
@@ -333,13 +332,14 @@
         # photoscape # not found - does not exist in nixpkgs
         piper
 
-
         # Q
-        qpwgraph qdirstat qsynth
+        qpwgraph
+        qdirstat
+        qsynth
         #quiterss # does not build - insecure library + no compiling
 
         # R
-        reaper 
+        reaper
         remmina
         retroarch # does not have a configuration
         rustdesk
@@ -350,15 +350,15 @@
         # error: The top-level skanlite alias has been removed.
         # skanlite # image scaling
         szyszka # bulk file renamer
-        screenkey 
+        screenkey
         # error: The top-level skanpage alias has been removed.
-        # skanpage 
+        # skanpage
         solaar
 
         # T
-        tenacity 
-        thunderbird 
-        tiled 
+        tenacity
+        thunderbird
+        tiled
         tor-browser
 
         # U
@@ -379,7 +379,8 @@
         kdePackages.yakuake # does not have a configuration
 
         # Z
-        zoom zotero
+        zoom
+        zotero
         zig # was needed for neovim to stop showing errors
 
       ]) # (with pkgs;
@@ -387,15 +388,15 @@
 
       ++
 
-      # Unstable Packages
-      (with pkgs-unstable; [
+        # Unstable Packages
+        (with pkgs-unstable; [
 
-        freetube 
-        #neovim
+          freetube
+          #neovim
 
-        stripe-cli
-      ]) # (with pkgs-unstable;
-      # Unstable Packages
+          stripe-cli
+        ]) # (with pkgs-unstable;
+    # Unstable Packages
 
     ; # home.packages
 
@@ -413,18 +414,18 @@
       #   org.gradle.daemon.idletimeout=3600000
       # '';
 
-  # "Copy and Paste" config files.
-  #
-  # 1st method
-  #
-  #  home.file.".config/hypr/hyperland.conf".text = ''
-  #<contents of the config>
-  #'';
-  #
-  #
-  # 2nd method
-  #
-  #  home.file.".config/hypr/hyperland.conf".source = ./hyperland.conf;
+      # "Copy and Paste" config files.
+      #
+      # 1st method
+      #
+      #  home.file.".config/hypr/hyperland.conf".text = ''
+      #<contents of the config>
+      #'';
+      #
+      #
+      # 2nd method
+      #
+      #  home.file.".config/hypr/hyperland.conf".source = ./hyperland.conf;
       #".bashrc".source = lib.mkDefault ./home/config/bash/.bashrc;
       ".profile".source = lib.mkDefault ./config/bash/.profile;
     };
