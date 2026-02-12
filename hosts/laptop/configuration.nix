@@ -5,9 +5,11 @@
 { config, pkgs, ... }:
 
 {
+
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ../_modules/nh.nix
     ];
 
   stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
@@ -237,7 +239,6 @@
     wget
     keepassxc
     git
-    nh
     mangohud
     protonup-ng # gamming proton
     bottles

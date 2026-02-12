@@ -1,6 +1,9 @@
 { config, pkgs, pkgs-unstable, lib, inputs, userSettings, ... }:
 
 {
+  imports = [
+  ]; # imports
+
   config = {
     # A
     # TODO move alacritty to a terminals.nix module
@@ -90,16 +93,6 @@
     programs.lf.enable = true;
     # M
     # N
-    programs.nh = {
-      enable = true;
-      flake = "/home/${userSettings.username}/dotfiles";
-
-      # needs to be set in the nixos module
-      # does not work in the home-manager module
-      # it errors out with null
-      #clean.enable = true;
-      #clean.extraArgs = "--keep-since 7d"; 
-    }; # programs.nh
     programs.nnn.enable = true;
 
     programs.neovim = {

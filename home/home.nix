@@ -11,7 +11,7 @@
 {
   imports = [
     ./modules/sh.nix
-    ./modules/cli.nix
+    ./modules/cli/default.nix
     ./modules/gui
     ./modules/gui/web_browsers.nix
     ./modules/gui/terminals.nix
@@ -110,8 +110,7 @@
 
         # vimPlugins.nvim-treesitter.withPlugins
 
-        chezmoi # dotfiles manager
-        nh # nix helper
+        chezmoi # dotfiles manager # no config
         alejandra # nix formatter
         nixd # nix language server
         nixfmt
