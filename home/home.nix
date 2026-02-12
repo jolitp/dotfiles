@@ -405,6 +405,7 @@
         freetube 
         #neovim
 
+        stripe-cli
       ]) # (with pkgs-unstable;
       # Unstable Packages
 
