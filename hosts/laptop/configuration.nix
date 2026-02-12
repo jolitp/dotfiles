@@ -228,6 +228,7 @@
     virt-manager
     ddcutil
     distrobox
+    ntfs3g
     protonvpn-gui # privacy proton
     protonmail-bridge-gui # privacy proton
 
