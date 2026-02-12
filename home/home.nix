@@ -114,6 +114,7 @@
         nh # nix helper
         alejandra # nix formatter
         nixd # nix language server
+        nixfmt
         #nvf # neovim configuration and plugin manager - installed in a different way
 
         atuin
