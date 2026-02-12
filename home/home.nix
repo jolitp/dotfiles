@@ -439,9 +439,9 @@
     # or
     #  /etc/profiles/per-user/jolitp/etc/profile.d/hm-session-vars.sh
     home.sessionVariables = {
-      # EDITOR = "emacs";
+      EDITOR = "nvim";
       # TESTING = lib.mkDefault "home.nix";
-      # FLAKE = "/home/jolitp/dotfiles";
+      FLAKE = "/home/jolitp/dotfiles";
     };
 
     # Let Home Manager install and manage itself.
@@ -453,4 +453,3 @@
 
   }; # config
 }
-
