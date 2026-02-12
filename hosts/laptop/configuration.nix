@@ -222,12 +222,14 @@
     git
     nh
     mangohud
-    protonup-ng
+    protonup-ng # gamming proton
     bottles
     kdePackages.kdeconnect-kde
     virt-manager
     ddcutil
     distrobox
+    protonvpn-gui # privacy proton
+    protonmail-bridge-gui # privacy proton
 
     dnsmasq
 
@@ -240,6 +242,7 @@
 
 
   ];
+  
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
