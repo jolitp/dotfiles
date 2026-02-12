@@ -31,12 +31,10 @@
     home.username = "${userSettings.username}";
     home.homeDirectory = "/home/${userSettings.username}";
 
-   
-    targets.genericLinux.enable = true; # enable this on non-nixos 
+    # targets.genericLinux.enable = true; # enable this on non-nixos
 
-    # You should not change this value, 
-    # even if you update Home Manager. 
-    # If you do want to update the value, 
+    # You should not change this value, even if you update Home Manager.
+    # If you do want to update the value,
     # then make sure to first check the Home Manager release notes.
     home.stateVersion = "24.11";
 
@@ -430,7 +428,7 @@
       ".profile".source = lib.mkDefault ./config/bash/.profile;
     };
 
-    # Home Manager can also manage your environment variables through 'home.sessionVariables'. 
+    # Home Manager can also manage your environment variables through 'home.sessionVariables'.
     # These will be explicitly sourced when using a shell provided by Home Manager.
     # If you don't want to manage your shell through Home Manager
     # then you have to manually source 'hm-session-vars.sh' located at either
