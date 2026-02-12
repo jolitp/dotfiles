@@ -150,7 +150,8 @@
         cheat # command line cheat sheets # does not have a configuration
         dust # does not have configuration, enable option errors out
         entr # folder watcher # calculator # does not have configuration, enable option errors out
-        ffmpeg # does not have configuration, enable option errors out
+        # ffmpeg # does not have configuration, enable option errors out
+        ffmpeg-full
         just # does not have configuration, enable option errors out
         lm_sensors # does not have configuration, enable option errors out
         ripgrep-all # does not have configuration, enable option errors out
