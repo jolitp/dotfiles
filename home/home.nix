@@ -180,7 +180,7 @@
 
         # GUIs
         resources 
-        espanso 
+        # espanso 
         obsidian 
         bazecor 
         redshift
@@ -289,6 +289,7 @@
 
         # E
         eyedropper
+        espanso-wayland
 
         # F
         kdePackages.filelight 
