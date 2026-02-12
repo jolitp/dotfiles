@@ -11,6 +11,9 @@
       librewolf
       floorp-bin
       tor
+      vivaldi
+      vivaldi-ffmpeg-codecs
+
     ]) # (with pkgs;
     ++
     # Unstable Packages
