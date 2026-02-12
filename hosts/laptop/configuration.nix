@@ -10,6 +10,8 @@
       ./hardware-configuration.nix
     ];
 
+  stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
+
   # srouce:
   # https://discourse.nixos.org/t/installing-nvidia-drivers-on-a-laptop-in-nixos/70951
   
@@ -164,6 +166,15 @@
 
   # Enable the KDE Plasma Desktop Environment.
   services.displayManager.sddm.enable = true;
+  catppuccin.sddm = {
+    enable = true;
+    flavor = "mocha";
+    accent = "mauve";
+    clockEnabled = true;
+    loginBackground = true;
+    userIcon = true;
+  };
+
   services.desktopManager.plasma6.enable = true;
 
   # Configure keymap in X11
@@ -239,7 +250,7 @@
     protonmail-bridge-gui # privacy proton
 
     dnsmasq
-
+    catppuccin-sddm
     python3
 
     # For Prisma:

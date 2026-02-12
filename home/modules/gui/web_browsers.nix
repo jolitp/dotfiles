@@ -61,6 +61,13 @@
         ''  
         ''; # userChrome = # CSS to change the browser theme
 
+       # error:
+       # Failed assertions:
+       # - Using 'programs.firefox.profiles.jolitp.extensions.settings' will override all
+       # previous extensions settings. Enable
+       # 'programs.firefox.profiles.jolitp.extensions.force' to acknowledge this.
+        extensions.force = true;
+
         #extensions = with inputs.firefox-addons.packages."x86_64-linux"; [
         extensions.packages = with pkgs.nur.repos.rycee.firefox-addons; [
           darkreader

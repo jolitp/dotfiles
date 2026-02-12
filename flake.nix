@@ -24,6 +24,7 @@
         # home-manager.follows = "home-manager";
       };
     };
+    catppuccin.url = "github:catppuccin/nix/release-25.11";
 
   }; # inputs
 
@@ -33,6 +34,7 @@
       nixpkgs-unstable, 
       home-manager, 
       stylix,
+      catppuccin,
       #nvf, 
       ... 
     }@inputs:
@@ -94,6 +96,7 @@
            # ./hosts/${systemSettings.hostname}/configuration.nix
            ./hosts/desktop/configuration.nix
            stylix.nixosModules.stylix
+           catppuccin.nixosModules.catppuccin
         ];
         specialArgs = {
           inherit system;
@@ -110,6 +113,7 @@
            # ./hosts/${systemSettings.hostname}/configuration.nix
            ./hosts/laptop/configuration.nix
            stylix.nixosModules.stylix
+           catppuccin.nixosModules.catppuccin
         ];
         specialArgs = {
           inherit system;
@@ -126,6 +130,7 @@
            # ./hosts/${systemSettings.hostname}/configuration.nix
            ./hosts/vm/configuration.nix
            stylix.nixosModules.stylix
+           catppuccin.nixosModules.catppuccin
         ];
         specialArgs = {
           inherit system;
@@ -147,7 +152,8 @@
         #inherit pkgs-unstable; # error
 
         modules = [ 
-        ./home/home.nix
+          ./home/home.nix
+          catppuccin.homeModules.catppuccin
         ]; # modules
         
         extraSpecialArgs = {

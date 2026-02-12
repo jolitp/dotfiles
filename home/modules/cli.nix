@@ -22,7 +22,6 @@
       enable = true;
       config = {
         pager = "less -FR";
-        theme = "Nord";
       }; # config
     }; # programs.bat
 
