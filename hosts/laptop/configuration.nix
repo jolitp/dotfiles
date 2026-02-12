@@ -220,11 +220,11 @@
     distrobox
 
     # For Prisma:
-    nodePackages_latest.pnpm
-    nodePackages_latest.vercel
-    nodePackages_latest.prisma
-    openssl
-    nodejs_22
+    # nodePackages_latest.pnpm
+    # nodePackages_latest.vercel
+    # nodePackages_latest.prisma
+    # openssl
+    # nodejs_22
 
 
   ];
