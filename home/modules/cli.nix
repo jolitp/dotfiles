@@ -105,7 +105,9 @@
 
     programs.neovim = {
       enable = true;
-      
+      extraWrapperArgs = [
+        "--prefix" "PATH" ":" "${lib.makeBinPath [ pkgs.gcc ]}"
+      ];
       vimAlias = true;
       viAlias = true;
     }; # programs.neovim
