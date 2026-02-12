@@ -134,6 +134,9 @@
         # # fonts?
         # (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
 
+        # vimPlugins.nvim-treesitter.withPlugins
+
+
         chezmoi # dotfiles manager
         nh # nix helper
         alejandra # nix formatter
