@@ -13,6 +13,7 @@
     ./modules/sh.nix
     ./modules/cli/default.nix
     ./modules/gui
+    ./modules/development/text_editors/vscode.nix
     ./modules/gui/web_browsers.nix
     ./modules/gui/terminals.nix
     ./modules/gui/games.nix
@@ -143,10 +144,7 @@
         # qcalc # not found
 
         # supporting applications for GUIs
-        flatpak
         gearlever
-        devbox
-        #bottles
         # warehouse # not found - install through flatpak
         # flatseal # not found - install through flatpak
         protontricks
@@ -239,7 +237,10 @@
         bulky
 
         czkawka
-        vscodium
+        # vscodium # hassle without all extensions
+        vsce # Visual Studio Code Extension Manager cli
+        yarn
+        typescript
         # vscode # cannot install together with vscodium
 
         # A
