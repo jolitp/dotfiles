@@ -18,12 +18,48 @@
     ++
     # Unstable Packages
     (with pkgs-unstable; [
+
     ]) # (with pkgs-unstable;
     # Unstable Packages
     ; # home.packages
 
     programs.firefox = {
       enable = true;
+
+      policies = {
+        # Updates & Background Services
+        AppAutoUpdate                 = false;
+        BackgroundAppUpdate           = false;
+
+
+      # Feature Disabling
+        DisableBuiltinPDFViewer       = true;
+        DisableFirefoxStudies         = true;
+        DisableFirefoxAccounts        = true;
+        DisableFirefoxScreenshots     = true;
+        DisableForgetButton           = true;
+        DisableMasterPasswordCreation = true;
+        DisableProfileImport          = true;
+        DisableProfileRefresh         = true;
+        DisableSetDesktopBackground   = true;
+        DisablePocket                 = true;
+        DisableTelemetry              = true;
+        # DisableFormHistory            = true;
+        # DisablePasswordReveal         = true;
+
+        # Access Restrictions
+        BlockAboutConfig              = false;
+        # BlockAboutProfiles            = true;
+        # BlockAboutSupport             = true;
+
+        # UI and Behavior
+        DisplayMenuBar                = "never";
+        DontCheckDefaultBrowser       = true;
+        HardwareAcceleration          = true;
+        OfferToSaveLogins             = false;
+        DefaultDownloadDirectory      = "/home/${userSettings.username}/Downloads/__FIREFOX__";
+      };
+
       profiles.jolitp = {
         # bookmarks sync is done using floccus browser extension & NextCloud bookmarks
         #https://floccus.org/
@@ -101,8 +137,12 @@
           floccus
           # auto-highlight # not found
         ]; # extensions
+
       }; # profiles.jolitp = {
     }; # programs.firefox = {
+
+
+
 
     programs.chromium = {
       enable = true;
