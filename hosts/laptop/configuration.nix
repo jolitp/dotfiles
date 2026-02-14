@@ -12,6 +12,11 @@
       ../_modules/nh.nix
     ];
 
+  programs.fuse.enable = true;
+  programs.fuse.userAllowOther = true;
+
+
+
   stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
 
   # srouce:
@@ -29,6 +34,13 @@
 
   hardware.bluetooth.enable = true;
   services.flatpak.enable = true;
+  systemd.services.flatpak-repo = {
+    wantedBy = [ "multi-user.target" ];
+    path = [ pkgs.flatpak ];
+    script = ''
+      flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+    '';
+  };
   
   virtualisation.docker = {
     enable = true;
@@ -222,6 +234,8 @@
   programs.nix-ld.libraries = with pkgs; [
     # Add any missing dynamic libraries for unpackaged programs
     # here, NOT in environment.systemPackages
+    fuse
+    appimage-run
   ];
 
   # Install firefox.
@@ -253,6 +267,8 @@
     dnsmasq
     catppuccin-sddm
     python3
+    fuse
+    appimage-run
 
     # For Prisma:
     # nodePackages_latest.pnpm
