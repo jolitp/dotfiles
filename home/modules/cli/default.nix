@@ -126,6 +126,11 @@
     # U
     # V
     # W
+    programs.wezterm = {
+      enable = true;
+      extraConfig = builtins.readFile ./dotfiles/home/config/wezterm/wezterm.lua;
+    };
+
     # X
     # Y
     programs.yazi.enable = true;
