@@ -230,6 +230,11 @@
     ];
   };
 
+  services.mongodb.enable = true;
+  services.mongodb.package = pkgs.mongodb-ce;
+
+  security.polkit.enable = true;
+
   programs.nix-ld.enable = true;
   programs.nix-ld.libraries = with pkgs; [
     # Add any missing dynamic libraries for unpackaged programs
@@ -269,6 +274,7 @@
     python3
     fuse
     appimage-run
+    mongodb-compass
 
     # For Prisma:
     # nodePackages_latest.pnpm
