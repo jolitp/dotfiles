@@ -275,6 +275,7 @@
     fuse
     appimage-run
     mongodb-compass
+    just
 
     # For Prisma:
     # nodePackages_latest.pnpm
