@@ -13,7 +13,7 @@
     ./modules/sh.nix
     ./modules/cli/default.nix
     ./modules/gui
-    ./modules/development/text_editors/vscode.nix
+    # ./modules/development/text_editors/vscode.nix
     ./modules/gui/web_browsers.nix
     ./modules/gui/terminals.nix
     ./modules/gui/games.nix
@@ -241,7 +241,7 @@
         vsce # Visual Studio Code Extension Manager cli
         yarn
         typescript
-        # vscode # cannot install together with vscodium
+        vscode # cannot install together with vscodium
 
         # A
         actiona
