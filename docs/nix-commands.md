@@ -14,15 +14,10 @@ In the `dotfiles` directory:
 sudo nixos-rebuild switch --flake .
 ```
 
-<<<<<<< HEAD
 Or anywhere:
 
 ```bash
 sudo nixos-rebuild switch --flake ~/dotfiles
-=======
-```bash
-sudo nixos-rebuild switch --flake ~/dotfiles/
->>>>>>> b5f4889 (adds things to pc)
 ```
 
 ### Update package versions in the `flake.lock` file

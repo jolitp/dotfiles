@@ -161,7 +161,6 @@
 
         # Games
         lutris # does not have a configuration
-<<<<<<< HEAD
         antimicrox # does not have a configuration
         # lime3ds # not found? no error? deprecated
         # ryujinx # error: 'ryujinx' has been replaced by 'ryubing' as the new upstream
@@ -186,12 +185,7 @@
         cemu
         xemu
         # gens-gs
-=======
         vkd3d-proton
-        #antimicrox # does not have a configuration
-        #lime3ds # not found? no error? deprecated
-        #ryujinx # does not have a configuration
->>>>>>> b5f4889 (adds things to pc)
 
         # TODO get them from other means
         # citra # not found - install through flatpak?
@@ -266,15 +260,10 @@
 
         # C
         # cohesion # does not exist in nixpkgs
-<<<<<<< HEAD
-        cheese
-        corectrl
         clapgrep
-=======
         cheese 
         corectrl
         # coolercontrol # need to use enable = true
->>>>>>> b5f4889 (adds things to pc)
 
         # D
         darktable
