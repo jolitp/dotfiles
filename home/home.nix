@@ -261,7 +261,7 @@
         # C
         # cohesion # does not exist in nixpkgs
         clapgrep
-        cheese 
+        cheese
         corectrl
         # coolercontrol # need to use enable = true
 
@@ -277,6 +277,7 @@
         espanso-wayland
 
         # F
+        # firefox # installed system-wide
         kdePackages.filelight
         fluent-reader
         fontforge
@@ -403,7 +404,6 @@
     # Unstable Packages
 
     ; # home.packages
-
 
     # Home Manager is pretty good at managing dotfiles. The primary way to manage
     # plain files is through 'home.file'.
