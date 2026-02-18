@@ -6,31 +6,20 @@
 
 {
 
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-      ../_modules/nh.nix
-    ];
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+    ../_modules/nh.nix
+    ../_modules/virtualization.nix
+  ];
 
   programs.fuse.enable = true;
   programs.fuse.userAllowOther = true;
-
-
 
   stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
 
   # srouce:
   # https://discourse.nixos.org/t/installing-nvidia-drivers-on-a-laptop-in-nixos/70951
-  
-  # Enable libvirtd service
-  virtualisation.libvirtd.enable = true;
-
-  # Enable virt-manager program
-  programs.virt-manager.enable = true;
-
-  # Enable KVM kernel modules (adjust for your CPU type if necessary)
-  boot.kernelModules = [ "kvm-amd" ];
-
 
   hardware.bluetooth.enable = true;
   services.flatpak.enable = true;
@@ -40,10 +29,6 @@
     script = ''
       flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
     '';
-  };
-  
-  virtualisation.docker = {
-    enable = true;
   };
 
   # Enable OpenGL
@@ -58,7 +43,7 @@
     open = true; # Use the open-source kernel module
     nvidiaSettings = true;
     # package = config.boot.kernelPackages.nvidiaPackages.stable;
-    
+
     prime = {
       # sync.enable = true;
       offload = {
@@ -73,12 +58,15 @@
   };
 
   # Load the nvidia driver for Xorg and Wayland
-  services.xserver.videoDrivers = [ "modesetting" "nvidia" ]; 
-  
+  services.xserver.videoDrivers = [
+    "modesetting"
+    "nvidia"
+  ];
+
   programs.steam.enable = true;
   programs.steam.gamescopeSession.enable = true;
   programs.gamemode.enable = true;
-  
+
   environment.sessionVariables = {
     STEAM_EXTRA_COMPAT_TOOLS_PATHS = "/home/jolitp/.steam/root/compatibilitytools.d";
 
@@ -94,30 +82,33 @@
   # hardware.graphics.enable = true;
   # services.xserver.videoDrivers = [ "nvidia" "amdgpu" ];
   # hardware.nvidia.open = false;
-#   hardware.nvidia.modesetting.enable = true;
+  #   hardware.nvidia.modesetting.enable = true;
 
   # Nvidia Optimus Prime
   # sync vs offload
-/*
-  hardware.nvidia.prime = {
-#     sync.enable = true;
-    offload = {
-      enable = true;
-      enableOffloadCmd = true;
-    };
+  /*
+      hardware.nvidia.prime = {
+    #     sync.enable = true;
+        offload = {
+          enable = true;
+          enableOffloadCmd = true;
+        };
 
-  # integrated
-    amdgpuBusId = "PCI:5:0:0"; # checked
-  # dedicated
-    nvidiaBusId = "PCI:1:0:0"; # checked
-  # To find the ids use the `lspci` command:
-  # $ nix shell nixpkgs#pciutils -c lspci | grep ' VGA '
-  };*/
-
-
+      # integrated
+        amdgpuBusId = "PCI:5:0:0"; # checked
+      # dedicated
+        nvidiaBusId = "PCI:1:0:0"; # checked
+      # To find the ids use the `lspci` command:
+      # $ nix shell nixpkgs#pciutils -c lspci | grep ' VGA '
+      };
+  */
 
   # Shells
-  environment.shells = with pkgs; [ bash zsh fish ];
+  environment.shells = with pkgs; [
+    bash
+    zsh
+    fish
+  ];
   users.defaultUserShell = pkgs.bash;
   programs.zsh.enable = true;
   programs.fish.enable = true;
@@ -125,10 +116,11 @@
   # Bootloader.
   # boot.loader.systemd-boot.enable = true;
   # boot.loader.efi.canTouchEfiVariables = true;
-  boot = {# Bootloader
+  boot = {
+    # Bootloader
     loader = {
       efi.canTouchEfiVariables = true;
-      grub ={
+      grub = {
         enable = true;
         device = "nodev";
         efiSupport = true;
@@ -223,13 +215,16 @@
   users.users.jolitp = {
     isNormalUser = true;
     description = "jolitp";
-    extraGroups = [ "networkmanager" "wheel" "docker" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+      "docker"
+    ];
     packages = with pkgs; [
       kdePackages.kate
-    #  thunderbird
+      #  thunderbird
     ];
   };
-
 
   security.polkit.enable = true;
 
@@ -243,7 +238,7 @@
 
   # Install firefox.
   programs.firefox.enable = true;
-  
+
   programs.gnome-disks.enable = true;
 
   # Allow unfree packages
@@ -260,7 +255,7 @@
     protonup-ng # gamming proton
     bottles
     kdePackages.kdeconnect-kde
-    virt-manager
+    # virt-manager
     ddcutil
     distrobox
     ntfs3g
@@ -282,9 +277,7 @@
     # openssl
     # nodejs_22
 
-
   ];
-  
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -313,5 +306,8 @@
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "25.05"; # Did you read the comment?
 
-    nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 }
