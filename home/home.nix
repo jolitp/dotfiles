@@ -398,6 +398,7 @@
 
           stripe-cli
           yt-dlp
+          tartube-yt-dlp
         ]) # (with pkgs-unstable;
     # Unstable Packages
 
