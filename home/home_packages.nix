@@ -130,13 +130,9 @@
         aseprite
 
         # misc
-        normcap # Optical Caracter Recognition (OCR)
         # corekeyboard # not working - name is right
-        nextcloud-client # NextCloud Desktop
-        pdfarranger
         # error: 'stacer' has been removed because it was abandoned upstream and relied upon vulnerable software
         # stacer # removed from nixpkgs
-        keepassxc
 
         ##########################################################################################
         ##########################################################################################
@@ -204,6 +200,7 @@
         junction # application chooser
 
         # K
+        keepassxc
         # kiview # only on flatpak
         kdiskmark
         # error: The top-level kleopatra alias has been removed.
@@ -229,7 +226,9 @@
         masterpdfeditor
 
         # N
+        nextcloud-client # NextCloud Desktop
         newsflash
+        normcap # Optical Caracter Recognition (OCR) from screenshot
 
         # O
         obsidian
@@ -238,6 +237,7 @@
         onlyoffice-desktopeditors
 
         # P
+        pdfarranger
         penpot-desktop # not found - name is right
         # photoscape # not found - does not exist in nixpkgs
         piper
