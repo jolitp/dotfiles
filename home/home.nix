@@ -11,6 +11,7 @@
 {
   imports = [
     ./home_packages.nix
+
     ./modules/sh.nix
     ./modules/cli/default.nix
     ./modules/gui

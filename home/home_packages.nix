@@ -1,7 +1,10 @@
 {
   config,
   pkgs,
+  pkgs-unstable,
   lib,
+  inputs,
+  userSettings,
   ...
 }:
 {
@@ -21,36 +24,12 @@
 
         # Cintiq 16 tools
         brightnessctl
-        # xrandr # for X11 only
-
-        # (nerdfonts.override {
-        #   fonts = [
-        #     "FiraCode"
-        #     "JetBrainsMono"
-        #     "CascadiaCode"
-        #     "CodeNewRoman"
-        #   ];
-        # })
-
-        # DID NOT WORK AS A FIX
-        # nerdfonts.fira-code fira-code-symbols
-        # nerdfonts.fira-code-symbols
-
-        # # It is sometimes useful to fine-tune packages, for example, by applying
-        # # overrides. You can do that directly here, just don't forget the
-        # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
-        # # fonts?
-        # (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
-
-        # vimPlugins.nvim-treesitter.withPlugins
 
         chezmoi # dotfiles manager # no config
         alejandra # nix formatter
         nixd # nix language server
         nixfmt
         #nvf # neovim configuration and plugin manager - installed in a different way
-
-        atuin
 
         bc # calculator # does not have configuration, enable option errors out
         doublecmd # double commander - midnight-commander alternative # does not have a configuration
@@ -85,12 +64,8 @@
         devbox
 
         # GUIs
-        resources
         # espanso
-        obsidian
-        bazecor
         redshift
-        anytype
 
         # Games
         lutris # does not have a configuration
@@ -119,7 +94,6 @@
         xemu
         # gens-gs
         vkd3d-proton
-
         # TODO get them from other means
         # citra # not found - install through flatpak?
         azahar # 3DS Emulator
@@ -127,7 +101,6 @@
         #azahar # does not have a configuration
 
         # Internet
-        thunderbird
 
         # Images
         inkscape
@@ -138,20 +111,18 @@
         gimp
 
         # Videos
-        # error: The top-level kdenlive alias has been removed.
-        kdePackages.kdenlive
-        # avidemux # nixos version is bugged on wayland
-        # the flatpak version also is bugged
-        obs-studio
+        # avidemux # nixos version is bugged on wayland the flatpak version also is bugged
 
         # programming
         zed
         nodejs
-        # npm
         pnpm
         svelte-language-server
-        prisma-engines
-        prisma
+        vsce # Visual Studio Code Extension Manager cli
+        yarn
+        typescript
+        # vscodium # hassle without all extensions
+        vscode # cannot install together with vscodium
 
         # Game Dev
         godot # better leave it for specific shell
@@ -162,41 +133,41 @@
         normcap # Optical Caracter Recognition (OCR)
         # corekeyboard # not working - name is right
         nextcloud-client # NextCloud Desktop
-        speedcrunch
         pdfarranger
-        qbittorrent
         # error: 'stacer' has been removed because it was abandoned upstream and relied upon vulnerable software
         # stacer # removed from nixpkgs
         keepassxc
-        bulky
-        thunderbird
 
-        czkawka
-        # vscodium # hassle without all extensions
-        vsce # Visual Studio Code Extension Manager cli
-        yarn
-        typescript
-        vscode # cannot install together with vscodium
+        ##########################################################################################
+        ##########################################################################################
+        ##########################################################################################
+        ##########################################################################################
+        ##########################################################################################
 
         # A
         actiona
+        anytype
         anki
         anydesk
         rustdesk
         appflowy
         autokey
+        atuin
 
         # B
+        bazecor
         birdtray
         bleachbit
         boxbuddy
         banana-cursor
+        bulky
 
         # C
         # cohesion # does not exist in nixpkgs
         clapgrep
         cheese
         corectrl
+        czkawka # file duplicate finder
         # coolercontrol # need to use enable = true
 
         # D
@@ -238,6 +209,7 @@
         # error: The top-level kleopatra alias has been removed.
         # kleopatra # certificate manager
         kdePackages.kate
+        kdePackages.kdenlive
         kanata
 
         # L
@@ -260,6 +232,8 @@
         newsflash
 
         # O
+        obsidian
+        obs-studio
         openrgb
         onlyoffice-desktopeditors
 
@@ -270,12 +244,14 @@
         kdePackages.partitionmanager
 
         # Q
+        qbittorrent
         qpwgraph
         qdirstat
         qsynth
         #quiterss # does not build - insecure library + no compiling
 
         # R
+        resources
         reaper
         remmina
         retroarch # does not have a configuration
@@ -283,6 +259,7 @@
         libratbag
 
         # S
+        speedcrunch
         scrcpy # android screen mirror
         scantailor-advanced # post processing for scanned pages
         # error: The top-level skanlite alias has been removed.
