@@ -10,12 +10,27 @@
     programs.alacritty = {
       enable = true;
       settings = {
+        window = {
+          startup_mode = "Maximized";
+        };
+        cursor = {
+          style.shape = "Beam";
+          style.blinking = "Off";
+        };
+        vi_mode_style = { 
+          style.shape = "Block";
+          style.blinking = "Off";
+        };
+        mouse = {
+          hide_when_typing = true;
+        };
         font = {
           normal = {
             #family = "JetBrainsMono";
             family = "FiraCode Nerd Font";
             style = "Regular";
           }; # normal
+          size = 16;
         }; # font
       }; # settings
     }; # programs.alacritty
@@ -128,7 +143,7 @@
     # W
     programs.wezterm = {
       enable = true;
-      extraConfig = builtins.readFile ./dotfiles/home/config/wezterm/wezterm.lua;
+      extraConfig = builtins.readFile ./../../config/wezterm/wezterm.lua;
     };
 
     # X
