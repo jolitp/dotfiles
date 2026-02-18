@@ -95,6 +95,11 @@
 
   # Install firefox.
   programs.firefox.enable = true;
+  programs.coolercontrol = {
+    enable = true;
+    nvidiaSupport = true;
+  };
+
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -125,6 +130,7 @@
 
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
+  services.flatpak.enable = true;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];

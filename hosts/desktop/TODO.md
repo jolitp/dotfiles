@@ -1,12 +1,5 @@
 # To-do in NixOS (Desktop)
 
-## Up dotfiles to github
-
-- [ ] move dotfiles folder in preparation to github cloning
-- [ ] clone repo from github in home folder
-- [ ] replace the files with the local files already changed
-- [ ] git push
-
 ## Install Path of Exile to test new monitor
 
 - [ ] Install Path of Exile to test new monitor
@@ -14,7 +7,7 @@
 
 ## Theming
 
-- [ ] research how to make gnome apps look like kde apps
+- [ ] research how to make gnome apps look like kde apps (use stylix?)
 - [ ] 
 
 ## Virtual Desktop
