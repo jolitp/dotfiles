@@ -1,5 +1,9 @@
 # Nix / NixOS commands list
 
+Can use Just command runner to run the following commands.
+
+Run `just` from `~/dotfiles` directory to get a list of available commands.
+
 ## Flakes
 
 ### Rebuild flake configuration
