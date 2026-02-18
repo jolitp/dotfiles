@@ -12,9 +12,10 @@
     ./gpu.nix
 
     ../_modules/bootloader.nix
+    ../_modules/virtualization.nix
     ../_modules/nh.nix
     ../_modules/kde.nix
-    ../_modules/virtualization.nix
+    ../_modules/flatpak.nix
   ];
 
   programs.fuse.enable = true;
@@ -32,15 +33,6 @@
     pkgs.kdePackages.xdg-desktop-portal-kde
   ];
   xdg.portal.config.common.default = "*";
-
-  services.flatpak.enable = true;
-  systemd.services.flatpak-repo = {
-    wantedBy = [ "multi-user.target" ];
-    path = [ pkgs.flatpak ];
-    script = ''
-      flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-    '';
-  };
 
   programs.steam.enable = true;
   programs.steam.gamescopeSession.enable = true;
