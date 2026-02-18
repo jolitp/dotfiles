@@ -146,6 +146,8 @@
     ntfs3g
     protonvpn-gui # privacy proton
     protonmail-bridge-gui # privacy proton
+    # corekeyboard # x11 only
+    maliit-keyboard
 
     dnsmasq
     catppuccin-sddm
