@@ -15,6 +15,7 @@
     ../_modules/virtualization.nix
     ../_modules/nh.nix
     ../_modules/kde.nix
+    ../_modules/xdg.nix
     ../_modules/flatpak.nix
   ];
 
@@ -26,13 +27,6 @@
   # https://discourse.nixos.org/t/installing-nvidia-drivers-on-a-laptop-in-nixos/70951
 
   hardware.bluetooth.enable = true;
-
-  xdg.portal.enable = true;
-  xdg.portal.extraPortals = [
-    pkgs.xdg-desktop-portal-gtk
-    pkgs.kdePackages.xdg-desktop-portal-kde
-  ];
-  xdg.portal.config.common.default = "*";
 
   programs.steam.enable = true;
   programs.steam.gamescopeSession.enable = true;
