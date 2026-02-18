@@ -149,7 +149,7 @@
     # X
     # Y
     programs.yazi.enable = true;
-    programs.yt-dlp.enable = true;
+    # programs.yt-dlp.enable = true;
     
     # Z
     programs.zellij = {
