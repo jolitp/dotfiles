@@ -236,6 +236,7 @@
         # stacer # removed from nixpkgs
         keepassxc
         bulky
+        thunderbird
 
         czkawka
         # vscodium # hassle without all extensions
@@ -303,7 +304,7 @@
         kdiskmark
         # error: The top-level kleopatra alias has been removed.
         # kleopatra # certificate manager
-        kdePackages.partitionmanager
+        kdePackages.kate
         kanata
 
         # L
@@ -333,6 +334,7 @@
         penpot-desktop # not found - name is right
         # photoscape # not found - does not exist in nixpkgs
         piper
+        kdePackages.partitionmanager
 
         # Q
         qpwgraph

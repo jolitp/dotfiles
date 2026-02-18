@@ -10,13 +10,14 @@
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
     ./gpu.nix
+
     ../_modules/bootloader.nix
     ../_modules/nh.nix
+    ../_modules/kde.nix
     ../_modules/virtualization.nix
   ];
 
   programs.fuse.enable = true;
-  programs.fuse.userAllowOther = true;
 
   stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
 
@@ -24,6 +25,13 @@
   # https://discourse.nixos.org/t/installing-nvidia-drivers-on-a-laptop-in-nixos/70951
 
   hardware.bluetooth.enable = true;
+
+  xdg.portal.enable = true;
+  xdg.portal.extraPortals = [
+    pkgs.xdg-desktop-portal-gtk
+    pkgs.kdePackages.xdg-desktop-portal-kde
+  ];
+  xdg.portal.config.common.default = "*";
 
   services.flatpak.enable = true;
   systemd.services.flatpak-repo = {
@@ -84,19 +92,6 @@
   # You can disable this if you're only using the Wayland session.
   services.xserver.enable = true;
 
-  # Enable the KDE Plasma Desktop Environment.
-  services.displayManager.sddm.enable = true;
-  catppuccin.sddm = {
-    enable = true;
-    flavor = "mocha";
-    accent = "mauve";
-    clockEnabled = true;
-    loginBackground = true;
-    userIcon = true;
-  };
-
-  services.desktopManager.plasma6.enable = true;
-
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = "us";
@@ -133,10 +128,6 @@
       "networkmanager"
       "wheel"
       "docker"
-    ];
-    packages = with pkgs; [
-      kdePackages.kate
-      #  thunderbird
     ];
   };
 
