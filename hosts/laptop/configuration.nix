@@ -10,6 +10,7 @@
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
     ./gpu.nix
+    ../_modules/bootloader.nix
     ../_modules/nh.nix
     ../_modules/virtualization.nix
   ];
@@ -46,33 +47,6 @@
     PRISMA_SCHEMA_ENGINE_BINARY = "${pkgs.prisma-engines}/bin/schema-engine";
   };
 
-  # NVIDIA
-  # drivers.nvidia.enable = true;
-
-  # hardware.graphics.enable = true;
-  # services.xserver.videoDrivers = [ "nvidia" "amdgpu" ];
-  # hardware.nvidia.open = false;
-  #   hardware.nvidia.modesetting.enable = true;
-
-  # Nvidia Optimus Prime
-  # sync vs offload
-  /*
-      hardware.nvidia.prime = {
-    #     sync.enable = true;
-        offload = {
-          enable = true;
-          enableOffloadCmd = true;
-        };
-
-      # integrated
-        amdgpuBusId = "PCI:5:0:0"; # checked
-      # dedicated
-        nvidiaBusId = "PCI:1:0:0"; # checked
-      # To find the ids use the `lspci` command:
-      # $ nix shell nixpkgs#pciutils -c lspci | grep ' VGA '
-      };
-  */
-
   # Shells
   environment.shells = with pkgs; [
     bash
@@ -82,31 +56,6 @@
   users.defaultUserShell = pkgs.bash;
   programs.zsh.enable = true;
   programs.fish.enable = true;
-
-  # Bootloader.
-  # boot.loader.systemd-boot.enable = true;
-  # boot.loader.efi.canTouchEfiVariables = true;
-  boot = {
-    # Bootloader
-    loader = {
-      efi.canTouchEfiVariables = true;
-      grub = {
-        enable = true;
-        device = "nodev";
-        efiSupport = true;
-        useOSProber = true;
-        theme = "${
-          (pkgs.fetchFromGitHub {
-            owner = "catppuccin";
-            repo = "grub";
-            rev = "0a37ab19f654e77129b409fed371891c01ffd0b9";
-            hash = "sha256-jgM22pvCQvb0bjQQXoiqGMgScR9AgCK3OfDF5Ud+/mk=";
-          })
-        }/src/catppuccin-mocha-grub-theme";
-      };
-      timeout = 3;
-    };
-  };
 
   networking.hostName = "laptop"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
