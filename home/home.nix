@@ -397,6 +397,7 @@
           #neovim
 
           stripe-cli
+          yt-dlp
         ]) # (with pkgs-unstable;
     # Unstable Packages
 
