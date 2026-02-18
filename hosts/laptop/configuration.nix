@@ -57,16 +57,16 @@
     modesetting.enable = true;
     open = true; # Use the open-source kernel module
     nvidiaSettings = true;
-    package = config.boot.kernelPackages.nvidiaPackages.stable;
+    # package = config.boot.kernelPackages.nvidiaPackages.stable;
     
     prime = {
-      # offload = {
-      #   enable = true;
-      #   enableOffloadCmd = true;
-      #   # use `nvidia-offload` command to run any program (from terminal) on the nvidia gpu
-      # };
+      # sync.enable = true;
+      offload = {
+        enable = true;
+        enableOffloadCmd = true;
+        # use `nvidia-offload` command to run any program (from terminal) on the nvidia gpu
+      };
       # Use the Bus IDs you found earlier
-      sync.enable = true;
       amdgpuBusId = "PCI:5:0:0";
       nvidiaBusId = "PCI:1:0:0";
     };
@@ -231,7 +231,7 @@
   };
 
   services.mongodb.enable = true;
-  services.mongodb.package = pkgs.mongodb-ce;
+  services.mongodb.package = pkgs.mongodb;
 
   security.polkit.enable = true;
 
@@ -241,6 +241,7 @@
     # here, NOT in environment.systemPackages
     fuse
     appimage-run
+    mongodb
   ];
 
   # Install firefox.
