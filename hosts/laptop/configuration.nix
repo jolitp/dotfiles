@@ -13,10 +13,12 @@
 
     ../_modules/bootloader.nix
     ../_modules/virtualization.nix
-    ../_modules/nh.nix
+    ../_modules/sh.nix
     ../_modules/kde.nix
     ../_modules/xdg.nix
+
     ../_modules/flatpak.nix
+    ../_modules/nh.nix
   ];
 
   programs.fuse.enable = true;
@@ -35,16 +37,6 @@
   environment.sessionVariables = {
     STEAM_EXTRA_COMPAT_TOOLS_PATHS = "/home/jolitp/.steam/root/compatibilitytools.d";
   };
-
-  # Shells
-  environment.shells = with pkgs; [
-    bash
-    zsh
-    fish
-  ];
-  users.defaultUserShell = pkgs.bash;
-  programs.zsh.enable = true;
-  programs.fish.enable = true;
 
   networking.hostName = "laptop"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
