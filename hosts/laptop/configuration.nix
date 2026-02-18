@@ -40,11 +40,6 @@
 
   environment.sessionVariables = {
     STEAM_EXTRA_COMPAT_TOOLS_PATHS = "/home/jolitp/.steam/root/compatibilitytools.d";
-
-    # Prisma:
-    PRISMA_QUERY_ENGINE_LIBRARY = "${pkgs.prisma-engines}/lib/libquery_engine.node";
-    PRISMA_QUERY_ENGINE_BINARY = "${pkgs.prisma-engines}/bin/query-engine";
-    PRISMA_SCHEMA_ENGINE_BINARY = "${pkgs.prisma-engines}/bin/schema-engine";
   };
 
   # Shells
@@ -186,16 +181,7 @@
     python3
     fuse
     appimage-run
-    mongodb-compass
     just
-
-    # For Prisma:
-    # nodePackages_latest.pnpm
-    # nodePackages_latest.vercel
-    # nodePackages_latest.prisma
-    # openssl
-    # nodejs_22
-
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
