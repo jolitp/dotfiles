@@ -9,6 +9,7 @@
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
+    ./gpu.nix
     ../_modules/nh.nix
     ../_modules/virtualization.nix
   ];
@@ -22,6 +23,7 @@
   # https://discourse.nixos.org/t/installing-nvidia-drivers-on-a-laptop-in-nixos/70951
 
   hardware.bluetooth.enable = true;
+
   services.flatpak.enable = true;
   systemd.services.flatpak-repo = {
     wantedBy = [ "multi-user.target" ];
@@ -30,38 +32,6 @@
       flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
     '';
   };
-
-  # Enable OpenGL
-  hardware.graphics = {
-    enable = true;
-    enable32Bit = true;
-  };
-
-  # Configure the NVIDIA driver
-  hardware.nvidia = {
-    modesetting.enable = true;
-    open = true; # Use the open-source kernel module
-    nvidiaSettings = true;
-    # package = config.boot.kernelPackages.nvidiaPackages.stable;
-
-    prime = {
-      # sync.enable = true;
-      offload = {
-        enable = true;
-        enableOffloadCmd = true;
-        # use `nvidia-offload` command to run any program (from terminal) on the nvidia gpu
-      };
-      # Use the Bus IDs you found earlier
-      amdgpuBusId = "PCI:5:0:0";
-      nvidiaBusId = "PCI:1:0:0";
-    };
-  };
-
-  # Load the nvidia driver for Xorg and Wayland
-  services.xserver.videoDrivers = [
-    "modesetting"
-    "nvidia"
-  ];
 
   programs.steam.enable = true;
   programs.steam.gamescopeSession.enable = true;
