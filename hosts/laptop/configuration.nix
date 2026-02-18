@@ -230,8 +230,6 @@
     ];
   };
 
-  services.mongodb.enable = true;
-  services.mongodb.package = pkgs.mongodb;
 
   security.polkit.enable = true;
 
@@ -241,7 +239,6 @@
     # here, NOT in environment.systemPackages
     fuse
     appimage-run
-    mongodb
   ];
 
   # Install firefox.
