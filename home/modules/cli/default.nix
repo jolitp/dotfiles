@@ -169,6 +169,7 @@
         copy_command = "xclip -selection clipboard";
       }; # settings
       enableBashIntegration = true;
+      extraConfig = builtins.readFile ./../../config/zellij/config.kdl;
       settings = {
         theme = "catppuccin-mocha";
       }; # settings
