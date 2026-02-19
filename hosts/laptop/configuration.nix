@@ -23,6 +23,8 @@
     ../_modules/nh.nix
   ];
 
+  bootloader.enable = true;
+
   programs.fuse.enable = true;
 
   stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";

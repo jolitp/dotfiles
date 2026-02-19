@@ -9,7 +9,19 @@
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
     ./gpu.nix
+
+    ../_modules/sound.nix
+    ../_modules/bootloader.nix
+    ../_modules/virtualization.nix
+    ../_modules/sh.nix
+    ../_modules/kde.nix
+    ../_modules/xdg.nix
+
+    ../_modules/flatpak.nix
+    ../_modules/nh.nix
   ];
+
+  bootloader.enable = false;
 
   # Bootloader.
   boot.loader.grub.enable = true;
@@ -49,8 +61,8 @@
   services.xserver.enable = true;
 
   # Enable the KDE Plasma Desktop Environment.
-  services.displayManager.sddm.enable = true;
-  services.desktopManager.plasma6.enable = true;
+  # services.displayManager.sddm.enable = true;
+  # services.desktopManager.plasma6.enable = true;
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -64,21 +76,21 @@
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
-  # Enable sound with pipewire.
-  services.pulseaudio.enable = false;
-  security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-    # If you want to use JACK applications, uncomment this
-    #jack.enable = true;
-
-    # use the example session manager (no others are packaged yet so this is enabled by default,
-    # no need to redefine it in your config for now)
-    #media-session.enable = true;
-  };
+  # # Enable sound with pipewire.
+  # services.pulseaudio.enable = false;
+  # security.rtkit.enable = true;
+  # services.pipewire = {
+  #   enable = true;
+  #   alsa.enable = true;
+  #   alsa.support32Bit = true;
+  #   pulse.enable = true;
+  #   # If you want to use JACK applications, uncomment this
+  #   #jack.enable = true;
+  #
+  #   # use the example session manager (no others are packaged yet so this is enabled by default,
+  #   # no need to redefine it in your config for now)
+  #   #media-session.enable = true;
+  # };
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
@@ -91,14 +103,14 @@
       "networkmanager"
       "wheel"
     ];
-    packages = with pkgs; [
-      kdePackages.kate
-      #  thunderbird
-    ];
+    # packages = with pkgs; [
+    #   kdePackages.kate
+    #   #  thunderbird
+    # ];
   };
 
   # Install firefox.
-  programs.firefox.enable = true;
+  # programs.firefox.enable = true;
   #
   # programs.coolercontrol = {
   #   enable = true;
@@ -110,15 +122,15 @@
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  environment.systemPackages = with pkgs; [
-    vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-    wget
-    neovim
-    git
-    ddcutil # Wacom brightness tuning utility
-    nix-output-monitor
-    nvd
-  ];
+  # environment.systemPackages = with pkgs; [
+  #   vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+  #   wget
+  #   neovim
+  #   git
+  #   ddcutil # Wacom brightness tuning utility
+  #   nix-output-monitor
+  #   nvd
+  # ];
 
   hardware.i2c.enable = true;
 
@@ -134,7 +146,7 @@
 
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
-  services.flatpak.enable = true;
+  # services.flatpak.enable = true;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
@@ -143,9 +155,9 @@
   # networking.firewall.enable = false;
 
   # Enable OpenGL
-  hardware.graphics = {
-    enable = true;
-  };
+  # hardware.graphics = {
+  #   enable = true;
+  # };
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

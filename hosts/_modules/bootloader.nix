@@ -9,7 +9,10 @@
 }:
 
 {
-  config = {
+  options = {
+    bootloader.enable = lib.mkEnableOption "enable grub";
+  };
+  config = lib.mkIf config.bootloader.enable {
 
     boot = {
       # Bootloader
