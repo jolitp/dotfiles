@@ -10,6 +10,7 @@
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
     ./gpu.nix
+    ../packages.nix
 
     ../_modules/bootloader.nix
     ../_modules/virtualization.nix
@@ -29,10 +30,6 @@
   # https://discourse.nixos.org/t/installing-nvidia-drivers-on-a-laptop-in-nixos/70951
 
   hardware.bluetooth.enable = true;
-
-  programs.steam.enable = true;
-  programs.steam.gamescopeSession.enable = true;
-  programs.gamemode.enable = true;
 
   environment.sessionVariables = {
     STEAM_EXTRA_COMPAT_TOOLS_PATHS = "/home/jolitp/.steam/root/compatibilitytools.d";
@@ -110,52 +107,8 @@
   };
 
   security.polkit.enable = true;
-
-  programs.nix-ld.enable = true;
-  programs.nix-ld.libraries = with pkgs; [
-    # Add any missing dynamic libraries for unpackaged programs
-    # here, NOT in environment.systemPackages
-
-  ];
-
-  # Install firefox.
-  programs.firefox.enable = true;
-
-  programs.gnome-disks.enable = true;
-
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
-
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-  environment.systemPackages = with pkgs; [
-    lshw
-    lshw-gui
-    pciutils
-
-    vim
-    wget
-    keepassxc
-    git
-    mangohud
-    protonup-ng # gamming proton
-    bottles
-    kdePackages.kdeconnect-kde
-    ddcutil
-    distrobox
-    ntfs3g
-    protonvpn-gui # privacy proton
-    protonmail-bridge-gui # privacy proton
-    # corekeyboard # x11 only
-    maliit-keyboard
-
-    dnsmasq
-    catppuccin-sddm
-    python3
-    fuse
-    appimage-run
-    just
-  ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
