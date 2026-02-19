@@ -155,8 +155,9 @@
         birdtray
         bleachbit
         boxbuddy
-        banana-cursor
         bulky
+        banana-cursor
+        breeze-hacked-cursor-theme
 
         # C
         # cohesion # does not exist in nixpkgs

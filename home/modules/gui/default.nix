@@ -38,7 +38,7 @@ in
         name = "catppuccin-mocha-mauve-standard";
         package = pkgs.catppuccin-gtk.override {
           size = "standard";
-          accents = [ "mauve" ];
+          accents = [ "sky" ];
           variant = "mocha";
         }; # package = pkgs.catppuccin-gtk.override {
       }; # theme = {
@@ -49,17 +49,17 @@ in
         gtk-application-prefer-dark-theme = true;
       };
       cursorTheme = {
-        name = "Banana";
-        package = pkgs.banana-cursor;
+        name = "Breeze_Hacked";
+        package = pkgs.breeze-hacked-cursor-theme;
       }; # cursorTheme = {
     }; # gtk = {
 
     catppuccin.nvim.enable = false;
 
     home.pointerCursor = {
-      name = "Banana"; # Name of the theme
-      package = pkgs.banana-cursor;
-      size = 24; # Recommended size
+      name = "Breeze_Hacked";
+      package = pkgs.breeze-hacked-cursor-theme;
+      size = 32; # Recommended size
       gtk.enable = true;
       x11.enable = true;
     }; # home.pointerCursor = {
