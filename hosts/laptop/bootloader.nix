@@ -9,7 +9,7 @@
 }:
 
 {
-  config = lib.mkIf config.bootloader.enable {
+  config = {
 
     boot = {
       # Bootloader
