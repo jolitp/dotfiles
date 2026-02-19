@@ -21,12 +21,14 @@
     ../_modules/nh.nix
   ];
 
-  bootloader.enable = false;
+  bootloader.enable = true;
+  bootloader.boot.loader.grub.device = "/dev/sda";
+  bootloader.boot.loader.grub.efiSupport = false;
 
   # Bootloader.
-  boot.loader.grub.enable = true;
-  boot.loader.grub.device = "/dev/sda";
-  boot.loader.grub.useOSProber = true;
+  # boot.loader.grub.enable = true;
+  # boot.loader.grub.device = "/dev/sda";
+  # boot.loader.grub.useOSProber = true;
 
   networking.hostName = "desktop"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
