@@ -1,4 +1,12 @@
-{ config, pkgs, pkgs-unstable, lib, inputs, userSettings, ... }:
+{
+  config,
+  pkgs,
+  pkgs-unstable,
+  lib,
+  inputs,
+  userSettings,
+  ...
+}:
 
 {
   imports = [
@@ -17,7 +25,7 @@
           style.shape = "Beam";
           style.blinking = "Off";
         };
-        vi_mode_style = { 
+        vi_mode_style = {
           style.shape = "Block";
           style.blinking = "Off";
         };
@@ -50,9 +58,9 @@
       settings = {
         ext-colors = {
           nix = "cyan";
-	      }; # ext-colors
+        }; # ext-colors
       }; # settings
-    }; #programs.broot
+    }; # programs.broot
     programs.btop.enable = true;
 
     # C
@@ -65,7 +73,7 @@
       #icons = "always";
       git = true;
     }; # programs.eza
-    
+
     # F
     programs.fastfetch.enable = true;
     programs.feh.enable = true;
@@ -113,7 +121,10 @@
     programs.neovim = {
       enable = true;
       extraWrapperArgs = [
-        "--prefix" "PATH" ":" "${lib.makeBinPath [ pkgs.gcc ]}"
+        "--prefix"
+        "PATH"
+        ":"
+        "${lib.makeBinPath [ pkgs.gcc ]}"
       ];
       vimAlias = true;
       viAlias = true;
@@ -131,7 +142,7 @@
     # S
     programs.starship = {
       enable = true;
-# sh.nix imports the TOML file with settings
+      # sh.nix imports the TOML file with settings
       # settings = {
       #
       # };
@@ -150,7 +161,7 @@
     # Y
     programs.yazi.enable = true;
     # programs.yt-dlp.enable = true;
-    
+
     # Z
     programs.zellij = {
       enable = true;
