@@ -10,7 +10,7 @@
 
 {
   imports = [
-    ./home_packages.nix
+    ./packages.nix
 
     ./modules/sh.nix
     ./modules/cli/default.nix
