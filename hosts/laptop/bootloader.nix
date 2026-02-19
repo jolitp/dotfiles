@@ -9,11 +9,6 @@
 }:
 
 {
-  options = {
-    bootloader.enable = lib.mkEnableOption "enable grub";
-    bootloader.boot.loader.grub.device = lib.mkDefault "nodev";
-    bootloader.boot.loader.grub.efiSupport = lib.mkDefault true;
-  };
   config = lib.mkIf config.bootloader.enable {
 
     boot = {

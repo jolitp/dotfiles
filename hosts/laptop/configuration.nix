@@ -10,10 +10,10 @@
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
     ./gpu.nix
+    ./bootloader.nix
     ../packages.nix
 
     ../_modules/sound.nix
-    ../_modules/bootloader.nix
     ../_modules/virtualization.nix
     ../_modules/sh.nix
     ../_modules/kde.nix
@@ -22,8 +22,6 @@
     ../_modules/flatpak.nix
     ../_modules/nh.nix
   ];
-
-  bootloader.enable = true;
 
   programs.fuse.enable = true;
 

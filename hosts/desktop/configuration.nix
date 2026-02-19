@@ -9,9 +9,10 @@
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
     ./gpu.nix
+    ./bootloader.nix
+    ../packages.nix
 
     ../_modules/sound.nix
-    ../_modules/bootloader.nix
     ../_modules/virtualization.nix
     ../_modules/sh.nix
     ../_modules/kde.nix
@@ -20,15 +21,6 @@
     ../_modules/flatpak.nix
     ../_modules/nh.nix
   ];
-
-  bootloader.enable = true;
-  bootloader.boot.loader.grub.device = "/dev/sda";
-  bootloader.boot.loader.grub.efiSupport = false;
-
-  # Bootloader.
-  # boot.loader.grub.enable = true;
-  # boot.loader.grub.device = "/dev/sda";
-  # boot.loader.grub.useOSProber = true;
 
   networking.hostName = "desktop"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
