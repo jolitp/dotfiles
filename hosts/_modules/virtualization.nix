@@ -19,6 +19,8 @@
 
     environment.systemPackages = with pkgs; [
       virt-manager
+      virtualbox
+
     ];
 
     # Enable KVM kernel modules (adjust for your CPU type if necessary)
