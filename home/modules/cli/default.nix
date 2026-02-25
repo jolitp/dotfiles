@@ -140,13 +140,7 @@
     programs.ripgrep.enable = true;
 
     # S
-    programs.starship = {
-      enable = true;
-      # sh.nix imports the TOML file with settings
-      # settings = {
-      #
-      # };
-    };
+
     # T
     #programs.tldr.enable = true; # does not have configuration
     # U
@@ -165,10 +159,15 @@
     # Z
     programs.zellij = {
       enable = true;
+
       settings = {
         copy_command = "xclip -selection clipboard";
       }; # settings
+
       enableBashIntegration = true;
+      enableZshIntegration = true;
+      enableFishIntegration = true;
+
       extraConfig = builtins.readFile ./../../config/zellij/config.kdl;
       settings = {
         theme = "catppuccin-mocha";

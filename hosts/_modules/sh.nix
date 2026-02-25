@@ -7,7 +7,6 @@
   userSettings,
   ...
 }:
-
 {
   config = {
     # Shells
@@ -15,10 +14,31 @@
       bash
       zsh
       fish
-    ];
-    users.defaultUserShell = pkgs.bash;
-    programs.zsh.enable = true;
-    programs.fish.enable = true;
+    ]; # environment.shells = with pkgs; [
+    users.defaultUserShell = pkgs.zsh;
 
+    programs.bash = {
+      enable = true;
+    }; # programs.bash = {
+
+    programs.zsh = {
+      enable = true;
+      enableCompletion = true;
+      syntaxHighlighting.enable = true;
+
+      ohMyZsh = {
+        enable = true;
+        plugins = [
+          "git"
+          "dirhistory"
+          "history"
+        ]; # plugins = [
+      };
+
+    }; # programs.zsh
+
+    programs.fish = {
+      enable = true;
+    }; # programs.fish
   }; # config = {
 }
