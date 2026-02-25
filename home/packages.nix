@@ -29,6 +29,7 @@
         alejandra # nix formatter
         nixd # nix language server
         nixfmt
+        statix # lints and suggestions
         #nvf # neovim configuration and plugin manager - installed in a different way
 
         bc # calculator # does not have configuration, enable option errors out
