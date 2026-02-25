@@ -23,6 +23,14 @@
     ../_modules/nh.nix
   ];
 
+  console = {
+    earlySetup = true;
+    font = "ter-i32b";
+    packages = with pkgs; [
+      terminus_font
+    ];
+  };
+
   programs.fuse.enable = true;
 
   stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
