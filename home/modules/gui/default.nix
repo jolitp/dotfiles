@@ -51,6 +51,7 @@ in
       cursorTheme = {
         name = "Breeze_Hacked";
         package = pkgs.breeze-hacked-cursor-theme;
+        size = 32;
       }; # cursorTheme = {
     }; # gtk = {
 
