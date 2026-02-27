@@ -261,6 +261,8 @@
         libratbag
 
         # S
+        speedtest
+        speedtest-cli
         speedcrunch
         scrcpy # android screen mirror
         scantailor-advanced # post processing for scanned pages
