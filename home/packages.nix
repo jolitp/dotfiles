@@ -42,7 +42,6 @@
         just # does not have configuration, enable option errors out
         lm_sensors # does not have configuration, enable option errors out
         ripgrep-all # does not have configuration, enable option errors out
-        speedtest # does not have configuration, enable option errors out
         s-tui # TUI CPU stress and monitoring utility # does not heave a configureation
         tldr # does not have configuration, enable option errors out
         visidata # does not have configuration, enable option errors out
@@ -261,8 +260,8 @@
         libratbag
 
         # S
-        speedtest
-        speedtest-cli
+        speedtest # conflict with cli
+        # speedtest-cli # conflict with gui
         speedcrunch
         scrcpy # android screen mirror
         scantailor-advanced # post processing for scanned pages
