@@ -128,6 +128,7 @@
         godot # better leave it for specific shell
         gdevelop # does not install - name is right
         aseprite
+        ueviewer
 
         # misc
         # corekeyboard # not working - name is right
