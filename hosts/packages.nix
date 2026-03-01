@@ -51,6 +51,10 @@
       dnsmasq
       catppuccin-sddm
       python3
+      uv
+      playwright
+      stdenv.cc.cc.lib
+
       fuse
       appimage-run
       just
