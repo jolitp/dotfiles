@@ -80,6 +80,7 @@
         stella
         kega-fusion
         snes9x
+        snes9x-gtk
         mame
         mesen
         melonDS
@@ -96,7 +97,7 @@
         vkd3d-proton
         # TODO get them from other means
         # citra # not found - install through flatpak?
-        azahar # 3DS Emulator
+        # azahar # 3DS Emulator # does not open .3ds files anymore
         #azahar # does not install - name is right
         #azahar # does not have a configuration
 
