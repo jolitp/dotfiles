@@ -125,7 +125,7 @@
         vscode # cannot install together with vscodium
 
         # Game Dev
-        godot # better leave it for specific shell
+        # godot # using the Unstable version (newer)
         gdevelop # does not install - name is right
         aseprite
         ueviewer
@@ -316,6 +316,7 @@
           stripe-cli
           yt-dlp
           tartube-yt-dlp
+          godot # better leave it for specific shell
         ]) # (with pkgs-unstable;
     # Unstable Packages
 
