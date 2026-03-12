@@ -69,7 +69,7 @@ store-size:
 
 # Diff current vs previous system generation
 diff:
-    nvd diff /run/current-system /nix/var/nix/profiles/system-1-link
+    nvd diff /run/current-system $(readlink -f /nix/var/nix/profiles/system-*-link | tail -n 2 | head -n 1)
 
 # Diff two specific generations
 diff-gen a b:
@@ -80,12 +80,26 @@ diff-build:
     nix build .#nixosConfigurations.$(hostname).config.system.build.toplevel
     nvd diff /run/current-system ./result
 
+# Diff current system vs newly built system (before switching) (dry-run)
+# diff-preview:
+#     drv=$$(nix build .#nixosConfigurations.$(hostname).config.system.build.toplevel --no-link --print-out-paths); \
+#     nvd diff /run/current-system $$drv
+
+host := `hostname`
+
+# Diff current system vs newly built system (before switching) (dry-run)
+diff-preview:
+    nix build .#nixosConfigurations.laptop.config.system.build.toplevel --no-link --print-out-paths \
+      | xargs -I{} nvd diff /run/current-system {}
+
 # Diff Home Manager generations
 diff-hm:
-    nvd diff \
-      ~/.local/state/nix/profiles/home-manager \
-      ~/.local/state/nix/profiles/home-manager-1-link
+    nvd diff ~/.local/state/nix/profiles/home-manager ~/.local/state/nix/profiles/home-manager-$(($(ls ~/.local/state/nix/profiles | grep home-manager-[0-9]*-link | sed 's/[^0-9]//g' | sort -n | tail -n1)-1))-link
 
 # List generations
 gens:
     sudo nix-env --list-generations --profile /nix/var/nix/profiles/system
+
+# finds every .nix file inside ~/dotfiles and formats them with alejandra.
+fmt:
+    find . -type f -name '*.nix' -print0 | xargs -0 alejandra
