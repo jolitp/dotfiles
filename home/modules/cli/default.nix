@@ -6,9 +6,7 @@
   inputs,
   userSettings,
   ...
-}:
-
-{
+}: {
   imports = [
   ]; # imports
 
@@ -124,7 +122,7 @@
         "--prefix"
         "PATH"
         ":"
-        "${lib.makeBinPath [ pkgs.gcc ]}"
+        "${lib.makeBinPath [pkgs.gcc]}"
       ];
       vimAlias = true;
       viAlias = true;

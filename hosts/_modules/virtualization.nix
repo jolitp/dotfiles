@@ -6,11 +6,8 @@
   inputs,
   userSettings,
   ...
-}:
-
-{
+}: {
   config = {
-
     # Enable libvirtd service
     virtualisation.libvirtd.enable = true;
 
@@ -20,15 +17,13 @@
     environment.systemPackages = with pkgs; [
       virt-manager
       virtualbox
-
     ];
 
     # Enable KVM kernel modules (adjust for your CPU type if necessary)
-    boot.kernelModules = [ "kvm-amd" ];
+    boot.kernelModules = ["kvm-amd"];
 
     virtualisation.docker = {
       enable = true;
     };
-
   }; # config = {
 }

@@ -3,8 +3,7 @@
   pkgs,
   lib,
   ...
-}:
-let
+}: let
   myAliases = {
     # ls -> eza
     ls = "eza --group-directories-first --icons ";
@@ -39,43 +38,46 @@ let
     nfu = "nix flake update";
     nhms = "nh home switch"; # "home-manager switch --flake";
   }; # myAliases
-in
-{
+in {
   config = {
     programs = {
       bash = {
         enable = true;
         shellAliases = myAliases;
-        historyControl = [ "ignoreboth" ];
+        historyControl = ["ignoreboth"];
         historyIgnore = [
           "ls"
           "cd"
           "exit"
         ];
 
-        bashrcExtra = /* bash */ ''
-          # set variable identifying the chroot you work in (used in the prompt below)
-          if [ -z "$\{debian_chroot:-\}" ] && [ -r /etc/debian_chroot ]; then
-              debian_chroot=$(cat /etc/debian_chroot)
-          fi
-          # set a fancy prompt (non-color, unless we know we "want" color)
-          case "$TERM" in
-              xterm-color|*-256color) color_prompt=yes;;
-          esac
+        bashrcExtra =
+          /*
+          bash
+          */
+          ''
+            # set variable identifying the chroot you work in (used in the prompt below)
+            if [ -z "$\{debian_chroot:-\}" ] && [ -r /etc/debian_chroot ]; then
+                debian_chroot=$(cat /etc/debian_chroot)
+            fi
+            # set a fancy prompt (non-color, unless we know we "want" color)
+            case "$TERM" in
+                xterm-color|*-256color) color_prompt=yes;;
+            esac
 
-          # uncomment for a colored prompt, if the terminal has the capability; turned
-          # off by default to not distract the user: the focus in a terminal window
-          # should be on the output of commands, not on the prompt
-          #force_color_prompt=yes
+            # uncomment for a colored prompt, if the terminal has the capability; turned
+            # off by default to not distract the user: the focus in a terminal window
+            # should be on the output of commands, not on the prompt
+            #force_color_prompt=yes
 
-          # set PATH so it includes user's Applications bin folder if it exists
-          if [ -d "$HOME/Applications/bin" ] ; then
-              PATH="$HOME/Applications/bin:$PATH"
-          fi
+            # set PATH so it includes user's Applications bin folder if it exists
+            if [ -d "$HOME/Applications/bin" ] ; then
+                PATH="$HOME/Applications/bin:$PATH"
+            fi
 
-          set -o vi
+            set -o vi
 
-        '';
+          '';
       }; # programs.bash
 
       zsh = {
@@ -95,15 +97,29 @@ in
         shellAliases = myAliases;
 
         # Content to be added to .zshrc.
-        initContent =
-          let
-            zshConfigBefore = lib.mkOrder 500 /* bash */ ''
+        initContent = let
+          zshConfigBefore =
+            lib.mkOrder 500
+            /*
+            bash
+            */
+            ''
               # 500 (mkBefore): Early initialization (replaces initExtraFirst)
             '';
-            zshConfigDefault = lib.mkOrder 1000 /* bash */ ''
+          zshConfigDefault =
+            lib.mkOrder 1000
+            /*
+            bash
+            */
+            ''
               # 1000 (default): General configuration (replaces initExtra)
             '';
-            zshConfigAfter = lib.mkOrder 1500 /* bash */ ''
+          zshConfigAfter =
+            lib.mkOrder 1500
+            /*
+            bash
+            */
+            ''
                   # 1500 (mkAfter): Last to run configuration
               #
                   # set PATH so it includes user's Applications bin folder if it exists
@@ -114,7 +130,7 @@ in
                   set -o vi
 
             '';
-          in
+        in
           lib.mkMerge [
             zshConfigBefore
             zshConfigDefault

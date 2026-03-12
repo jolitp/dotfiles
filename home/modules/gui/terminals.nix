@@ -1,6 +1,12 @@
-{ config, pkgs, pkgs-unstable, lib, inputs, userSettings, ... }:
-
 {
+  config,
+  pkgs,
+  pkgs-unstable,
+  lib,
+  inputs,
+  userSettings,
+  ...
+}: {
   config = {
     # A
     # TODO move alacritty to a terminals.nix module

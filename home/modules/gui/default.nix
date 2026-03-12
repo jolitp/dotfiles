@@ -3,10 +3,8 @@
   pkgs,
   lib,
   ...
-}:
-let
-in
-{
+}: let
+in {
   config = {
     catppuccin = {
       enable = true;
@@ -38,7 +36,7 @@ in
         name = "catppuccin-mocha-sky-standard";
         package = pkgs.catppuccin-gtk.override {
           size = "standard";
-          accents = [ "sky" ];
+          accents = ["sky"];
           variant = "mocha";
         }; # package = pkgs.catppuccin-gtk.override {
       }; # theme = {

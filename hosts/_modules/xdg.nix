@@ -6,9 +6,7 @@
   inputs,
   userSettings,
   ...
-}:
-
-{
+}: {
   config = {
     xdg.portal.enable = true;
     xdg.portal.extraPortals = [

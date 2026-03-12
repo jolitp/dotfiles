@@ -6,8 +6,7 @@
   inputs,
   userSettings,
   ...
-}:
-{
+}: {
   config = {
     # Shells
     environment.shells = with pkgs; [
@@ -34,7 +33,6 @@
           "history"
         ]; # plugins = [
       };
-
     }; # programs.zsh
 
     programs.fish = {

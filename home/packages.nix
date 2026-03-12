@@ -6,15 +6,13 @@
   inputs,
   userSettings,
   ...
-}:
-{
+}: {
   config = {
     # The home.packages option allows you to install Nix packages into your
     # environment.
     home.packages =
       # Stable Packages
       (with pkgs; [
-
         # error: nerdfonts has been separated into individual font packages under the namespace nerd-fonts.
         fira-code
         fira-code-symbols
@@ -302,26 +300,21 @@
         zoom
         zotero
         zig # was needed for neovim to stop showing errors
-
       ]) # (with pkgs;
       # Stable Packages
-
       ++
+      # Unstable Packages
+      (with pkgs-unstable; [
+        freetube
+        #neovim
 
-        # Unstable Packages
-        (with pkgs-unstable; [
-
-          freetube
-          #neovim
-
-          stripe-cli
-          yt-dlp
-          tartube-yt-dlp
-          godot # better leave it for specific shell
-        ]) # (with pkgs-unstable;
-    # Unstable Packages
-
-    ; # home.packages
-
+        stripe-cli
+        yt-dlp
+        tartube-yt-dlp
+        godot # better leave it for specific shell
+      ])
+      # (with pkgs-unstable;
+      # Unstable Packages
+      ; # home.packages
   }; # config
 }

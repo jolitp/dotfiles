@@ -1,63 +1,67 @@
-{ config, pkgs, pkgs-unstable, lib, inputs, userSettings, ... }:
-
 {
+  config,
+  pkgs,
+  pkgs-unstable,
+  lib,
+  inputs,
+  userSettings,
+  ...
+}: {
   config = {
-    home.packages = 
-    # Stable Packages
-    (with pkgs; [
-      mullvad-browser
-      google-chrome
-      brave
-      librewolf
-      floorp-bin
-      tor
-      vivaldi
-      vivaldi-ffmpeg-codecs
-
-    ]) # (with pkgs;
-    ++
-    # Unstable Packages
-    (with pkgs-unstable; [
-
-    ]) # (with pkgs-unstable;
-    # Unstable Packages
-    ; # home.packages
+    home.packages =
+      # Stable Packages
+      (with pkgs; [
+        mullvad-browser
+        google-chrome
+        brave
+        librewolf
+        floorp-bin
+        tor
+        vivaldi
+        vivaldi-ffmpeg-codecs
+      ]) # (with pkgs;
+      ++
+      # Unstable Packages
+      (with pkgs-unstable; [
+        ])
+      # (with pkgs-unstable;
+      # Unstable Packages
+      ; # home.packages
 
     programs.firefox = {
       enable = true;
 
       policies = {
         # Updates & Background Services
-        AppAutoUpdate                 = false;
-        BackgroundAppUpdate           = false;
+        AppAutoUpdate = false;
+        BackgroundAppUpdate = false;
 
-
-      # Feature Disabling
-        DisableBuiltinPDFViewer       = true;
-        DisableFirefoxStudies         = true;
-        DisableFirefoxAccounts        = true;
-        DisableFirefoxScreenshots     = true;
-        DisableForgetButton           = true;
+        # Feature Disabling
+        DisableBuiltinPDFViewer = true;
+        DisableFirefoxStudies = true;
+        DisableFirefoxAccounts = true;
+        DisableFirefoxScreenshots = true;
+        DisableForgetButton = true;
         DisableMasterPasswordCreation = true;
-        DisableProfileImport          = true;
-        DisableProfileRefresh         = true;
-        DisableSetDesktopBackground   = true;
-        DisablePocket                 = true;
-        DisableTelemetry              = true;
+        DisableProfileImport = true;
+        DisableProfileRefresh = true;
+        DisableSetDesktopBackground = true;
+        DisablePocket = true;
+        DisableTelemetry = true;
         # DisableFormHistory            = true;
         # DisablePasswordReveal         = true;
 
         # Access Restrictions
-        BlockAboutConfig              = false;
+        BlockAboutConfig = false;
         # BlockAboutProfiles            = true;
         # BlockAboutSupport             = true;
 
         # UI and Behavior
-        DisplayMenuBar                = "never";
-        DontCheckDefaultBrowser       = true;
-        HardwareAcceleration          = true;
-        OfferToSaveLogins             = false;
-        DefaultDownloadDirectory      = "/home/${userSettings.username}/Downloads/__FIREFOX__";
+        DisplayMenuBar = "never";
+        DontCheckDefaultBrowser = true;
+        HardwareAcceleration = true;
+        OfferToSaveLogins = false;
+        DefaultDownloadDirectory = "/home/${userSettings.username}/Downloads/__FIREFOX__";
       };
 
       profiles.jolitp = {
@@ -67,7 +71,7 @@
         #bookmarks.configfile = ./config/firefox/firefox-bookmarks.html;
         #bookmarks = [
         #  {
-              #     name = "MyNisOS";
+        #     name = "MyNisOS";
         #     url = "https://mynixos.com/";
         #  }
         #]; # bookmarks = [
@@ -75,33 +79,40 @@
         settings = {
           # ... look them up
         };
-            
+
         search.engines = {
           "Nix Packages" = {
             urls = [
               {
-                  template = "https://search.nixos.org/packages";
-                  params = [
-                    { name = "type"; value = "packages"; }
-                    { name = "query"; value = "{searchTerms}"; }
-                  ]; # params
-                  icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
-                  definedAliases = [ "@np" ];
+                template = "https://search.nixos.org/packages";
+                params = [
+                  {
+                    name = "type";
+                    value = "packages";
+                  }
+                  {
+                    name = "query";
+                    value = "{searchTerms}";
+                  }
+                ]; # params
+                icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
+                definedAliases = ["@np"];
               }
             ]; # urls
           }; # "Nix Packages"
         }; # search.engines
         search.force = true;
-        
-        userChrome = # CSS to change the browser theme
-        ''  
-        ''; # userChrome = # CSS to change the browser theme
 
-       # error:
-       # Failed assertions:
-       # - Using 'programs.firefox.profiles.jolitp.extensions.settings' will override all
-       # previous extensions settings. Enable
-       # 'programs.firefox.profiles.jolitp.extensions.force' to acknowledge this.
+        userChrome =
+          # CSS to change the browser theme
+          ''
+          ''; # userChrome = # CSS to change the browser theme
+
+        # error:
+        # Failed assertions:
+        # - Using 'programs.firefox.profiles.jolitp.extensions.settings' will override all
+        # previous extensions settings. Enable
+        # 'programs.firefox.profiles.jolitp.extensions.force' to acknowledge this.
         extensions.force = true;
 
         #extensions = with inputs.firefox-addons.packages."x86_64-linux"; [
@@ -128,7 +139,7 @@
           canvasblocker
           # duplicate tabs closer # not found
           # hide youtube fullscreen controls # not found
-          # medium parser # not found 
+          # medium parser # not found
           # path of exile trade - fuzzy search # not found
           sponsorblock # youtube sponsorblock
           user-agent-string-switcher # should be the same (without the "string")
@@ -137,12 +148,8 @@
           floccus
           # auto-highlight # not found
         ]; # extensions
-
       }; # profiles.jolitp = {
     }; # programs.firefox = {
-
-
-
 
     programs.chromium = {
       enable = true;
@@ -162,7 +169,6 @@
         "penndbmahnpapepljikkjmakcobdahne" # Vimeo™ Video Downloader Pro
         "bbafmabaelnnkondpfpjmdklbmfnbmol" # Web Signer
       ];
-
     }; # programs.chromium
   }; # config
 }

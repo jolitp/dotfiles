@@ -6,11 +6,8 @@
   inputs,
   userSettings,
   ...
-}:
-
-{
+}: {
   config = {
-
     # Enable OpenGL
     hardware.graphics = {
       enable = true;
@@ -47,6 +44,5 @@
       "amdgpu"
       "nvidia"
     ];
-
   }; # config = {
 }

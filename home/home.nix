@@ -6,9 +6,7 @@
   inputs,
   userSettings,
   ...
-}:
-
-{
+}: {
   imports = [
     ./packages.nix
 
@@ -22,8 +20,7 @@
   ]; # imports
 
   config = {
-
-    home.activation.removeOldConfigs = lib.hm.dag.entryBefore [ "checkLinkTargets" ] ''
+    home.activation.removeOldConfigs = lib.hm.dag.entryBefore ["checkLinkTargets"] ''
       if test -f /home/${userSettings.username}/.gtkrc-2.0.backup; then
         rm /home/${userSettings.username}/.gtkrc-2.0.backup
       fi
@@ -50,8 +47,7 @@
       }; # config
     }; # nixpkgs
 
-    nixpkgs.config.allowUnfreePredicate =
-      pkg:
+    nixpkgs.config.allowUnfreePredicate = pkg:
       builtins.elem (lib.getName pkg) [
         "obsidian"
         "steam"
@@ -127,6 +123,5 @@
     # error persists after changing it's place
     # use `... -b backup` command flag
     # programs.home-manager.backupFileExtension = "backup";
-
   }; # config
 }

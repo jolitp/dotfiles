@@ -6,11 +6,8 @@
   inputs,
   userSettings,
   ...
-}:
-
-{
+}: {
   config = {
-
     boot = {
       # Bootloader
       loader = {
@@ -32,6 +29,5 @@
         timeout = 3;
       };
     };
-
   }; # config = {
 }

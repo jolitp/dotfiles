@@ -1,6 +1,12 @@
-{ config, pkgs, pkgs-unstable, lib, inputs, userSettings, ... }:
-
 {
+  config,
+  pkgs,
+  pkgs-unstable,
+  lib,
+  inputs,
+  userSettings,
+  ...
+}: {
   config.programs = {
     # A
     # B
@@ -35,4 +41,3 @@
     # Z
   }; # config
 }
-

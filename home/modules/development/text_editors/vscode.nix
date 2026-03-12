@@ -1,6 +1,12 @@
-{ config, pkgs, pkgs-unstable, lib, inputs, userSettings, ... }:
-
 {
+  config,
+  pkgs,
+  pkgs-unstable,
+  lib,
+  inputs,
+  userSettings,
+  ...
+}: {
   config = {
     programs.vscode = {
       enable = true;
@@ -8,13 +14,14 @@
       package = pkgs.vscode;
 
       # https://wiki.nixos.org/wiki/Visual_Studio_Code
-      profiles.default.extensions = with pkgs.vscode-extensions; [
-        ms-python.python
-      ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
+      profiles.default.extensions = with pkgs.vscode-extensions;
+        [
+          ms-python.python
+        ]
+        ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
+        ]; # ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
 
-      ]; # ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
-
- # error: The option `programs.vscode.profiles.default.enable' does not exist. 
+      # error: The option `programs.vscode.profiles.default.enable' does not exist.
       # profiles = {
       #   default = {
       #     enable = true;
@@ -39,8 +46,6 @@
       #     }; # userSettings = {
       #   }; # default = {
       # }; # profiles = {
-
     };
-
   };
 }
