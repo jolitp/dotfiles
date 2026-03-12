@@ -31,6 +31,7 @@
       lshw
       lshw-gui
       pciutils
+      nvd
 
       vim
       wget
