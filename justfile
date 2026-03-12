@@ -34,9 +34,58 @@ sys:
 home:
   nh home switch
 
+# check system build
+test_sys:
+  sudo nixos-rebuild switch --dry-run --flake ~/dotfiles
 
+# check home build
+test_home:
+  home-manager switch --dry-run -b backup --flake ~/dotfiles
 
+# collect garbage from the Nix Store
+gc:
+    nix-collect-garbage -d
 
+# deduplicates the Nix store
+optimize:
+    nix store optimise
 
+# gc + cleanup
+cleanup:
+    nix-collect-garbage -d
+    nix store optimise
 
+# Find why something is building
+why pkg:
+    nix why-depends . {{pkg}}
 
+# show flake info
+flake:
+    nix flake show
+
+# Track store size
+store-size:
+    du -sh /nix/store
+
+# Diff current vs previous system generation
+diff:
+    nvd diff /run/current-system /nix/var/nix/profiles/system-1-link
+
+# Diff two specific generations
+diff-gen a b:
+    nvd diff /nix/var/nix/profiles/system-{{a}}-link /nix/var/nix/profiles/system-{{b}}-link
+
+# Diff current system vs newly built system (before switching)
+diff-build:
+    nix build .#nixosConfigurations.$(hostname).config.system.build.toplevel
+    nvd diff /run/current-system ./result
+
+# Diff Home Manager generations
+diff-hm:
+    nvd diff \
+      ~/.local/state/nix/profiles/home-manager \
+      ~/.local/state/nix/profiles/home-manager-1-link
+
+# List generations
+gens:
+    sudo nix-env --list-generations --profile /nix/var/nix/profiles/system
