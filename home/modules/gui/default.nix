@@ -35,7 +35,7 @@ in
       # iconTheme.package = gruvboxPlus;
       # iconTheme.name = "GruvboxPlus"
       theme = {
-        name = "catppuccin-mocha-mauve-standard";
+        name = "catppuccin-mocha-sky-standard";
         package = pkgs.catppuccin-gtk.override {
           size = "standard";
           accents = [ "sky" ];

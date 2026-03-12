@@ -118,6 +118,7 @@
       EDITOR = "nvim";
       # TESTING = lib.mkDefault "home.nix";
       FLAKE = "/home/jolitp/dotfiles";
+      XCURSOR_SIZE = "32";
     };
 
     # Let Home Manager install and manage itself.
