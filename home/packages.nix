@@ -6,7 +6,12 @@
   inputs,
   userSettings,
   ...
-}: {
+}:
+{
+  imports = [
+    ./modules/development/game_development/godot.nix
+  ]; # imports
+
   config = {
     # The home.packages option allows you to install Nix packages into your
     # environment.
@@ -303,18 +308,18 @@
       ]) # (with pkgs;
       # Stable Packages
       ++
-      # Unstable Packages
-      (with pkgs-unstable; [
-        freetube
-        #neovim
+        # Unstable Packages
+        (with pkgs-unstable; [
+          freetube
+          #neovim
 
-        stripe-cli
-        yt-dlp
-        tartube-yt-dlp
-        godot # better leave it for specific shell
-      ])
-      # (with pkgs-unstable;
-      # Unstable Packages
-      ; # home.packages
+          stripe-cli
+          yt-dlp
+          tartube-yt-dlp
+          godot # better leave it for specific shell
+        ])
+    # (with pkgs-unstable;
+    # Unstable Packages
+    ; # home.packages
   }; # config
 }
