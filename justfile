@@ -42,19 +42,6 @@ test_sys:
 test_home:
   home-manager switch --dry-run -b backup --flake ~/dotfiles
 
-# collect garbage from the Nix Store
-gc:
-    nix-collect-garbage -d
-
-# deduplicates the Nix store
-optimize:
-    nix store optimise
-
-# gc + cleanup
-cleanup:
-    nix-collect-garbage -d
-    nix store optimise
-
 # Find why something is building
 why pkg:
     nix why-depends . {{pkg}}
@@ -96,10 +83,38 @@ diff-preview:
 diff-hm:
     nvd diff ~/.local/state/nix/profiles/home-manager ~/.local/state/nix/profiles/home-manager-$(($(ls ~/.local/state/nix/profiles | grep home-manager-[0-9]*-link | sed 's/[^0-9]//g' | sort -n | tail -n1)-1))-link
 
-# List generations
-gens:
-    sudo nix-env --list-generations --profile /nix/var/nix/profiles/system
-
 # finds every .nix file inside ~/dotfiles and formats them with alejandra.
 fmt:
     find . -type f -name '*.nix' -print0 | xargs -0 alejandra
+
+# Delete old system generations. Keep only the last 30 days
+cleanup-system:
+    sudo nix-collect-garbage --delete-older-than 30d
+
+# Cleanup Home Manager generations. Keep only the last 30 days
+
+cleanup-hm:
+    home-manager expire-generations "-30 days"
+
+# collect garbage from the Nix Store
+gc:
+    nix-collect-garbage -d
+
+# deduplicates the Nix store
+optimize:
+    nix store optimise
+
+# gc + cleanup
+cleanup:
+    just cleanup-system
+    just cleanup-hm
+    just optimise
+
+# List generations from system
+gens:
+    sudo nix-env --list-generations --profile /nix/var/nix/profiles/system
+
+# List generations from home manager
+hm-gens:
+    home-manager generations
+
