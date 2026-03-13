@@ -6,22 +6,26 @@
   inputs,
   userSettings,
   ...
-}: {
+}:
+{
   config = {
     # A
     # TODO move alacritty to a terminals.nix module
     programs.alacritty = {
       enable = true;
-      settings = {
-        font = {
-          normal = {
-            #family = "JetBrainsMono";
-            family = "FiraCode Nerd Font";
-            style = "Regular";
-          }; # normal
-        }; # font
-      }; # settings
+      settings = lib.mkForce { };
+
+      # settings = {
+      #   font = {
+      #     normal = {
+      #       #family = "JetBrainsMono";
+      #       family = "FiraCode Nerd Font";
+      #       style = "Regular";
+      #     }; # normal
+      #   }; # font
+      # }; # settings
     }; # programs.alacritty
+    xdg.configFile."alacritty/alacritty.toml".source = ../../config/alacritty/alacritty.toml;
 
     # B
     # C

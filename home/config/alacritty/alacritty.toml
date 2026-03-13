@@ -1,0 +1,19 @@
+[cursor.style]
+blinking = "Off"
+shape = "Beam"
+
+[font]
+size = 16
+
+[font.normal]
+family = "FiraCode Nerd Font"
+style = "Regular"
+
+[general]
+import = ["/nix/store/4gy3g91vqdks5qqzhxy28rb2mv270wfa-catppuccin-alacritty-0/catppuccin-mocha.toml"]
+
+[mouse]
+hide_when_typing = true
+
+[window]
+startup_mode = "Maximized"

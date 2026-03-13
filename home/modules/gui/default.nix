@@ -3,8 +3,8 @@
   pkgs,
   lib,
   ...
-}: let
-in {
+}:
+{
   config = {
     catppuccin = {
       enable = true;
@@ -36,7 +36,7 @@ in {
         name = "catppuccin-mocha-sky-standard";
         package = pkgs.catppuccin-gtk.override {
           size = "standard";
-          accents = ["sky"];
+          accents = [ "sky" ];
           variant = "mocha";
         }; # package = pkgs.catppuccin-gtk.override {
       }; # theme = {
@@ -54,6 +54,11 @@ in {
     }; # gtk = {
 
     catppuccin.nvim.enable = false;
+
+    home.sessionVariables = {
+      XCURSOR_THEME = "Breeze_Hacked";
+      XCURSOR_SIZE = "32";
+    };
 
     home.pointerCursor = {
       name = "Breeze_Hacked";
