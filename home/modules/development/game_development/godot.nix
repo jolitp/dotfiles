@@ -7,15 +7,25 @@
   userSettings,
   ...
 }:
-let
-  godotMono = pkgs.writeShellScriptBin "godot-mono" ''
-    exec ${pkgs.godot-mono}/bin/godot "$@"
-  '';
-in
 {
-  environment.systemPackages = with pkgs-unstable; [
+  home.packages = with pkgs-unstable; [
+    # Godot
     godot
-    godotMono
+    godot-mono
+
+    # .NET
+    dotnet-sdk_8
+    # dotnet-sdk
+
+    # C# tooling
+    omnisharp-roslyn
+
+    # Required runtime libs
+    icu
+    zlib
+    openssl
+
+    glib
   ]; # environment.systemPackages = with pkgs; [
 
 }

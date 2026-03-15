@@ -6,7 +6,8 @@
   inputs,
   userSettings,
   ...
-}: {
+}:
+{
   config = {
     programs.steam.enable = true;
     programs.steam.gamescopeSession.enable = true;
@@ -16,6 +17,12 @@
     programs.nix-ld.libraries = with pkgs; [
       # Add any missing dynamic libraries for unpackaged programs
       # here, NOT in environment.systemPackages
+      icu
+      openssl
+      zlib
+      curl
+      libunwind
+      stdenv.cc.cc
     ];
 
     programs.firefox.enable = true;
@@ -29,6 +36,15 @@
       lshw-gui
       pciutils
       nvd
+      icu
+
+      # for godot mono (C#)
+      openssl
+      zlib
+      libunwind
+      libuuid
+      curl
+      stdenv.cc.cc
 
       vim
       wget
