@@ -36,7 +36,7 @@ home:
 
 # check system build
 test_sys:
-  sudo nixos-rebuild switch --dry-run --flake ~/dotfiles
+  sudo nixos-rebuild dry-build --flake ~/dotfiles
 
 # check home build
 test_home:
