@@ -5,7 +5,8 @@
   config,
   pkgs,
   ...
-}: {
+}:
+{
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
@@ -29,6 +30,24 @@
     packages = with pkgs; [
       terminus_font
     ];
+  };
+
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 30d";
+  };
+
+  system.autoUpgrade = {
+    enable = true;
+    flake = "/home/jolitp/dotfiles";
+    flags = [
+      "--update-input"
+      "nixpkgs"
+      "--update-input"
+      "home-manager"
+    ];
+    dates = "daily";
   };
 
   programs.fuse.enable = true;
