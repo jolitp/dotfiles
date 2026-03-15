@@ -10,10 +10,13 @@
 
     # AI editors
     zed-editor
-    cursor
+    code-cursor
     windsurf
 
     # AI CLI
     claude-code
+    codex
+    gemini-cli-bin
+
   ];
 }

@@ -18,7 +18,8 @@
     ./modules/gui/web_browsers.nix
     ./modules/gui/terminals.nix
     ./modules/gui/games.nix
-    ./modules/development/ai_editors/ai_editors.nix
+    ./modules/ai/ai_editors.nix
+    ./modules/ai/ai_cli.nix
   ]; # imports
 
   config = {
