@@ -78,6 +78,7 @@
         ryubing
         heroic
         mgba
+        vbam
         duckstation
         sameboy
         stella
