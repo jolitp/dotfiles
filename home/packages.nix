@@ -126,8 +126,6 @@
         vsce # Visual Studio Code Extension Manager cli
         yarn
         typescript
-        # vscodium # hassle without all extensions
-        vscode # cannot install together with vscodium
 
         # Game Dev
         # godot # using the Unstable version (newer)
@@ -292,6 +290,8 @@
         # V
         vidcutter # does not install - name is right
         vlc
+        # vscodium # hassle without all extensions
+        vscode # cannot install together with vscodium
 
         # W
 

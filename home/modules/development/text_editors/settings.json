@@ -1,0 +1,85 @@
+{
+  "dotnetAcquisitionExtension.existingDotnetPath": [
+    {
+      "extensionId": "ms-dotnettools.csharp",
+      "path": "~/.nix-profile/bin/dotnet"
+    },
+    {
+      "extensionId": "ms-dotnettools.csdevkit",
+      "path": "~/.nix-profile/bin/dotnet"
+    }
+  ],
+  "workbench.sideBar.location": "right",
+  "extensions.experimental.affinity": {
+    "asvetliakov.vscode-neovim": 1
+  },
+  "svelte.enable-ts-plugin": true,
+  "editor.fontLigatures": true,
+  "workbench.iconTheme": "catppuccin-mocha",
+  "git.openRepositoryInParentFolders": "never",
+  "editor.formatOnSave": true,
+  "editor.tabSize": 2,
+  "editor.tabCompletion": "on",
+  "workbench.editor.highlightModifiedTabs": true,
+  "liveServer.settings.donotShowInfoMsg": true,
+  "editor.wordWrap": "bounded",
+  "explorer.compactFolders": false,
+  "editor.bracketPairColorization.enabled": true,
+  "workbench.colorCustomizations": {
+    "editorBracketHighlight.foreground1": "#ffffff",
+    "editorBracketHighlight.foreground2": "#b3ddff",
+    "editorBracketHighlight.foreground3": "#e4ffca",
+    "editorBracketHighlight.foreground4": "#ffc7c7",
+    "editorBracketHighlight.foreground5": "#fffeac",
+    "editorBracketHighlight.foreground6": "#ffddb1",
+    "editorBracketHighlight.unexpectedBracket.foreground": "#ff0000"
+  },
+  "indentRainbow.colors": [
+    "#d3d3d333",
+    "#72c0ff33",    
+    "#b7ff6f33",
+    "#ff5c6233",
+    "#fbf86b33",
+    "#fbb45733",    
+  ],
+  "workbench.colorTheme": "Catppuccin Mocha",
+  "editor.linkedEditing": true,
+  "colorful-titlebar.akasha": "f3GN1V2V0Fq9PWXifsmjjZ8kuW8lwxTpTihNFR7hjFtm26s7GPspCpbj4TJjqP94xC7b90/SmMNxxNS9DQXAZo+gvknfHFaXmcElLTtE4P0XvgEMCfryRA8ht5iEPc6ymr+fYMc4x99bRjvkyq5jDHQKorHIwBVVkBGKsiwVsyK8zJIrnQWmMZfs0/SalS67NgkxQuBquyS9o1LfkOLOeIicNpWiFTrK/Ff5zuP7KDo087bMZGINF+W0KiljKN6wOfrZbM4TIkcXXQ62O9vDE/WZS6tagg0mm7WFCO1LBUItn52qVTl4ptT4RkqYmuq/RYk2BebOhkPEK619ffSukHh1XIk8oQU+f721XQCWdmHzOASAh/lIg/qmZVqFhbHO7rIcwlUD4sypCAQC6Q==",
+  "regionsWithColors.box": true,
+  "regionsWithColors.color": "rgba(150, 150, 150, 0.05)",
+  "editor.minimap.renderCharacters": false,
+  "editor.minimap.scale": 2,
+  "editor.minimap.sectionHeaderFontSize": 10,
+  "explorer.confirmDelete": false,
+  "prettier.jsxSingleQuote": true,
+  "workbench.secondarySideBar.defaultVisibility": "hidden",
+
+  "rainbowTags.hightlightType": "background-color",
+  "rainbowTags.allowEverywhere": true,
+  "rainbowTags.supportedLanguages": [
+    "html",
+    "php",
+    "twig",
+    "blade",
+    "smarty",
+    "xml",
+    "vue",
+    "svelte",
+    "jsx",
+    "react",
+    "js"
+  ],
+  "rainbowTags.colors": [
+    "oklch(0.99 0.00 0 / 0.4)",
+    "oklch(0.62 0.19 260 / 0.4)",
+    "oklch(0.72 0.19 150 / 0.4)",
+    "oklch(0.58 0.22 27 / 0.4)",
+    "oklch(0.86 0.17 92 / 0.4)",
+    "oklch(0.70 0.19 48 / 0.4)",
+    "oklch(0.59 0.22 1 / 0.4)",
+    "oklch(0.56 0.25 302 / 0.4)",
+    "oklch(0.46 0.14 50 / 0.4))",
+    "oklch(0.21 0.01 286 / 0.4)",
+  ],
+  "window.confirmBeforeClose": "keyboardOnly"
+}
