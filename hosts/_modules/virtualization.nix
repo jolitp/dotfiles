@@ -6,8 +6,12 @@
   inputs,
   userSettings,
   ...
-}: {
+}:
+{
   config = {
+    # Recommended for networking
+    networking.networkmanager.enable = true;
+    networking.firewall.checkReversePath = false;
     # Enable libvirtd service
     virtualisation.libvirtd.enable = true;
 
@@ -20,7 +24,7 @@
     ];
 
     # Enable KVM kernel modules (adjust for your CPU type if necessary)
-    boot.kernelModules = ["kvm-amd"];
+    boot.kernelModules = [ "kvm-amd" ];
 
     virtualisation.docker = {
       enable = true;
