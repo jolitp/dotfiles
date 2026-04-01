@@ -31,6 +31,16 @@
       terminus_font
     ];
   };
+  # services.getty.extraArgs = [ "--noclear" ];
+  # 👇 THIS is the important part
+  systemd.services."console-font" = {
+    wantedBy = [ "multi-user.target" ];
+    after = [ "systemd-user-sessions.service" ];
+    serviceConfig = {
+      Type = "oneshot";
+      ExecStart = "${pkgs.kbd}/bin/setfont ter-v32n";
+    };
+  };
 
   # nix.gc = {
   #   automatic = true;
