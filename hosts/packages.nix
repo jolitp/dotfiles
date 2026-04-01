@@ -23,6 +23,9 @@
       curl
       libunwind
       stdenv.cc.cc
+      p7zip
+      # p7zip-rar
+
     ];
 
     programs.firefox.enable = true;
