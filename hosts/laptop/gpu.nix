@@ -6,7 +6,8 @@
   inputs,
   userSettings,
   ...
-}: {
+}:
+{
   config = {
     # Enable OpenGL
     hardware.graphics = {
@@ -17,6 +18,7 @@
     # Configure the NVIDIA driver
     hardware.nvidia = {
       modesetting.enable = true;
+      powerManagement.enable = false;
       open = false; # Use the open-source kernel module
       nvidiaSettings = true;
       # package = config.boot.kernelPackages.nvidiaPackages.stable;
