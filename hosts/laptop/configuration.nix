@@ -22,6 +22,7 @@
 
     ../_modules/flatpak.nix
     ../_modules/nh.nix
+    ../_modules/ai.nix
   ];
 
   console = {

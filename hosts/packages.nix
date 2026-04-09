@@ -41,6 +41,8 @@
       pciutils
       nvd
       icu
+      libcxx
+      yarn-berry
 
       # for godot mono (C#)
       openssl

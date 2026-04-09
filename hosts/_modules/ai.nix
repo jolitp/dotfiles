@@ -14,12 +14,16 @@
   environment.systemPackages = with pkgs; [
     open-webui
   ];
-
   systemd.services.open-webui = {
     description = "Open WebUI";
     wantedBy = [ "multi-user.target" ];
     serviceConfig = {
-      ExecStart = "${pkgs.open-webui}/bin/open-webui serve";
+      ExecStart = ''
+        ${pkgs.open-webui}/bin/open-webui serve
+      '';
+      Environment = [
+        "OPEN_WEBUI_DATA_DIR=/home/jolitp/.local/share/open-webui"
+      ];
       Restart = "always";
     };
   };
