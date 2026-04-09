@@ -26,8 +26,15 @@
     # Enable KVM kernel modules (adjust for your CPU type if necessary)
     boot.kernelModules = [ "kvm-amd" ];
 
-    virtualisation.docker = {
-      enable = true;
+    virtualisation = {
+      docker = {
+        enable = true;
+        daemon.settings.features.cdi = true;
+      };
+      podman = {
+        enable = true;
+      };
     };
+    hardware.nvidia-container-toolkit.enable = true;
   }; # config = {
 }

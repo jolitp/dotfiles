@@ -15,6 +15,10 @@
       enable32Bit = true;
     };
 
+    boot.kernelModules = [ "nvidia" ];
+    hardware.enableRedistributableFirmware = true;
+    hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.stable;
+
     # Configure the NVIDIA driver
     hardware.nvidia = {
       modesetting.enable = true;
@@ -39,6 +43,7 @@
         nvidiaBusId = "PCI:1:0:0";
       };
     };
+    # hardware.nvidia-container-toolkit.enable = true;
 
     # Load the nvidia driver for Xorg and Wayland
     services.xserver.videoDrivers = [

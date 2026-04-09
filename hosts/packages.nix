@@ -26,6 +26,7 @@
       p7zip
       # p7zip-rar
 
+      nvidia-container-toolkit
     ];
 
     programs.firefox.enable = true;

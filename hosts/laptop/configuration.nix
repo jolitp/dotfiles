@@ -125,6 +125,7 @@
       "networkmanager"
       "wheel"
       "docker"
+      "podman"
       "libvirtd"
     ];
   };
