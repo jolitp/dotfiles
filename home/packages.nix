@@ -84,7 +84,7 @@
         stella
         kega-fusion
         # snes9x
-        # snes9x-gtk
+        snes9x-gtk
         mame
         mesen
         melonDS
