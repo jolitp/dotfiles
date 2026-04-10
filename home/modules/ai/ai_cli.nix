@@ -15,6 +15,7 @@
     # Code AI CLI
     claude-code
     codex
+    opencode
 
   ];
 }

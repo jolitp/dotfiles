@@ -6,7 +6,8 @@
   inputs,
   userSettings,
   ...
-}: {
+}:
+{
   config.programs = {
     # A
     # B
@@ -30,7 +31,7 @@
     # P
     # Q
     # R
-    retroarch.enable = true; # does not have a configuration
+    # retroarch.enable = true; # does not have a configuration
     # S
     # T
     # U

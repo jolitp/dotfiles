@@ -77,15 +77,51 @@
       lib = nixpkgs.lib;
       system = "x86_64-linux";
       #pkgs = nixpkgs.legacyPackages.${system};
-      pkgs-unstable = nixpkgs-unstable.legacyPackages.${system};
+      # pkgs-unstable = nixpkgs-unstable.legacyPackages.${system};
+
+      overlays = [
+        (final: prev: {
+          snes9x-gtk = prev.snes9x-gtk.overrideAttrs (old: {
+            cmakeFlags = (old.cmakeFlags or [ ]) ++ [
+              "-DUSE_JMA=OFF"
+            ];
+          });
+        })
+      ];
 
       pkgs = import nixpkgs {
-        inherit system;
-        #legacyPackages.${system};
-        config = {
-          allowUnfree = true;
-        };
+        inherit system overlays;
+        config.allowUnfree = true;
       };
+
+      pkgs-unstable = import nixpkgs-unstable {
+        inherit system overlays;
+        config.allowUnfree = true;
+      };
+
+      # overlays = [
+      #   (final: prev: {
+      #     snes9x-gtk = prev.snes9x-gtk.overrideAttrs (old: {
+      #       # 🔥 best fix = disable JMA instead of fighting unzip.h
+      #       cmakeFlags = (old.cmakeFlags or [ ]) ++ [
+      #         "-DUSE_JMA=OFF"
+      #       ];
+      #     });
+      #   })
+      # ];
+
+      # pkgs = import nixpkgs {
+      #   inherit system overlays;
+      # };
+
+      # pkgs = import nixpkgs {
+      #   # inherit system;
+      #   inherit system overlays;
+      #   #legacyPackages.${system};
+      #   config = {
+      #     allowUnfree = true;
+      #   };
+      # };
     in
     {
       # System Configurations
