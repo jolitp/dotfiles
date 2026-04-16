@@ -18,5 +18,6 @@
     opencode
     ollama
     open-webui
+    lmstudio
   ];
 }

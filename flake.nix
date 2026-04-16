@@ -98,30 +98,6 @@
         inherit system overlays;
         config.allowUnfree = true;
       };
-
-      # overlays = [
-      #   (final: prev: {
-      #     snes9x-gtk = prev.snes9x-gtk.overrideAttrs (old: {
-      #       # 🔥 best fix = disable JMA instead of fighting unzip.h
-      #       cmakeFlags = (old.cmakeFlags or [ ]) ++ [
-      #         "-DUSE_JMA=OFF"
-      #       ];
-      #     });
-      #   })
-      # ];
-
-      # pkgs = import nixpkgs {
-      #   inherit system overlays;
-      # };
-
-      # pkgs = import nixpkgs {
-      #   # inherit system;
-      #   inherit system overlays;
-      #   #legacyPackages.${system};
-      #   config = {
-      #     allowUnfree = true;
-      #   };
-      # };
     in
     {
       # System Configurations
@@ -158,7 +134,7 @@
             inherit systemSettings;
             inherit userSettings;
           };
-        }; # desktop
+        }; # laptop
 
         vm = lib.nixosSystem {
           inherit system;
@@ -198,5 +174,6 @@
           };
         }; # jolitp = home-manager.lib.homeManagerConfiguration
       }; # homeConfigurations = {
+
     }; # outputs
 }
