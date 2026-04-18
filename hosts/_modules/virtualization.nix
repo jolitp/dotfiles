@@ -30,6 +30,10 @@
       virtualbox
     ];
 
+    virtualisation.virtualbox.host.enable = true;
+
+    users.users.jolitp.extraGroups = [ "vboxusers" ];
+
     # Enable KVM kernel modules (adjust for your CPU type if necessary)
     boot.kernelModules = [ "kvm-amd" ];
 
