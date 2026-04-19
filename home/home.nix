@@ -23,6 +23,7 @@
     ./modules/games/emulators.nix
     ./modules/games/default.nix
     ./modules/audio/daws.nix
+    ./modules/video/video_players.nix
   ]; # imports
 
   config = {
@@ -74,6 +75,7 @@
       "mbedtls-2.28.10" # What depend on this?
       #"qtwebkit-5.212.0-alpha4"
       "xpdf-4.06"
+      "qtwebengine-5.15.19"
     ]; # nixpkgs.config.permittedInsecurePackages
 
     fonts.fontconfig.enable = true;

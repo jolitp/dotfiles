@@ -157,7 +157,6 @@
         hardinfo2 # system profiler and benchmark
         hakuneko # manga and anime downloader
         handbrake
-        haruna # video player
         hexchat
 
         # I
@@ -186,7 +185,6 @@
         lact
 
         # M
-        mpv
         mediainfo
         # morgen # electron error
         mission-center
@@ -219,7 +217,6 @@
 
         # R
         resources
-        reaper
         remmina
         rustdesk
         libratbag # for piper
@@ -250,7 +247,6 @@
 
         # V
         vidcutter # does not install - name is right
-        vlc
         # vscodium # hassle without all extensions
         vscode # cannot install together with vscodium
 
