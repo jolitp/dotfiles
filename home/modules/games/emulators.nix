@@ -16,6 +16,8 @@
       # Stable Packages
       (with pkgs; [
 
+        # lime3ds # not found? no error? deprecated
+        # ryujinx # error: 'ryujinx' has been replaced by 'ryubing' as the new upstream
         ryubing
         heroic
         mgba
@@ -45,6 +47,7 @@
         #azahar # does not install - name is right
         #azahar # does not have a configuration
 
+        # retroarch-full # does not have a configuration
         (retroarch.withCores (
           cores: with cores; [
 
