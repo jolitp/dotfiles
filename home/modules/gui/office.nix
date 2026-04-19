@@ -15,12 +15,11 @@
     home.packages =
       # Stable Packages
       (with pkgs; [
-        davinci-resolve
-        handbrake
-        kdePackages.kdenlive
-        vidcutter # does not install - name is right
-        losslesscut-bin
-
+        libreoffice
+        jitsi-meet-electron # video conference client
+        masterpdfeditor
+        onlyoffice-desktopeditors
+        pdfarranger
       ]) # (with pkgs;
       # Stable Packages
       ++

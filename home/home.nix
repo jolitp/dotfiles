@@ -27,6 +27,8 @@
     ./modules/video/video_editors.nix
     ./modules/images/image_editors.nix
     ./modules/development/game_development/default.nix
+    ./modules/development/web_development/default.nix
+    ./modules/gui/office.nix
   ]; # imports
 
   config = {

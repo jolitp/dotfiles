@@ -15,11 +15,14 @@
     home.packages =
       # Stable Packages
       (with pkgs; [
-        davinci-resolve
-        handbrake
-        kdePackages.kdenlive
-        vidcutter # does not install - name is right
-        losslesscut-bin
+        # web programming
+        zed
+        nodejs
+        pnpm
+        svelte-language-server
+        vsce # Visual Studio Code Extension Manager cli
+        yarn
+        typescript
 
       ]) # (with pkgs;
       # Stable Packages

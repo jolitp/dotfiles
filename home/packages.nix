@@ -78,15 +78,6 @@
         # Videos
         # avidemux # nixos version is bugged on wayland the flatpak version also is bugged
 
-        # programming
-        zed
-        nodejs
-        pnpm
-        svelte-language-server
-        vsce # Visual Studio Code Extension Manager cli
-        yarn
-        typescript
-
         # misc
         # corekeyboard # not working - name is right
         # error: 'stacer' has been removed because it was abandoned upstream and relied upon vulnerable software
@@ -143,13 +134,10 @@
 
         # H
         hardinfo2 # system profiler and benchmark
-        hakuneko # manga and anime downloader
-        hexchat
 
         # I
 
         # J
-        jitsi-meet-electron # video conference client
         junction # application chooser
 
         # K
@@ -162,9 +150,7 @@
         kanata
 
         # L
-        libreoffice
         localsend
-        losslesscut-bin
         logseq
         lact
 
@@ -172,7 +158,6 @@
         # morgen # electron error
         mediainfo
         mission-center
-        masterpdfeditor
 
         # N
         nextcloud-client # NextCloud Desktop
@@ -183,10 +168,8 @@
         obsidian
         obs-studio
         openrgb
-        onlyoffice-desktopeditors
 
         # P
-        pdfarranger
         penpot-desktop # not found - name is right
         # photoscape # not found - does not exist in nixpkgs
         piper
