@@ -17,6 +17,16 @@
       (with pkgs; [
         lmms
         musescore
+        lilypond
+        frescobaldi
+        denemo
+        ardour
+        reaper
+        qtractor
+        zrythm
+        carla
+
+        #TODO setup JACK via pipewire
 
       ]) # (with pkgs;
       # Stable Packages
