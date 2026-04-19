@@ -6,8 +6,16 @@
   inputs,
   userSettings,
   ...
+<<<<<<< HEAD
 }: {
   config = {
+=======
+}:
+
+{
+  config = {
+
+>>>>>>> 568ba15 (fix desktop bootloader)
     boot = {
       # Bootloader
       loader = {
@@ -15,7 +23,6 @@
         grub = {
           enable = true;
           device = "/dev/sda";
-          efiSupport = true;
           useOSProber = true;
           theme = "${
             (pkgs.fetchFromGitHub {
