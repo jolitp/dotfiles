@@ -22,7 +22,7 @@
     ./modules/ai/ai_cli.nix
     ./modules/games/emulators.nix
     ./modules/games/default.nix
-    ./modules/audio/music.nix
+    ./modules/audio/daws.nix
   ]; # imports
 
   config = {
