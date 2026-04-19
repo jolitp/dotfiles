@@ -63,18 +63,11 @@
         gearlever
         # warehouse # not found - install through flatpak
         # flatseal # not found - install through flatpak
-        protontricks
-        winetricks
         devbox
 
         # GUIs
         # espanso
         redshift
-
-        # Games
-        lutris # does not have a configuration
-        antimicrox # does not have a configuration
-        vkd3d-proton
 
         # Internet
 
