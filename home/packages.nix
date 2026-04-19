@@ -113,7 +113,6 @@
         anytype
         anki
         anydesk
-        rustdesk
         appflowy
         autokey
         atuin
@@ -156,9 +155,9 @@
 
         # H
         hardinfo2 # system profiler and benchmark
-        hakuneko
+        hakuneko # manga and anime downloader
         handbrake
-        haruna
+        haruna # video player
         hexchat
 
         # I
@@ -181,7 +180,6 @@
         # L
         libreoffice
         libresprite
-        lmms
         localsend
         losslesscut-bin
         logseq
@@ -224,7 +222,7 @@
         reaper
         remmina
         rustdesk
-        libratbag
+        libratbag # for piper
 
         # S
         speedtest # conflict with cli
@@ -269,7 +267,6 @@
         zoom
         zotero
         zig # was needed for neovim to stop showing errors
-        zsnes
       ]) # (with pkgs;
       # Stable Packages
       ++

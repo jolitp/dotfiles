@@ -40,6 +40,7 @@
         dolphin-emu
         cemu
         xemu
+        zsnes
         # gens-gs
         # TODO get them from other means
         # citra # not found - install through flatpak?
