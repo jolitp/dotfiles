@@ -15,15 +15,10 @@
     home.packages =
       # Stable Packages
       (with pkgs; [
-        darktable
-        inkscape
-        krita
-        converseen
-        gimp
-        aseprite
-        imagemagick
-        libresprite
-        mediainfo
+        davinci-resolve
+        handbrake
+        kdePackages.kdenlive
+        vidcutter # does not install - name is right
 
       ]) # (with pkgs;
       # Stable Packages

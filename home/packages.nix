@@ -125,11 +125,9 @@
         # coolercontrol # need to use enable = true
 
         # D
-        darktable
         discord
         dropbox
         distroshelf # does not show up
-        davinci-resolve
 
         # E
         eyedropper
@@ -146,7 +144,6 @@
         # H
         hardinfo2 # system profiler and benchmark
         hakuneko # manga and anime downloader
-        handbrake
         hexchat
 
         # I
@@ -162,7 +159,6 @@
         # error: The top-level kleopatra alias has been removed.
         # kleopatra # certificate manager
         kdePackages.kate
-        kdePackages.kdenlive
         kanata
 
         # L
@@ -231,7 +227,6 @@
         unzip
 
         # V
-        vidcutter # does not install - name is right
         # vscodium # hassle without all extensions
         vscode # cannot install together with vscodium
 
@@ -241,7 +236,6 @@
         #xvkbd # virtual keyboard for x11
 
         # Y
-        # error: The top-level yakuake alias has been removed.
         kdePackages.yakuake # does not have a configuration
 
         # Z
