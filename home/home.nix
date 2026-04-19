@@ -21,6 +21,7 @@
     ./modules/ai/ai_editors.nix
     ./modules/ai/ai_cli.nix
     ./modules/games/emulators.nix
+    ./modules/games/default.nix
   ]; # imports
 
   config = {
