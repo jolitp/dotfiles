@@ -212,7 +212,6 @@
         qbittorrent
         qpwgraph
         qdirstat
-        qsynth
         #quiterss # does not build - insecure library + no compiling
 
         # R

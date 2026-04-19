@@ -25,6 +25,7 @@
         qtractor
         zrythm
         carla
+        qsynth
 
         #TODO setup JACK via pipewire
 
