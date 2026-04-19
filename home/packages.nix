@@ -87,12 +87,6 @@
         yarn
         typescript
 
-        # Game Dev
-        # godot # using the Unstable version (newer)
-        gdevelop # does not install - name is right
-        aseprite
-        ueviewer
-
         # misc
         # corekeyboard # not working - name is right
         # error: 'stacer' has been removed because it was abandoned upstream and relied upon vulnerable software
@@ -173,7 +167,6 @@
 
         # L
         libreoffice
-        libresprite
         localsend
         losslesscut-bin
         logseq
@@ -231,7 +224,6 @@
         # T
         tenacity
         thunderbird
-        tiled
         tor-browser
 
         # U
@@ -267,7 +259,6 @@
           stripe-cli
           yt-dlp
           tartube-yt-dlp
-          godot # better leave it for specific shell
         ])
     # (with pkgs-unstable;
     # Unstable Packages

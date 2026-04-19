@@ -25,6 +25,7 @@
     ./modules/audio/daws.nix
     ./modules/video/video_players.nix
     ./modules/images/image_editors.nix
+    ./modules/development/game_development/default.nix
   ]; # imports
 
   config = {
