@@ -15,20 +15,14 @@
     home.packages =
       # Stable Packages
       (with pkgs; [
-        lmms
-        musescore
-        lilypond
-        frescobaldi
-        denemo
-        ardour
-        reaper
-        qtractor
-        zrythm
-        carla
-        qsynth
-        qpwgraph
-
-        #TODO setup JACK via pipewire
+        inkscape
+        krita
+        converseen
+        gimp
+        aseprite
+        imagemagick
+        libresprite
+        mediainfo
 
       ]) # (with pkgs;
       # Stable Packages

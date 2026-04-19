@@ -72,12 +72,8 @@
         # Internet
 
         # Images
-        inkscape
         blender
-        krita
         flameshot
-        converseen
-        gimp
 
         # Videos
         # avidemux # nixos version is bugged on wayland the flatpak version also is bugged
@@ -160,7 +156,6 @@
         hexchat
 
         # I
-        imagemagick
 
         # J
         jitsi-meet-electron # video conference client
@@ -185,8 +180,8 @@
         lact
 
         # M
-        mediainfo
         # morgen # electron error
+        mediainfo
         mission-center
         masterpdfeditor
 
@@ -206,11 +201,11 @@
         penpot-desktop # not found - name is right
         # photoscape # not found - does not exist in nixpkgs
         piper
+        libratbag # for piper
         kdePackages.partitionmanager
 
         # Q
         qbittorrent
-        qpwgraph
         qdirstat
         #quiterss # does not build - insecure library + no compiling
 
@@ -218,7 +213,6 @@
         resources
         remmina
         rustdesk
-        libratbag # for piper
 
         # S
         speedtest # conflict with cli
