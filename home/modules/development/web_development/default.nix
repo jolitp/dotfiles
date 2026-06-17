@@ -23,6 +23,7 @@
         vsce # Visual Studio Code Extension Manager cli
         yarn
         typescript
+        mongodb-compass
 
       ]) # (with pkgs;
       # Stable Packages
