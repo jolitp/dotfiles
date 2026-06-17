@@ -43,6 +43,10 @@
     };
   };
 
+  nixpkgs.config.permittedInsecurePackages = [
+    "docker-28.5.2"
+  ]; # nixpkgs.config.permittedInsecurePackages
+
   # nix.gc = {
   #   automatic = true;
   #   dates = "weekly";

@@ -81,6 +81,7 @@
       #"qtwebkit-5.212.0-alpha4"
       "xpdf-4.06"
       "qtwebengine-5.15.19"
+      "docker-28.5.2"
     ]; # nixpkgs.config.permittedInsecurePackages
 
     fonts.fontconfig.enable = true;
