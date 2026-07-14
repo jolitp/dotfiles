@@ -79,7 +79,9 @@
       "electron-32.3.3"
       "electron-39.8.10"
       "librewolf-151.0.2-1"
+      "librewolf-152.0.2-1"
       "librewolf-unwrapped-151.0.2-1"
+      "librewolf-unwrapped-152.0.2-1"
       "mbedtls-2.28.10" # What depend on this?
       #"qtwebkit-5.212.0-alpha4"
       "xpdf-4.06"
