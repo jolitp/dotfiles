@@ -13,6 +13,7 @@
 
   environment.systemPackages = with pkgs; [
     open-webui
+    lmstudio
   ];
   systemd.services.open-webui = {
     description = "Open WebUI";
