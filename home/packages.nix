@@ -119,6 +119,7 @@
         discord
         dropbox
         distroshelf # does not show up
+        dig
 
         # E
         eyedropper
@@ -131,6 +132,7 @@
         fontforge
 
         # G
+        glab
 
         # H
         hardinfo2 # system profiler and benchmark
@@ -236,6 +238,7 @@
           stripe-cli
           yt-dlp
           tartube-yt-dlp
+          typst
         ])
     # (with pkgs-unstable;
     # Unstable Packages
