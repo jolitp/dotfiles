@@ -17,6 +17,6 @@
     codex
     opencode
     ollama
-    open-webui
+    # open-webui
   ];
 }
