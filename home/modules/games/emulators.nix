@@ -22,7 +22,7 @@
         heroic
         mgba
         vbam
-        duckstation
+        # duckstation # removed from nixpkgs 26.05 by upstream request (use appimage)
         sameboy
         stella
         kega-fusion
@@ -30,7 +30,7 @@
         # snes9x-gtk
         mame
         mesen
-        melonDS
+        melonds
         desmume
         yabause
         gopher64

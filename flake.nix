@@ -2,10 +2,10 @@
   description = "dotfiles flake";
 
   inputs = {
-    nixpkgs.url = "nixpkgs/nixos-25.11"; # Change periodically to the latest version
+    nixpkgs.url = "nixpkgs/nixos-26.05"; # Change periodically to the latest version
     nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
 
-    home-manager.url = "github:nix-community/home-manager/release-25.11";
+    home-manager.url = "github:nix-community/home-manager/release-26.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
     nur.url = "github:nix-community/nur";
@@ -16,7 +16,7 @@
     }; # firefox-addons
 
     stylix = {
-      url = "github:danth/stylix/release-25.11";
+      url = "github:danth/stylix/release-26.05";
       inputs = {
         nixpkgs.follows = "nixpkgs";
 
@@ -24,7 +24,10 @@
         # home-manager.follows = "home-manager";
       };
     };
-    catppuccin.url = "github:catppuccin/nix/release-25.11";
+    catppuccin.url = "github:catppuccin/nix/release-26.05";
+
+    openspec.url = "github:Fission-AI/OpenSpec";
+    openspec.inputs.nixpkgs.follows = "nixpkgs";
   }; # inputs
 
   outputs =
@@ -35,6 +38,7 @@
       home-manager,
       stylix,
       catppuccin,
+      openspec,
       #nvf,
       ...
     }@inputs:
@@ -87,7 +91,13 @@
             ];
           });
         })
+        (final: prev: {
+          openspec = openspec.packages.${prev.stdenv.hostPlatform.system}.default;
+        })
       ];
+      overlayModule = {
+        nixpkgs.overlays = overlays;
+      };
 
       pkgs = import nixpkgs {
         inherit system overlays;
@@ -109,6 +119,7 @@
             ./hosts/desktop/configuration.nix
             stylix.nixosModules.stylix
             catppuccin.nixosModules.catppuccin
+            overlayModule
           ];
           specialArgs = {
             inherit system;
@@ -126,6 +137,7 @@
             ./hosts/laptop/configuration.nix
             stylix.nixosModules.stylix
             catppuccin.nixosModules.catppuccin
+            overlayModule
           ];
           specialArgs = {
             inherit system;
@@ -133,6 +145,7 @@
             inherit pkgs-unstable;
             inherit systemSettings;
             inherit userSettings;
+            inherit openspec;
           };
         }; # laptop
 

@@ -17,7 +17,7 @@
       (with pkgs; [
         libreoffice
         jitsi-meet-electron # video conference client
-        masterpdfeditor
+        # masterpdfeditor
         onlyoffice-desktopeditors
         pdfarranger
       ]) # (with pkgs;

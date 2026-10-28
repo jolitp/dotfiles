@@ -14,7 +14,6 @@
     ./modules/sh.nix
     ./modules/cli/default.nix
     ./modules/gui
-    # ./modules/development/text_editors/vscode.nix
     ./modules/gui/web_browsers.nix
     ./modules/gui/terminals.nix
     ./modules/gui/games.nix
@@ -29,6 +28,7 @@
     ./modules/development/game_development/default.nix
     ./modules/development/web_development/default.nix
     ./modules/gui/office.nix
+    # ./modules/kanata-mouse.nix
   ]; # imports
 
   config = {
@@ -78,6 +78,7 @@
       "electron-27.3.11"
       "electron-32.3.3"
       "electron-39.8.10"
+      "electron-41.10.7" # jitsi-meet-electron
       "librewolf-151.0.2-1"
       "librewolf-152.0.2-1"
       "librewolf-unwrapped-151.0.2-1"

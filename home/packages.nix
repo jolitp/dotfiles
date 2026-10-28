@@ -90,11 +90,11 @@
         ##########################################################################################
 
         # A
-        actiona
-        anytype
-        anki
+        #actiona
+        #anytype
+        #anki
         anydesk
-        appflowy
+        #appflowy
         autokey
         atuin
 
@@ -129,7 +129,7 @@
         # firefox # installed system-wide
         kdePackages.filelight
         fluent-reader
-        fontforge
+        #fontforge
 
         # G
         glab
@@ -149,11 +149,10 @@
         # error: The top-level kleopatra alias has been removed.
         # kleopatra # certificate manager
         kdePackages.kate
-        kanata
 
         # L
         localsend
-        logseq
+        #logseq
         lact
 
         # M
@@ -172,7 +171,7 @@
         openrgb
 
         # P
-        penpot-desktop # not found - name is right
+        #penpot-desktop # not found - name is right
         # photoscape # not found - does not exist in nixpkgs
         piper
         libratbag # for piper
@@ -201,6 +200,7 @@
         # error: The top-level skanpage alias has been removed.
         # skanpage
         solaar
+        subtitlecomposer
 
         # T
         tenacity
@@ -239,6 +239,15 @@
           yt-dlp
           tartube-yt-dlp
           typst
+          kanata
+
+          umu-launcher
+          (lutris.override {
+            extraPkgs = p: [
+              umu-launcher
+              p.vulkan-tools
+            ];
+          })
         ])
     # (with pkgs-unstable;
     # Unstable Packages

@@ -5,7 +5,8 @@
   config,
   pkgs,
   ...
-}: {
+}:
+{
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
@@ -71,6 +72,11 @@
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
+  # Remove or disable the old system service so two kanatas don't fight over the mouse
+  # services.kanata.enable = false;
+
+  hardware.uinput.enable = true; # loads uinput, creates the uinput group + udev rule
+
   # # Enable sound with pipewire.
   # services.pulseaudio.enable = false;
   # security.rtkit.enable = true;
@@ -97,6 +103,8 @@
     extraGroups = [
       "networkmanager"
       "wheel"
+      "input"
+      "uinput"
     ];
     # packages = with pkgs; [
     #   kdePackages.kate

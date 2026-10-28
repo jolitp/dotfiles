@@ -8,7 +8,8 @@
 {
   services.ollama = {
     enable = true;
-    acceleration = "cuda"; # or "rocm" / "none"
+    #  acceleration = "cuda"; # or "rocm" / "none"
+    package = pkgs.ollama-cuda;
   };
 
   environment.systemPackages = with pkgs; [

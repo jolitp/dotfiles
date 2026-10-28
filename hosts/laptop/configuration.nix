@@ -132,8 +132,18 @@
       "docker"
       "podman"
       "libvirtd"
+      "kvm"
+      "input" 
+      "uinput"
     ];
   };
+
+  virtualisation.libvirtd = {
+    enable = true;
+    qemu.swtpm.enable = true;
+  };
+
+  programs.virt-manager.enable = true;
 
   security.polkit.enable = true;
   # Allow unfree packages
@@ -158,6 +168,25 @@
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
   #
+
+  services.samba = {
+    enable = true;
+    openFirewall = true;
+    settings = {
+      global = {
+        "workgroup" = "WORKGROUP";
+        "security" = "user";
+      };
+      trabalho = {
+        "path" = "/home/jolitp/trabalho-bi";
+        "browseable" = "yes";
+        "read only" = "no";
+        "guest ok" = "no";
+        "valid users" = "jolitp";
+      };
+    };
+  };
+
   system.stateVersion = "25.05"; # DO NOT CHANGE!!!
 
   nix.settings.experimental-features = [

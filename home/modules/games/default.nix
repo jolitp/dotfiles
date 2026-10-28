@@ -16,7 +16,7 @@
       # Stable Packages
       (with pkgs; [
         # Games
-        lutris # does not have a configuration
+        # lutris # does not have a configuration # install through flatpak
         antimicrox # does not have a configuration
         vkd3d-proton
         protontricks

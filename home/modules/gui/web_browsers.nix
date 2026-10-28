@@ -30,6 +30,7 @@
 
     programs.firefox = {
       enable = true;
+      configPath = ".mozilla/firefox";
 
       policies = {
         # Updates & Background Services

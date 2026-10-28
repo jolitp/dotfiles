@@ -5,13 +5,14 @@
   lib,
   inputs,
   userSettings,
+  openspec,
   ...
 }:
 {
   config = {
     programs.steam.enable = true;
     programs.steam.gamescopeSession.enable = true;
-    programs.gamemode.enable = true;
+    # programs.gamemode.enable = true;
 
     programs.nix-ld.enable = true;
     programs.nix-ld.libraries = with pkgs; [
@@ -27,11 +28,19 @@
       # p7zip-rar
 
       nvidia-container-toolkit
+      steam
+      cabextract
     ];
 
     programs.firefox.enable = true;
 
     programs.gnome-disks.enable = true;
+
+    nixpkgs.overlays = [
+      (final: prev: {
+        openspec = inputs.openspec.packages.${prev.stdenv.hostPlatform.system}.default;
+      })
+    ];
 
     # List packages installed in system profile. To search, run:
     # $ nix search wget
@@ -43,6 +52,7 @@
       icu
       libcxx
       yarn-berry
+      kdePackages.kio-fuse # fix dolphin not showing mounted iso
 
       # for godot mono (C#)
       openssl
@@ -58,12 +68,12 @@
       git
       mangohud
       protonup-ng # gamming proton
-      bottles
+      # bottles # going to install through flatpak
       kdePackages.kdeconnect-kde
       ddcutil
       distrobox
       ntfs3g
-      protonvpn-gui # privacy proton
+      proton-vpn # privacy proton
       protonmail-bridge-gui # privacy proton
       # corekeyboard # x11 only
       maliit-keyboard
@@ -78,6 +88,8 @@
       fuse
       appimage-run
       just
+      openspec
+
     ];
   }; # config
 }

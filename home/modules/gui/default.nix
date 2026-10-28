@@ -43,6 +43,7 @@
       gtk3.extraConfig = {
         gtk-application-prefer-dark-theme = true;
       };
+      gtk4.theme = config.gtk.theme;
       gtk4.extraConfig = {
         gtk-application-prefer-dark-theme = true;
       };
@@ -54,6 +55,8 @@
     }; # gtk = {
 
     catppuccin.nvim.enable = false;
+    # catppuccin firefox source build fetches yarn deps over IPv6 only, which fails here
+    catppuccin.firefox.enable = false;
 
     home.sessionVariables = {
       XCURSOR_THEME = "Breeze_Hacked";
