@@ -5,7 +5,6 @@
   lib,
   inputs,
   userSettings,
-  openspec,
   ...
 }:
 {
@@ -36,11 +35,6 @@
 
     programs.gnome-disks.enable = true;
 
-    nixpkgs.overlays = [
-      (final: prev: {
-        openspec = inputs.openspec.packages.${prev.stdenv.hostPlatform.system}.default;
-      })
-    ];
 
     # List packages installed in system profile. To search, run:
     # $ nix search wget
@@ -88,7 +82,6 @@
       fuse
       appimage-run
       just
-      openspec
 
     ];
   }; # config
