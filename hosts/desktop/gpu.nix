@@ -19,7 +19,8 @@
       modesetting.enable = true;
       open = false; # Use the open-source kernel module
       nvidiaSettings = true;
-      # package = config.boot.kernelPackages.nvidiaPackages.stable;
+      # GTX 1060 (Pascal) was dropped after 580.xx, newer drivers ignore it
+      package = config.boot.kernelPackages.nvidiaPackages.legacy_580;
     };
 
     # Load the nvidia driver for Xorg and Wayland
