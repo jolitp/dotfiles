@@ -31,5 +31,14 @@ in {
       fsType = "ntfs3";
       options = ntfs;
     };
+
+    # VM images live on the NVMe: the root SSD is DRAM-less and stalls under
+    # the VMs' random writes. Bind mount keeps the path, so snapshots still
+    # find their backing files
+    fileSystems."/var/lib/libvirt/images" = {
+      device = "/mnt/HOME/libvirt/images";
+      fsType = "none";
+      options = ["bind" "x-systemd.requires-mounts-for=/mnt/HOME"];
+    };
   }; # config = {
 }
