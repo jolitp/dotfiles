@@ -191,7 +191,7 @@
         # R
         resources
         remmina
-        rustdesk
+        # rustdesk
 
         # S
         speedtest # conflict with cli
