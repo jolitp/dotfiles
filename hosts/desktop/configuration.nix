@@ -12,6 +12,7 @@
     ./hardware-configuration.nix
     ./gpu.nix
     ./bootloader.nix
+    ./disks.nix
     ../packages.nix
 
     ../_modules/sound.nix

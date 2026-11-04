@@ -29,7 +29,8 @@
 
   # just mount /mnt/HOME and symlink the home folders (Downloads, Pictures, Videos, etc.)
   fileSystems."/mnt/HOME" = {
-    device = "/dev/disk/by-label/HOME";
+    # by-uuid because the Crucial 2TB also has the label HOME
+    device = "/dev/disk/by-uuid/6d0ea267-6b48-4347-b388-78fdd4d45ef5";
     fsType = "ext4";
   };
 
