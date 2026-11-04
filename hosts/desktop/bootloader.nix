@@ -14,8 +14,8 @@
         efi.canTouchEfiVariables = true;
         grub = {
           enable = true;
-          device = "/dev/sda";
-          efiSupport = true;
+          # by-id because /dev/sdX names change between boots
+          device = "/dev/disk/by-id/ata-SSD_512GB_SN-on-the-lable";
           useOSProber = true;
           theme = "${
             (pkgs.fetchFromGitHub {
