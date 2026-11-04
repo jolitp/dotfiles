@@ -9,6 +9,9 @@
 }: {
   config = {
     boot = {
+      # Zen 1 (Ryzen 5 1600) freezes/reboots at idle because of deep C-states
+      kernelParams = ["processor.max_cstate=1"];
+
       # Bootloader
       loader = {
         efi.canTouchEfiVariables = true;
