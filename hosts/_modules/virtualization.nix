@@ -15,6 +15,8 @@
 
     # Enable libvirtd service
     virtualisation.libvirtd.enable = true;
+    # Emulated TPM, required by Windows 11
+    virtualisation.libvirtd.qemu.swtpm.enable = true;
 
     # Needed for virgl / GL
     hardware.graphics.enable = true;

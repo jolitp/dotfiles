@@ -106,6 +106,7 @@
       "wheel"
       "input"
       "uinput"
+      "libvirtd"
     ];
     # packages = with pkgs; [
     #   kdePackages.kate
