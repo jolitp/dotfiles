@@ -93,7 +93,13 @@
         #actiona
         #anytype
         #anki
-        anydesk
+        # AnyDesk re-uploaded the 8.1.0 tarball, so nixpkgs' hash no longer matches
+        (anydesk.overrideAttrs (old: {
+          src = fetchurl {
+            url = "https://download.anydesk.com/linux/anydesk-${old.version}-amd64.tar.gz";
+            hash = "sha256-zS5P2eyTHZY7cBW8mQ2Q6M0lXcx9VZZTtpG3Bb6u7IQ=";
+          };
+        }))
         #appflowy
         autokey
         atuin
