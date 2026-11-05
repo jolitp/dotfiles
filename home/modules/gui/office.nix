@@ -16,7 +16,7 @@
       # Stable Packages
       (with pkgs; [
         libreoffice
-        jitsi-meet-electron # video conference client
+        # jitsi-meet-electron # video conference client
         # masterpdfeditor
         onlyoffice-desktopeditors
         pdfarranger
