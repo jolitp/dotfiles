@@ -17,10 +17,10 @@
     # Configure the NVIDIA driver
     hardware.nvidia = {
       modesetting.enable = true;
-      open = false; # Use the open-source kernel module
+      # RTX 5060 Ti (Blackwell) only works with the open kernel module
+      open = true;
       nvidiaSettings = true;
-      # GTX 1060 (Pascal) was dropped after 580.xx, newer drivers ignore it
-      package = config.boot.kernelPackages.nvidiaPackages.legacy_580;
+      package = config.boot.kernelPackages.nvidiaPackages.stable;
     };
 
     # Load the nvidia driver for Xorg and Wayland
